@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bvfa18ddvvaon"]
+
+[ext_resource type="Script" uid="uid://b4eh34uyoaj51" path="res://scripts/ui.gd" id="1_dj8aq"]
+
+[node name="UI" type="CanvasLayer" unique_id=1826785090]
+script = ExtResource("1_dj8aq")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=456803766]
+anchors_preset = -1
+anchor_left = 0.667
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.16799974
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=281203841]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=176046976]
+layout_mode = 2
+
+[node name="Employees" type="MenuButton" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1341166046]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 0.8217194, 0.86063063, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_constants/h_separation = 4
+theme_override_font_sizes/font_size = 70
+text = "Employees"
+
+[node name="Shop" type="MenuButton" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1611310431]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.9999997, 0.8563485, 0.55233353, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 70
+text = "Shop
+"
+
+[node name="Market" type="MenuButton" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=680675728]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.83274853, 0.94195986, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 70
+text = "Market
+"
