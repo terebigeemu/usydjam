@@ -20,7 +20,7 @@ var enable_stash_edits = false
 
 # item values (should be equal to frame ids)
 
-# item id 157 = empty
+const item_empty: int = 157
 
 var item1: int
 var item2: int
@@ -33,6 +33,12 @@ var item100: int
 var item101: int
 var item102: int
 
+@onready var cell_array = [cell1, cell2, cell3, cell4, cell5, cell6]
+@onready var cell_item_array = [item1, item2, item3, item4, item5, item6]
+
+@onready var stash_array = [stash100, stash101, stash102]
+@onready var stash_item_array = [item100, item101, item102]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
@@ -44,17 +50,14 @@ func _ready() -> void:
 	
 	# background should be person putting in food
 	
-	var cell_array = [cell1, cell2, cell3, cell4, cell5, cell6]
-	var cell_item_array = [item1, item2, item3, item4, item5, item6]
+	# cell_array and cell_item_array should generally never diverge except for
+	# momentary instances where the frames of a sprite might need to change
 	
-	var stash_array = [stash100, stash101, stash102]
-	var stash_item_array = [item100, item101, item102]
-	
-	var n_stash: int 
-	var n_cell: int
+	var n_stash: int = -1
+	var n_cell: int = -1
 
 	for i in stash_array:
-		n_stash += 0
+		n_stash += 1
 		i.frame = stash_item_array[n_stash]
 		i.visible = false
 	
@@ -64,7 +67,7 @@ func _ready() -> void:
 	await get_tree().create_timer(0.5).timeout
 	
 	for i in cell_array:
-		n_cell += 0
+		n_cell += 1
 		await get_tree().create_timer(0.05).timeout
 		cell_item_array[n_cell] = rng.randi_range(0, 45)
 		i.frame = cell_item_array[n_cell]
@@ -87,21 +90,38 @@ func _ready() -> void:
 	# todo:  tutorial prompts
 	
 	
-	#todo: detect hoverover
+	# todo: detect hoverover
 	
+func stash_fill(item_no):
+	
+	var j: int = 0
+	var is_filled: bool = false
+	
+	for i in stash_item_array:
+		j += 1
+		# if a slot has already been filled, break the return function
+		if is_filled == true:
+			break
+		# if a slot is available and can be filled, fill it
+		if i == item_empty and is_filled != true:
+			stash_item_array[i] = item_no
+			cell_item_array[i].frame = stash_item_array[i]
+			is_filled = true
+	
+	is_filled = false # reset filled variable and end the function
+			
 func stash_edit(cell_id, viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	var cell_selected: AnimatedSprite2D = get_node(cell_id)
-	if event is InputEventMouseButton and event.pressed:
-		if event.button_index == MOUSE_BUTTON_LEFT and enable_stash_edits == true:
-			print("clicked " + str(cell_id))
-			cell_selected.frame = 157 
-			
-	pass
+
+	print("clicked " + str(cell_id))
+	stash_fill(cell_item_array[cell_array.find(cell_id)])
+	cell_selected.frame = item_empty
 
 	# extra_arg_0 = cell_id
 func _on_cell_input_event(viewport: Node, event: InputEvent, shape_idx: int, extra_arg_0: NodePath) -> void:
-	stash_edit(extra_arg_0, viewport, event, shape_idx)
-	pass
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT and enable_stash_edits == true:
+			stash_edit(extra_arg_0, viewport, event, shape_idx)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
