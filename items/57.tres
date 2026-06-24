@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ba22ermeo2b8f"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://chrbo3k1wsmvp"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_tpfey"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_sd266"]
@@ -10,7 +10,7 @@ region = Rect2(288, 96, 32, 32)
 [resource]
 script = ExtResource("2_sd266")
 item_id = 57
-name = "Cooked Corn on the Cob"
+item_name = "Cooked Corn on the Cob"
 attrb = "Earthy, Savory, Vegetable"
 cost = 2
 icon = SubResource("AtlasTexture_60sdf")

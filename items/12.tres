@@ -1,16 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dnso1w17cixjm"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bj70g4dgynenw"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_k1cds"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_th1t8"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_v64vr"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_th1t8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3wnj"]
 atlas = ExtResource("1_th1t8")
 region = Rect2(384, 0, 32, 32)
 
 [resource]
-script = ExtResource("1_k1cds")
+script = ExtResource("2_v64vr")
 item_id = 12
-name = "Red Popsicle"
+item_name = "Red Popsicle"
 attrb = "Sweet, Dessert "
 cost = 1
-icon = SubResource("AtlasTexture_th1t8")
+icon = SubResource("AtlasTexture_c3wnj")

@@ -1,16 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bt80g7gyfcqns"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cllibyha1txau"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_5misu"]
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_r1ic8"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_bnajt"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5misu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wp2ti"]
 atlas = ExtResource("1_5misu")
 region = Rect2(224, 0, 32, 32)
 
 [resource]
-script = ExtResource("1_r1ic8")
+script = ExtResource("2_bnajt")
 item_id = 7
-name = "Red Glazed Donut"
+item_name = "Red Glazed Donut"
 attrb = "Sweet, Pastry "
 cost = 2
-icon = SubResource("AtlasTexture_5misu")
+icon = SubResource("AtlasTexture_wp2ti")

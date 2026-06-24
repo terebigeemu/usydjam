@@ -32,7 +32,7 @@ func _run():
 			
 		var new_item = ItemData.new()
 		new_item.item_id = line[0]
-		new_item.name = line[1]
+		new_item.item_name = line[1]
 		new_item.attrb = line[2]
 		new_item.cost = line[3].to_int()
 		# Calculates the exact grid coordinates based on the item_id

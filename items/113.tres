@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d2k271f3kmdpa"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bhkal54sntc08"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_0p21y"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_xi5qp"]
@@ -10,7 +10,7 @@ region = Rect2(32, 224, 32, 32)
 [resource]
 script = ExtResource("2_xi5qp")
 item_id = 113
-name = "Blue Cereal / Rice Bowl"
+item_name = "Blue Cereal / Rice Bowl"
 attrb = "Savory, Salty, Carbs"
 cost = 2
 icon = SubResource("AtlasTexture_rxwd0")

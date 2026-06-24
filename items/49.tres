@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://icgy1jf358ms"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c2ef01t5x6a05"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_2urpx"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_cpw22"]
@@ -10,7 +10,7 @@ region = Rect2(32, 96, 32, 32)
 [resource]
 script = ExtResource("2_cpw22")
 item_id = 49
-name = "Orange Chips Bag"
+item_name = "Orange Chips Bag"
 attrb = "Savory, Salty, Snack"
 cost = 1
 icon = SubResource("AtlasTexture_4k1rf")

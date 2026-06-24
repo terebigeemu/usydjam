@@ -1,16 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dnj805pa3yxo6"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dha0ges4kt8c2"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_5ny25"]
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_glhqh"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_mmgul"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5ny25"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dxhx"]
 atlas = ExtResource("1_5ny25")
 region = Rect2(224, 32, 32, 32)
 
 [resource]
-script = ExtResource("1_glhqh")
+script = ExtResource("2_mmgul")
 item_id = 23
-name = "Fresh Strawberries"
+item_name = "Fresh Strawberries"
 attrb = "Sweet, Sour, Fruit"
 cost = 2
-icon = SubResource("AtlasTexture_5ny25")
+icon = SubResource("AtlasTexture_7dxhx")

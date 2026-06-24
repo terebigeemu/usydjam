@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://2up80frovpeh"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://fk05hafehof7"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_j1cn2"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_1qgwi"]
@@ -10,7 +10,7 @@ region = Rect2(288, 160, 32, 32)
 [resource]
 script = ExtResource("2_1qgwi")
 item_id = 89
-name = "Broccoli"
+item_name = "Broccoli"
 attrb = "Earthy, Savory, Vegetable"
 cost = 1
 icon = SubResource("AtlasTexture_yq8p1")

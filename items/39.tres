@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bci4kj0v2uk4a"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cvvnufv7jahhf"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_url7f"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_j8sva"]
@@ -10,7 +10,7 @@ region = Rect2(224, 64, 32, 32)
 [resource]
 script = ExtResource("2_j8sva")
 item_id = 39
-name = "Quiche / Cheese Pie Slice"
+item_name = "Quiche / Cheese Pie Slice"
 attrb = "Savory, Salty,  Savory"
 cost = 4
 icon = SubResource("AtlasTexture_4kdha")

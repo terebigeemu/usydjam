@@ -1,16 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c2at4b77g7k6d"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d2snrmdkf7mvi"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_l1rpk"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_vc3q3"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_s7u0t"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vc3q3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2nee"]
 atlas = ExtResource("1_vc3q3")
 region = Rect2(0, 32, 32, 32)
 
 [resource]
-script = ExtResource("1_l1rpk")
+script = ExtResource("2_s7u0t")
 item_id = 16
-name = "Red Chips Bag"
+item_name = "Red Chips Bag"
 attrb = "Savory, Salty, Snack"
 cost = 1
-icon = SubResource("AtlasTexture_vc3q3")
+icon = SubResource("AtlasTexture_n2nee")

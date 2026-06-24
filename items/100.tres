@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://gxmb3ujqgj38"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dm4fkwoy34x51"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_bvec4"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_s042h"]
@@ -10,7 +10,7 @@ region = Rect2(128, 192, 32, 32)
 [resource]
 script = ExtResource("2_s042h")
 item_id = 100
-name = "Green Mochi"
+item_name = "Green Mochi"
 attrb = "Sweet, Dessert "
 cost = 3
 icon = SubResource("AtlasTexture_1ak4w")

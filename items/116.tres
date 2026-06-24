@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c30gi6mrs685h"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dbwd8yrqjlmd7"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_fw4mu"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_8xddm"]
@@ -10,7 +10,7 @@ region = Rect2(128, 224, 32, 32)
 [resource]
 script = ExtResource("2_8xddm")
 item_id = 116
-name = "Vanilla Beans / Spices"
+item_name = "Vanilla Beans / Spices"
 attrb = "Sweet, Earthy, Condiment / Ingredient"
 cost = 5
 icon = SubResource("AtlasTexture_526cv")

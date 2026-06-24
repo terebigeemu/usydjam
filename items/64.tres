@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c6f6jr683sfd7"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bcl8i7amgpt5s"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_pisxg"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_rsp77"]
@@ -10,7 +10,7 @@ region = Rect2(0, 128, 32, 32)
 [resource]
 script = ExtResource("2_rsp77")
 item_id = 64
-name = "Apple Pie Slice"
+item_name = "Apple Pie Slice"
 attrb = "Sweet, Fruit"
 cost = 3
 icon = SubResource("AtlasTexture_h313u")

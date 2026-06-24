@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d10mirvw4twi5"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dhwq38wog8xje"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_hdam5"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_hy4db"]
@@ -10,7 +10,7 @@ region = Rect2(320, 160, 32, 32)
 [resource]
 script = ExtResource("2_hy4db")
 item_id = 90
-name = "Pickle Jar"
+item_name = "Pickle Jar"
 attrb = "Sour, Condiment / Ingredient"
 cost = 2
 icon = SubResource("AtlasTexture_15a68")

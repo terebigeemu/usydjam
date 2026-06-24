@@ -1,16 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b5fvc3poxsj3"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://45qlbi2y5nhc"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_j74cu"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_u5uif"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_qnpum"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u5uif"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_flcta"]
 atlas = ExtResource("1_u5uif")
 region = Rect2(192, 32, 32, 32)
 
 [resource]
-script = ExtResource("1_j74cu")
+script = ExtResource("2_qnpum")
 item_id = 22
-name = "Whole Strawberry Cake"
+item_name = "Whole Strawberry Cake"
 attrb = "Sweet, Sour, Dessert "
 cost = 5
-icon = SubResource("AtlasTexture_u5uif")
+icon = SubResource("AtlasTexture_flcta")

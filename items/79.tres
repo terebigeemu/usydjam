@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dgdyxuumat2e4"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bvsab3fublenl"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_ikc8k"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_cr72o"]
@@ -10,7 +10,7 @@ region = Rect2(480, 128, 32, 32)
 [resource]
 script = ExtResource("2_cr72o")
 item_id = 79
-name = "Iced Coffee / Latte"
+item_name = "Iced Coffee / Latte"
 attrb = "Sweet, Bitter, Drink"
 cost = 3
 icon = SubResource("AtlasTexture_84rxb")

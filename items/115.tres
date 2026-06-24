@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://g8gnmu6a0ltd"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://2djvjoqhq2xf"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_xfga1"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_d5345"]
@@ -10,7 +10,7 @@ region = Rect2(96, 224, 32, 32)
 [resource]
 script = ExtResource("2_d5345")
 item_id = 115
-name = "Blue Energy Drink Can"
+item_name = "Blue Energy Drink Can"
 attrb = "Sweet, Drink"
 cost = 3
 icon = SubResource("AtlasTexture_i2by0")

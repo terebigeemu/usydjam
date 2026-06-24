@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ckndpjq4pa0dk"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dnof3plkd67x4"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_hjfxg"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_cse06"]
@@ -10,7 +10,7 @@ region = Rect2(448, 64, 32, 32)
 [resource]
 script = ExtResource("2_cse06")
 item_id = 46
-name = "Orange Popsicle"
+item_name = "Orange Popsicle"
 attrb = "Sweet, Dessert "
 cost = 1
 icon = SubResource("AtlasTexture_tkjwc")

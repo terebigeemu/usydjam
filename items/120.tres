@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ngi3omaqyo1c"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://kqcvkweso0rl"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_60ju7"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_aumnf"]
@@ -10,7 +10,7 @@ region = Rect2(256, 224, 32, 32)
 [resource]
 script = ExtResource("2_aumnf")
 item_id = 120
-name = "Dark Chocolate Cake Slice"
+item_name = "Dark Chocolate Cake Slice"
 attrb = "Sweet, Bitter, Dessert "
 cost = 3
 icon = SubResource("AtlasTexture_hd0xy")

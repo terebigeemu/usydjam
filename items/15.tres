@@ -1,16 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://iohefop5ajor"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dl516mf3ff34u"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_lydj5"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_qq4ae"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_wvvjr"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qq4ae"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwe28"]
 atlas = ExtResource("1_qq4ae")
 region = Rect2(480, 0, 32, 32)
 
 [resource]
-script = ExtResource("1_lydj5")
+script = ExtResource("2_wvvjr")
 item_id = 15
-name = "Red Apple"
+item_name = "Red Apple"
 attrb = "Sweet, Fruit"
 cost = 1
-icon = SubResource("AtlasTexture_qq4ae")
+icon = SubResource("AtlasTexture_jwe28")

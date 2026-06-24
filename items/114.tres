@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d37nftrir3y0e"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cgjoi6hrs4gtk"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_5pk2w"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_k4ilx"]
@@ -10,7 +10,7 @@ region = Rect2(64, 224, 32, 32)
 [resource]
 script = ExtResource("2_k4ilx")
 item_id = 114
-name = "Blue Cotton Candy"
+item_name = "Blue Cotton Candy"
 attrb = "Sweet, Dessert "
 cost = 2
 icon = SubResource("AtlasTexture_jamxo")

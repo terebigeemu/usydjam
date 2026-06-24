@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dpqd0blaxk6o"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bydosg6mvv6p7"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_86iys"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_5okvm"]
@@ -10,7 +10,7 @@ region = Rect2(480, 224, 32, 32)
 [resource]
 script = ExtResource("2_5okvm")
 item_id = 127
-name = "Purple Soda Can 1"
+item_name = "Purple Soda Can 1"
 attrb = "Sweet, Drink"
 cost = 2
 icon = SubResource("AtlasTexture_ifime")

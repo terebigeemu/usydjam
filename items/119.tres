@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://2t3eg3qknlbd"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b2ftegqtmbq5l"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_u8bwh"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_nok53"]
@@ -10,7 +10,7 @@ region = Rect2(224, 224, 32, 32)
 [resource]
 script = ExtResource("2_nok53")
 item_id = 119
-name = "Chocolate Cookies (Oreos)"
+item_name = "Chocolate Cookies (Oreos)"
 attrb = "Sweet, Dessert "
 cost = 2
 icon = SubResource("AtlasTexture_lwpgy")

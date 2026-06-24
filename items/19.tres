@@ -1,16 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cfgbe4acnjo10"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://2e7u4no26gpk"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_bsir5"]
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_bxov7"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_oecyv"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bsir5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kid7e"]
 atlas = ExtResource("1_bsir5")
 region = Rect2(96, 32, 32, 32)
 
 [resource]
-script = ExtResource("1_bxov7")
+script = ExtResource("2_oecyv")
 item_id = 19
-name = "Red Soda Can"
+item_name = "Red Soda Can"
 attrb = "Sweet, Drink"
 cost = 1
-icon = SubResource("AtlasTexture_bsir5")
+icon = SubResource("AtlasTexture_kid7e")

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://6sa6rmh14kmj"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://7s88fwc62opl"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_v1vik"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_nloo1"]
@@ -10,7 +10,7 @@ region = Rect2(256, 64, 32, 32)
 [resource]
 script = ExtResource("2_nloo1")
 item_id = 40
-name = "Carrot Cake Slice"
+item_name = "Carrot Cake Slice"
 attrb = "Sweet, Dessert "
 cost = 3
 icon = SubResource("AtlasTexture_ke10o")

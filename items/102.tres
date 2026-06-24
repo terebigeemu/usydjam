@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://mh6mrmdel88p"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://docnd35pjshl3"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_4n1cx"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_ihduy"]
@@ -10,7 +10,7 @@ region = Rect2(192, 192, 32, 32)
 [resource]
 script = ExtResource("2_ihduy")
 item_id = 102
-name = "Blue Swiss Roll"
+item_name = "Blue Swiss Roll"
 attrb = "Sweet, Dessert "
 cost = 2
 icon = SubResource("AtlasTexture_eb3xg")

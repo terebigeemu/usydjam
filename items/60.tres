@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ddosb8yrpci4x"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cxvqxkaxgjdnb"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_i6yk1"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_wecps"]
@@ -10,7 +10,7 @@ region = Rect2(384, 96, 32, 32)
 [resource]
 script = ExtResource("2_wecps")
 item_id = 60
-name = "Macaroni / Cereal Bowl"
+item_name = "Macaroni / Cereal Bowl"
 attrb = "Savory, Salty, Carbs"
 cost = 5
 icon = SubResource("AtlasTexture_frpdu")

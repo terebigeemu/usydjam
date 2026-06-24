@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://pgdlulj7uyo0"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c7p8hpj73sh5m"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_mnqna"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_wfs4y"]
@@ -10,7 +10,7 @@ region = Rect2(224, 256, 32, 32)
 [resource]
 script = ExtResource("2_wfs4y")
 item_id = 135
-name = "Purple Chocolate Bar 2"
+item_name = "Purple Chocolate Bar 2"
 attrb = "Sweet, Dessert "
 cost = 2
 icon = SubResource("AtlasTexture_n7nvs")

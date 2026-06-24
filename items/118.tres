@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d2olbti3a6bre"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://byvdaqi71280"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_5lo6k"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_jhnd7"]
@@ -10,7 +10,7 @@ region = Rect2(192, 224, 32, 32)
 [resource]
 script = ExtResource("2_jhnd7")
 item_id = 118
-name = "Blueberries / Olives"
+item_name = "Blueberries / Olives"
 attrb = "Sweet, Sour, Earthy, Salty, Bitter, Fruit"
 cost = 2
 icon = SubResource("AtlasTexture_ogqlh")

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://sjjxws0tno33"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c05udfws5ixt3"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_ihtsm"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_rn1l8"]
@@ -10,7 +10,7 @@ region = Rect2(384, 256, 32, 32)
 [resource]
 script = ExtResource("2_rn1l8")
 item_id = 140
-name = "Purple Jam Jar / Potion"
+item_name = "Purple Jam Jar / Potion"
 attrb = "Sweet, Drink"
 cost = 2
 icon = SubResource("AtlasTexture_0u6wr")

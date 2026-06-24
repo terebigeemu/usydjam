@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c6ty1athd31vo"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cetetgnjit460"]
 
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_ocqt5"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_s3pu0"]
@@ -10,7 +10,7 @@ region = Rect2(128, 0, 32, 32)
 [resource]
 script = ExtResource("1_ocqt5")
 item_id = 4
-name = "Red Gelatin / Jelly"
+item_name = "Red Gelatin / Jelly"
 attrb = "Sweet, Dessert "
 cost = 1
 icon = SubResource("AtlasTexture_s3pu0")

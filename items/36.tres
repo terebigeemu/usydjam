@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bjquwcluvidkj"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://oe12ngvxdyqy"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_p2mr3"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_3fq32"]
@@ -10,7 +10,7 @@ region = Rect2(128, 64, 32, 32)
 [resource]
 script = ExtResource("2_3fq32")
 item_id = 36
-name = "Cheese Pizza Slice"
+item_name = "Cheese Pizza Slice"
 attrb = "Savory, Salty,  Savory"
 cost = 3
 icon = SubResource("AtlasTexture_ehndu")

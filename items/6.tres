@@ -1,16 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://doaw475c5ax5r"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bpbi2ssl7bg82"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_a8vr7"]
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_ip4xn"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_53re1"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a8vr7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7e1u"]
 atlas = ExtResource("1_a8vr7")
 region = Rect2(192, 0, 32, 32)
 
 [resource]
-script = ExtResource("1_ip4xn")
+script = ExtResource("2_53re1")
 item_id = 6
-name = "Red Juice / Cocktail"
+item_name = "Red Juice / Cocktail"
 attrb = "Sweet, Drink"
 cost = 4
-icon = SubResource("AtlasTexture_a8vr7")
+icon = SubResource("AtlasTexture_q7e1u")

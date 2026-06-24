@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cgh4e7cw4ne85"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://byy1c4topwc7y"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_bn5vc"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_gwvpo"]
@@ -10,7 +10,7 @@ region = Rect2(192, 160, 32, 32)
 [resource]
 script = ExtResource("2_gwvpo")
 item_id = 86
-name = "Avocado Halves"
+item_name = "Avocado Halves"
 attrb = "Earthy, Creamy, Vegetable"
 cost = 2
 icon = SubResource("AtlasTexture_t7bx1")

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bo8en7e0hjcx5"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://blx6ry7mbhkld"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_s2y1j"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_bh6k5"]
@@ -10,7 +10,7 @@ region = Rect2(384, 288, 32, 32)
 [resource]
 script = ExtResource("2_bh6k5")
 item_id = 156
-name = "Pink Heart Cookie"
+item_name = "Pink Heart Cookie"
 attrb = "Sweet, Dessert "
 cost = 1
 icon = SubResource("AtlasTexture_naehx")

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bmnb81jmyx20x"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b3fjicdcrpino"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_dru6s"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_044cg"]
@@ -10,7 +10,7 @@ region = Rect2(96, 64, 32, 32)
 [resource]
 script = ExtResource("2_044cg")
 item_id = 35
-name = "Cheeseburger"
+item_name = "Cheeseburger"
 attrb = "Savory, Salty,  Savory"
 cost = 3
 icon = SubResource("AtlasTexture_hsjs8")

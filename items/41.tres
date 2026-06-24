@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bb006313ohana"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bktctr4ivsu1c"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_bm3cm"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_dkyd2"]
@@ -10,7 +10,7 @@ region = Rect2(288, 64, 32, 32)
 [resource]
 script = ExtResource("2_dkyd2")
 item_id = 41
-name = "Baguette / Bread Loaf"
+item_name = "Baguette / Bread Loaf"
 attrb = "Savory, Salty, Carbs"
 cost = 2
 icon = SubResource("AtlasTexture_k0kcr")

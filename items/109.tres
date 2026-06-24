@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dtesxibrx3q5v"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bgl67clw2xypx"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_rre8w"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_37j8b"]
@@ -10,7 +10,7 @@ region = Rect2(416, 192, 32, 32)
 [resource]
 script = ExtResource("2_37j8b")
 item_id = 109
-name = "Water Bottle"
+item_name = "Water Bottle"
 attrb = "Neutral, Drink"
 cost = 1
 icon = SubResource("AtlasTexture_41oid")

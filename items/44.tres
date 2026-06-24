@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d0vtnn43g1whm"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dtocxn0gxidca"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_ojhya"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_4bmxw"]
@@ -10,7 +10,7 @@ region = Rect2(384, 64, 32, 32)
 [resource]
 script = ExtResource("2_4bmxw")
 item_id = 44
-name = "Chocolate Covered Strawberry 2"
+item_name = "Chocolate Covered Strawberry 2"
 attrb = "Sweet, Sour, Dessert "
 cost = 2
 icon = SubResource("AtlasTexture_1y0f2")

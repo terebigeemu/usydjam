@@ -1,16 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b2uspggwd4s5g"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://uhpmxt1rswuk"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_2ibm0"]
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_rb5ys"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_uy2v1"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2ibm0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohrqo"]
 atlas = ExtResource("1_2ibm0")
 region = Rect2(32, 0, 32, 32)
 
 [resource]
-script = ExtResource("1_rb5ys")
+script = ExtResource("2_uy2v1")
 item_id = 1
-name = "Chili Peppers"
+item_name = "Chili Peppers"
 attrb = "Spicy, Vegetable"
 cost = 1
-icon = SubResource("AtlasTexture_2ibm0")
+icon = SubResource("AtlasTexture_ohrqo")

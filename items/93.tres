@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dijqbov3v77y8"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ctmaokoxbrlkc"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_6djrr"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_ubqox"]
@@ -10,7 +10,7 @@ region = Rect2(416, 160, 32, 32)
 [resource]
 script = ExtResource("2_ubqox")
 item_id = 93
-name = "Green Beans / Edamame"
+item_name = "Green Beans / Edamame"
 attrb = "Earthy, Savory, Vegetable"
 cost = 1
 icon = SubResource("AtlasTexture_p1k7r")

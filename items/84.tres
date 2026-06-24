@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bplof4111ogd6"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bes7i2pbku1ku"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_ju3to"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_viyld"]
@@ -10,7 +10,7 @@ region = Rect2(128, 160, 32, 32)
 [resource]
 script = ExtResource("2_viyld")
 item_id = 84
-name = "Green Candy Box"
+item_name = "Green Candy Box"
 attrb = "Sweet, Dessert "
 cost = 4
 icon = SubResource("AtlasTexture_7womo")

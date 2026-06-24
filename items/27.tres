@@ -1,16 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://t0gd6np5s54h"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c7x5lq50r6ruc"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_2him5"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_2kf3t"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_ffbo2"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2kf3t"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rk1f"]
 atlas = ExtResource("1_2kf3t")
 region = Rect2(352, 32, 32, 32)
 
 [resource]
-script = ExtResource("1_2him5")
+script = ExtResource("2_ffbo2")
 item_id = 27
-name = "Chocolate Pocky Sticks"
+item_name = "Chocolate Pocky Sticks"
 attrb = "Sweet, Dessert "
 cost = 1
-icon = SubResource("AtlasTexture_2kf3t")
+icon = SubResource("AtlasTexture_3rk1f")

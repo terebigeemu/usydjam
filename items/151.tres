@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c02hn0dycbrvn"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c6colrqcgwcyp"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_sbukm"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_uj0q6"]
@@ -10,7 +10,7 @@ region = Rect2(224, 288, 32, 32)
 [resource]
 script = ExtResource("2_uj0q6")
 item_id = 151
-name = "Cherry Cake Slice"
+item_name = "Cherry Cake Slice"
 attrb = "Sweet, Sour, Dessert "
 cost = 4
 icon = SubResource("AtlasTexture_28ypp")

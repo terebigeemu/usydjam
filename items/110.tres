@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c4ho3cqr1fr3v"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dl8goh2yh5crd"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_x5y33"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_kiwhj"]
@@ -10,7 +10,7 @@ region = Rect2(448, 192, 32, 32)
 [resource]
 script = ExtResource("2_kiwhj")
 item_id = 110
-name = "Blue Granola / Snack Bar"
+item_name = "Blue Granola / Snack Bar"
 attrb = "Sweet, Snack"
 cost = 1
 icon = SubResource("AtlasTexture_7nq8m")

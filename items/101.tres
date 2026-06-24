@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dgeekwhdj4s00"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dsmii1axmcgbo"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_ygp01"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_myf1f"]
@@ -10,7 +10,7 @@ region = Rect2(160, 192, 32, 32)
 [resource]
 script = ExtResource("2_myf1f")
 item_id = 101
-name = "Margarita / Green Cocktail"
+item_name = "Margarita / Green Cocktail"
 attrb = "Sour, Sweet, Drink"
 cost = 5
 icon = SubResource("AtlasTexture_djux0")

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dxs6cpn0axuw7"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dlbguv0h0cbud"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_77tt0"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_cf4c8"]
@@ -10,7 +10,7 @@ region = Rect2(96, 288, 32, 32)
 [resource]
 script = ExtResource("2_cf4c8")
 item_id = 147
-name = "Pink Dragonfruit"
+item_name = "Pink Dragonfruit"
 attrb = "Sweet, Fruit"
 cost = 4
 icon = SubResource("AtlasTexture_le2cs")

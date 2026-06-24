@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://02skd5vdbkam"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b5uhn6j2j5d0t"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_3brp1"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_8qham"]
@@ -10,7 +10,7 @@ region = Rect2(384, 160, 32, 32)
 [resource]
 script = ExtResource("2_8qham")
 item_id = 92
-name = "Asparagus / Celery Sticks"
+item_name = "Asparagus / Celery Sticks"
 attrb = "Earthy, Savory, Vegetable"
 cost = 1
 icon = SubResource("AtlasTexture_r0jqp")

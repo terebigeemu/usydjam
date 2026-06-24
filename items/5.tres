@@ -1,16 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://gveto78s8jm2"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dwm12r44k51t5"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_8kmu1"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_n0rh5"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_7c8wi"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n0rh5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4f31"]
 atlas = ExtResource("1_n0rh5")
 region = Rect2(160, 0, 32, 32)
 
 [resource]
-script = ExtResource("1_8kmu1")
+script = ExtResource("2_7c8wi")
 item_id = 5
-name = "Watermelon Slices"
+item_name = "Watermelon Slices"
 attrb = "Sweet, Drink"
 cost = 1
-icon = SubResource("AtlasTexture_n0rh5")
+icon = SubResource("AtlasTexture_q4f31")

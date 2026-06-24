@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://btl8a6hk56k7p"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d23ne3lauvje1"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_pcu3l"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_0rai2"]
@@ -10,7 +10,7 @@ region = Rect2(0, 64, 32, 32)
 [resource]
 script = ExtResource("2_0rai2")
 item_id = 32
-name = "Bagel Sandwich 1"
+item_name = "Bagel Sandwich 1"
 attrb = "Savory, Salty, Carbs"
 cost = 4
 icon = SubResource("AtlasTexture_idosw")

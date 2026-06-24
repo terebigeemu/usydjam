@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://brojc87om7sxy"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://jinlg4qn1dh5"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_cw52f"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_ssy3v"]
@@ -10,7 +10,7 @@ region = Rect2(0, 256, 32, 32)
 [resource]
 script = ExtResource("2_ssy3v")
 item_id = 128
-name = "Figs"
+item_name = "Figs"
 attrb = "Sweet, Fruit"
 cost = 3
 icon = SubResource("AtlasTexture_umdhk")
