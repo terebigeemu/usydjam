@@ -79,11 +79,6 @@ func _ready() -> void:
 		
 	# INIT
 	
-	# randomly generate cells 1-6
-	
-	# background should be person putting in food
-	
-	
 	var n_stash: int = 0
 	var n_cell: int = 0
 
@@ -94,9 +89,7 @@ func _ready() -> void:
 	
 	for i in cell_array:
 		i.visible = false
-		
-	#await get_tree().create_timer(0.5).timeout
-	
+			
 	for i in cell_array:
 		await get_tree().create_timer(0.05).timeout
 		cell_item_array[n_cell] = rng.randi_range(0, 156)
