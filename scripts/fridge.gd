@@ -176,10 +176,11 @@ func stash_fill(cell_id, item_no, inventory_index):
 		is_filled = false # reset filled variable and end the function
 			
 func stash_edit(cell_id, inventory_index, viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	
+	print("clicked " + str(cell_id))
+	
 	var cell_selected: AnimatedSprite2D = get_node(cell_id)
 	var item_id: int
-
-	print("clicked " + str(cell_id))
 	
 	# sorry i forgot about zero indexing and its cooked now and not bothered to change each signal manually
 	
@@ -194,7 +195,7 @@ func fridge_fill(cell_id, item_no, inventory_index):
 	
 	# literally just copied and pasted but i reversed everything LMFAO
 	
-	var stash_selected: AnimatedSprite2D = get_node("UI/" + str(cell_id))
+	var stash_selected: AnimatedSprite2D = get_node(cell_id)
 	
 	print("calling fridge_fill with param " + str(cell_id) + " and " + str(item_no))
 
@@ -256,7 +257,7 @@ func swap_helper(dest_cell_id, dest_inventory_index, dest_cell_type):
 	# dest_cell_type type: 0 = player clicked on normal cell, 1 = player clicked on stash cell
 	var cell_path = dest_cell_id
 	if dest_cell_type != 0:
-		cell_path = "UI/" + str(dest_cell_id)
+		cell_path = str(dest_cell_id)
 		
 	var cell_selected: AnimatedSprite2D = get_node(cell_path)
 	var swap_cell: AnimatedSprite2D = get_node(swap_cell_id)
@@ -285,8 +286,8 @@ func swap_helper(dest_cell_id, dest_inventory_index, dest_cell_type):
 			cell_item_array[dest_inventory_index] = cell_item_array[swap_inventory_index]
 			cell_item_array[swap_inventory_index] = temp
 			
-			cell_selected.frame = cell_item_array[dest_inventory_index]
 			swap_cell.frame = cell_item_array[swap_inventory_index]
+			cell_selected.frame = cell_item_array[dest_inventory_index]
 			
 		else:
 			print("player clicked on normal cell")
@@ -316,8 +317,9 @@ func swap_helper(dest_cell_id, dest_inventory_index, dest_cell_type):
 			stash_item_array[dest_inventory_index] = stash_item_array[swap_inventory_index]
 			stash_item_array[swap_inventory_index] = temp
 			
-			cell_selected.frame = stash_item_array[dest_inventory_index]
 			swap_cell.frame = stash_item_array[swap_inventory_index]
+			cell_selected.frame = stash_item_array[dest_inventory_index]
+
 		else:
 			print("player clicked on stash cell")
 			print("dest_inventory_index = " + str(dest_inventory_index))
