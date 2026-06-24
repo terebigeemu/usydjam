@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://ds3b5tal44hr8"]
 
-[ext_resource type="Texture2D" uid="uid://bl3nl31dpjd87" path="res://assets/fridge-inside.png" id="1_npr5r"]
+[ext_resource type="Texture2D" uid="uid://dyhhrqcdonllp" path="res://assets/fridge_inside.png" id="1_ipvyg"]
 [ext_resource type="Script" uid="uid://dfnvvs5s7ml48" path="res://scripts/fridge.gd" id="3_buvrw"]
+[ext_resource type="Script" uid="uid://b0xawac0vvxw5" path="res://scripts/skybox.gd" id="4_husjh"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="7_nm1dx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t2fjl"]
@@ -1134,16 +1135,23 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_buvrw"]
 
+[sub_resource type="Gradient" id="Gradient_buvrw"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u8bke"]
+gradient = SubResource("Gradient_buvrw")
+
 [node name="Fridge" type="Node2D" unique_id=672302043]
 position = Vector2(10, -1)
 script = ExtResource("3_buvrw")
 
 [node name="FridgeInside" type="Sprite2D" parent="." unique_id=62022446]
-position = Vector2(643, 541)
+z_index = -1
+position = Vector2(631, 541)
 scale = Vector2(8, 8)
-texture = ExtResource("1_npr5r")
+texture = ExtResource("1_ipvyg")
 
 [node name="Area1" type="Area2D" parent="." unique_id=2124120713]
+position = Vector2(-2, -22)
 
 [node name="Cell1" type="AnimatedSprite2D" parent="Area1" unique_id=249107901]
 position = Vector2(251.00003, 417)
@@ -1157,6 +1165,7 @@ scale = Vector2(13.979357, 13.979357)
 shape = SubResource("CircleShape2D_buvrw")
 
 [node name="Area2" type="Area2D" parent="." unique_id=698623990]
+position = Vector2(-11, -27)
 
 [node name="Cell2" type="AnimatedSprite2D" parent="Area2" unique_id=662472063]
 position = Vector2(634, 412)
@@ -1171,6 +1180,7 @@ scale = Vector2(13.979357, 13.979357)
 shape = SubResource("CircleShape2D_buvrw")
 
 [node name="Area3" type="Area2D" parent="." unique_id=43603100]
+position = Vector2(-27, -14)
 
 [node name="Cell3" type="AnimatedSprite2D" parent="Area3" unique_id=1330796320]
 position = Vector2(1028, 407)
@@ -1184,7 +1194,7 @@ scale = Vector2(13.979357, 13.979357)
 shape = SubResource("CircleShape2D_buvrw")
 
 [node name="Area4" type="Area2D" parent="." unique_id=1025747186]
-position = Vector2(-1, 0)
+position = Vector2(-16, -24)
 
 [node name="Cell4" type="AnimatedSprite2D" parent="Area4" unique_id=1068781061]
 position = Vector2(247.00002, 911)
@@ -1198,6 +1208,7 @@ scale = Vector2(13.979357, 13.979357)
 shape = SubResource("CircleShape2D_buvrw")
 
 [node name="Area5" type="Area2D" parent="." unique_id=26352538]
+position = Vector2(-5, -25)
 
 [node name="Cell5" type="AnimatedSprite2D" parent="Area5" unique_id=426618104]
 position = Vector2(637, 889)
@@ -1211,7 +1222,7 @@ scale = Vector2(13.979357, 13.979357)
 shape = SubResource("CircleShape2D_buvrw")
 
 [node name="Area6" type="Area2D" parent="." unique_id=32644874]
-position = Vector2(3, -7)
+position = Vector2(-4, -29)
 
 [node name="Cell6" type="AnimatedSprite2D" parent="Area6" unique_id=1128920026]
 position = Vector2(1035.0001, 899.00006)
@@ -1253,7 +1264,7 @@ scale = Vector2(13.979357, 13.979357)
 shape = SubResource("CircleShape2D_buvrw")
 
 [node name="Stash102" type="Area2D" parent="." unique_id=68831125]
-position = Vector2(1327, 489)
+position = Vector2(1340, 489)
 
 [node name="Cell102" type="AnimatedSprite2D" parent="Stash102" unique_id=2144828167]
 position = Vector2(251.00003, 417)
@@ -1274,13 +1285,27 @@ offset_bottom = -15.0
 text = "InitialState"
 
 [node name="Background" type="Sprite2D" parent="." unique_id=880272330]
+position = Vector2(4, 8)
+script = ExtResource("4_husjh")
 
-[connection signal="input_event" from="Area1" to="." method="_on_cell_input_event" binds= [NodePath("Area1/Cell1")]]
-[connection signal="input_event" from="Area2" to="." method="_on_cell_input_event" binds= [NodePath("Area2/Cell2")]]
-[connection signal="input_event" from="Area3" to="." method="_on_cell_input_event" binds= [NodePath("Area3/Cell3")]]
-[connection signal="input_event" from="Area4" to="." method="_on_cell_input_event" binds= [NodePath("Area4/Cell4")]]
-[connection signal="input_event" from="Area5" to="." method="_on_cell_input_event" binds= [NodePath("Area5/Cell5")]]
-[connection signal="input_event" from="Area6" to="." method="_on_cell_input_event" binds= [NodePath("Area6/Cell6")]]
-[connection signal="input_event" from="Stash100" to="." method="_on_cell_input_event" binds= [NodePath("Stash100/Cell100")]]
-[connection signal="input_event" from="Stash101" to="." method="_on_cell_input_event" binds= [NodePath("Stash101/Cell101")]]
-[connection signal="input_event" from="Stash102" to="." method="_on_cell_input_event" binds= [NodePath("Stash102/Cell102")]]
+[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=466734330]
+position = Vector2(16, 1)
+
+[node name="Parallax2D" type="Parallax2D" parent="Background" unique_id=1899894768]
+
+[node name="TextureRect" type="TextureRect" parent="Background" unique_id=1341369736]
+z_index = -10
+offset_left = -28.000004
+offset_top = 1087.0
+offset_right = 35.999996
+offset_bottom = 1151.0
+rotation = -1.5693567
+scale = Vector2(17.310328, 21.097878)
+texture = SubResource("GradientTexture2D_u8bke")
+
+[connection signal="input_event" from="Area1" to="." method="_on_cell_input_event" binds= [NodePath("Area1/Cell1"), 1]]
+[connection signal="input_event" from="Area2" to="." method="_on_cell_input_event" binds= [NodePath("Area2/Cell2"), 2]]
+[connection signal="input_event" from="Area3" to="." method="_on_cell_input_event" binds= [NodePath("Area3/Cell3"), 3]]
+[connection signal="input_event" from="Area4" to="." method="_on_cell_input_event" binds= [NodePath("Area4/Cell4"), 4]]
+[connection signal="input_event" from="Area5" to="." method="_on_cell_input_event" binds= [NodePath("Area5/Cell5"), 5]]
+[connection signal="input_event" from="Area6" to="." method="_on_cell_input_event" binds= [NodePath("Area6/Cell6"), 6]]
