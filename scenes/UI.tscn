@@ -124,3 +124,29 @@ size_flags_stretch_ratio = 7.0
 [node name="EGrid" type="GridContainer" parent="PanelContainer/MarginContainer/EmployeePage/EmployeeSection" unique_id=1907066367]
 layout_mode = 2
 columns = 6
+
+[node name="StashPage" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=376075644]
+layout_mode = 2
+
+[node name="TopBar" type="HBoxContainer" parent="PanelContainer/MarginContainer/StashPage" unique_id=530167626]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BtnHome" type="TextureButton" parent="PanelContainer/MarginContainer/StashPage/TopBar" unique_id=1097935858]
+custom_minimum_size = Vector2(80, 60)
+layout_mode = 2
+texture_normal = ExtResource("2_ro3t7")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="StashSection" type="ScrollContainer" parent="PanelContainer/MarginContainer/StashPage" unique_id=500202458]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 7.0
+
+[node name="Stash" type="GridContainer" parent="PanelContainer/MarginContainer/StashPage/StashSection" unique_id=1454911529]
+layout_mode = 2
+columns = 6
+
+[connection signal="draw" from="PanelContainer/MarginContainer/StashPage" to="." method="_open_stash_ui"]
+[connection signal="hidden" from="PanelContainer/MarginContainer/StashPage" to="." method="_close_stash_ui"]

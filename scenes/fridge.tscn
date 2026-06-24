@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dyhhrqcdonllp" path="res://assets/fridge_inside.png" id="1_ipvyg"]
 [ext_resource type="Script" uid="uid://dfnvvs5s7ml48" path="res://scripts/fridge.gd" id="3_buvrw"]
 [ext_resource type="Script" uid="uid://b0xawac0vvxw5" path="res://scripts/skybox.gd" id="4_husjh"]
+[ext_resource type="Script" uid="uid://5o47sdhdufep" path="res://scripts/stash_init.gd" id="4_nm1dx"]
 [ext_resource type="Script" uid="uid://c1gt0wwr3gvxt" path="res://scripts/parallax_background.gd" id="4_npr5r"]
 [ext_resource type="Texture2D" uid="uid://dan8bmestv28h" path="res://assets/clouds.png" id="5_npr5r"]
 [ext_resource type="Texture2D" uid="uid://57xmjwbynog7" path="res://assets/office1.png" id="7_mq0tr"]
@@ -1166,6 +1167,7 @@ animations = [{
 }]
 
 [node name="Fridge" type="Node2D" unique_id=672302043]
+z_index = 1
 position = Vector2(10, -1)
 script = ExtResource("3_buvrw")
 
@@ -1260,47 +1262,52 @@ position = Vector2(1020.00006, 907.00006)
 scale = Vector2(13.979357, 13.979357)
 shape = SubResource("CircleShape2D_buvrw")
 
-[node name="Stash100" type="Area2D" parent="." unique_id=394698429]
-z_index = 1
+[node name="Stash100" type="Area2D" parent="." unique_id=394698429 groups=["stash_cells"]]
+z_index = 5
 position = Vector2(1339, -240)
+script = ExtResource("4_nm1dx")
 
-[node name="Cell100" type="AnimatedSprite2D" parent="Stash100" unique_id=180398834]
+[node name="Cell100" type="AnimatedSprite2D" parent="Stash100" unique_id=180398834 groups=["stash_cells"]]
+z_index = 5
 position = Vector2(251.00003, 417)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_u8bke")
 frame = 35
 
-[node name="Collision100" type="CollisionShape2D" parent="Stash100" unique_id=1159099581]
+[node name="Collision100" type="CollisionShape2D" parent="Stash100" unique_id=1159099581 groups=["stash_cells"]]
 position = Vector2(252, 413.00003)
 scale = Vector2(13.979357, 13.979357)
 shape = SubResource("CircleShape2D_buvrw")
 
-[node name="Stash101" type="Area2D" parent="." unique_id=754821852]
-z_index = 1
+[node name="Stash101" type="Area2D" parent="." unique_id=754821852 groups=["stash_cells"]]
+z_index = 5
 position = Vector2(1341, 131)
+script = ExtResource("4_nm1dx")
 
-[node name="Cell101" type="AnimatedSprite2D" parent="Stash101" unique_id=1906242593]
+[node name="Cell101" type="AnimatedSprite2D" parent="Stash101" unique_id=1906242593 groups=["stash_cells"]]
+z_index = 5
 position = Vector2(251.00003, 417)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_u8bke")
 frame = 35
 
-[node name="Collision101" type="CollisionShape2D" parent="Stash101" unique_id=1475958206]
+[node name="Collision101" type="CollisionShape2D" parent="Stash101" unique_id=1475958206 groups=["stash_cells"]]
 position = Vector2(252, 413.00003)
 scale = Vector2(13.979357, 13.979357)
 shape = SubResource("CircleShape2D_buvrw")
 
-[node name="Stash102" type="Area2D" parent="." unique_id=68831125]
-z_index = 1
+[node name="Stash102" type="Area2D" parent="." unique_id=68831125 groups=["stash_cells"]]
+z_index = 5
 position = Vector2(1340, 489)
+script = ExtResource("4_nm1dx")
 
-[node name="Cell102" type="AnimatedSprite2D" parent="Stash102" unique_id=2144828167]
+[node name="Cell102" type="AnimatedSprite2D" parent="Stash102" unique_id=2144828167 groups=["stash_cells"]]
 position = Vector2(251.00003, 417)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_u8bke")
 frame = 35
 
-[node name="Collision102" type="CollisionShape2D" parent="Stash102" unique_id=700102036]
+[node name="Collision102" type="CollisionShape2D" parent="Stash102" unique_id=700102036 groups=["stash_cells"]]
 z_index = 1
 position = Vector2(252, 413.00003)
 scale = Vector2(13.979357, 13.979357)
@@ -1352,7 +1359,7 @@ texture = ExtResource("7_mq0tr")
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1389560730]
 z_index = -1
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=1948833750]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=1948833750 groups=["stash_cells"]]
 position = Vector2(640, 540)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_abnil")
@@ -1369,6 +1376,7 @@ mouse_filter = 2
 color = Color(0.3019608, 0.3019608, 0.3019608, 1)
 
 [node name="UI" parent="." unique_id=1826785090 instance=ExtResource("11_s2lay")]
+layer = 0
 
 [connection signal="input_event" from="Area1" to="." method="_on_cell_input_event" binds= [NodePath("Area1/Cell1"), 1]]
 [connection signal="input_event" from="Area2" to="." method="_on_cell_input_event" binds= [NodePath("Area2/Cell2"), 2]]

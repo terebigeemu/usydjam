@@ -60,7 +60,7 @@ func _ready() -> void:
 	# call cutscene? can be done in a diff script
 	
 	door_status.text = "init"
-	
+		
 	# INIT
 	
 	# randomly generate cells 1-6
@@ -189,7 +189,7 @@ func fridge_fill(cell_id, item_no, inventory_index):
 	
 	if stash_item_array[inventory_index] == item_empty:
 		return
-	elif stash_item_array.has(item_empty) == false:
+	elif cell_item_array.has(item_empty) == false:
 		# if the stash is full, then swap the item instead with one that the user chooses
 		
 		# grow the item to show it has been selected
@@ -254,6 +254,8 @@ func swap_helper(dest_cell_id, dest_inventory_index, dest_cell_type):
 	if dest_cell_type == 0: # player clicked on normal cell
 		dest_inventory_index -= 1
 		
+		print("normal cell")
+		
 		if cell_item_array[dest_inventory_index] == item_empty or swap_cell_type == 1:
 			return
 		
@@ -271,10 +273,13 @@ func swap_helper(dest_cell_id, dest_inventory_index, dest_cell_type):
 			swap_cell.frame = stash_item_array[swap_inventory_index]
 		
 	elif dest_cell_type == 1: # player clicked on stash cell
+		print("stash cell")
 		
-		if stash_item_array[dest_inventory_index] == item_empty or swap_cell_type == 0:
+		if swap_cell_type == 0:
 			return
-		
+		elif stash_item_array[dest_inventory_index] == item_empty:
+			swap_cell.frame = cell_item_array[swap_inventory_index]
+			cell_selected.frame = stash_item_array[dest_inventory_index]
 		else:
 			print("player clicked on stash cell")
 			print("dest_inventory_index = " + str(dest_inventory_index))
