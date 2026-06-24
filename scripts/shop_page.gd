@@ -58,6 +58,9 @@ func roll_new_shop_items():
 		# 6. Pass the item data (including the icon) into the slot
 		new_slot.setup(chosen_item)
 		print(str(chosen_item))
+		
+func load_sellable_items():
+	pass
 
 func _on_remove_item_from_shop(store_array_index: int) -> void:	
 	print("called _on_remove_item_from_shop with store_array_index " + str(store_array_index))
