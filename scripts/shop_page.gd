@@ -54,3 +54,4 @@ func roll_new_shop_items():
 		
 		# 6. Pass the item data (including the icon) into the slot
 		new_slot.setup(chosen_item)
+		print(str(chosen_item))

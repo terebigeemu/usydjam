@@ -24,7 +24,6 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="MainMenu" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=176046976]
-visible = false
 layout_mode = 2
 mouse_filter = 2
 

@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bfauu7v4jlohq" path="res://assets/Employee1.png" id="8_cx14s"]
 [ext_resource type="Texture2D" uid="uid://u4bhle2chw6i" path="res://assets/Employee2.png" id="9_mq0tr"]
 [ext_resource type="Texture2D" uid="uid://cl153ofc4vinp" path="res://assets/Employee3.png" id="10_s2lay"]
+[ext_resource type="PackedScene" uid="uid://bvfa18ddvvaon" path="res://scenes/UI.tscn" id="11_s2lay"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t2fjl"]
 atlas = ExtResource("7_nm1dx")
@@ -1366,6 +1367,8 @@ offset_right = 1910.0
 offset_bottom = 1081.0
 mouse_filter = 2
 color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+
+[node name="UI" parent="." unique_id=1826785090 instance=ExtResource("11_s2lay")]
 
 [connection signal="input_event" from="Area1" to="." method="_on_cell_input_event" binds= [NodePath("Area1/Cell1"), 1]]
 [connection signal="input_event" from="Area2" to="." method="_on_cell_input_event" binds= [NodePath("Area2/Cell2"), 2]]
