@@ -344,12 +344,15 @@ var turn_count: int = 0
 	#if event is InputEventMouseButton and event.pressed:
 		#if event.button_index == MOUSE_BUTTON_LEFT and turn_count % 2 == 0:
 			#advance_turn()
-			#
+
 # Function that runs when Start is clicked
 func _on_start_btn_pressed():
 	if turn_count % 2 == 0:
 		advance_turn()
 		
+# Need to get this connected to each employee, need to expand this so 
+# only employees of appropriate levels can show up, based on fridges level
+
 func get_random_employee():
 	var frame_count = employee.sprite_frames.get_frame_count("default")
 	var random_frame = randi_range(0, frame_count - 1)
