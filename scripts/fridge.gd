@@ -24,6 +24,7 @@ const swap_inventory_index_empty: int = 69420 # this should break the code if us
 
 var enable_stash_edits = false
 var swap_in_progress = false
+var swap_cell_type = 2 # 0 = normal cell, 1 = stash cell, 2 = neither
 var swap_cell_id
 var swap_inventory_index: int = swap_inventory_index_empty
 
@@ -134,6 +135,7 @@ func stash_fill(cell_id, item_no, inventory_index):
 		enable_stash_edits = false
 		swap_in_progress = true
 		swap_cell_id = cell_id
+		swap_cell_type = 1 # i love hardcoding variables
 		swap_inventory_index = inventory_index
 	
 		# handover to _on_stash_input_event or _on_cell_input_event
@@ -197,6 +199,7 @@ func fridge_fill(cell_id, item_no, inventory_index):
 		enable_stash_edits = false
 		swap_in_progress = true
 		swap_cell_id = cell_id
+		swap_cell_type = 0 # i love hardcoding variables
 		swap_inventory_index = inventory_index
 	
 		# handover to _on_stash_input_event or _on_cell_input_event
@@ -250,9 +253,10 @@ func swap_helper(dest_cell_id, dest_inventory_index, dest_cell_type):
 	
 	if dest_cell_type == 0: # player clicked on normal cell
 		dest_inventory_index -= 1
-
-		if cell_item_array[dest_inventory_index] == item_empty:
+		
+		if cell_item_array[dest_inventory_index] == item_empty or swap_cell_type == 1:
 			return
+		
 		else:
 			print("player clicked on normal cell")
 			print("dest_inventory_index = " + str(dest_inventory_index))
@@ -268,7 +272,7 @@ func swap_helper(dest_cell_id, dest_inventory_index, dest_cell_type):
 		
 	elif dest_cell_type == 1: # player clicked on stash cell
 		
-		if stash_item_array[dest_inventory_index] == item_empty:
+		if stash_item_array[dest_inventory_index] == item_empty or swap_cell_type == 0:
 			return
 		
 		else:
@@ -280,15 +284,16 @@ func swap_helper(dest_cell_id, dest_inventory_index, dest_cell_type):
 			
 			stash_item_array[dest_inventory_index] = cell_item_array[swap_inventory_index]
 			cell_item_array[swap_inventory_index] = temp
-
-			cell_selected.frame = stash_item_array[dest_inventory_index]
+			
 			swap_cell.frame = cell_item_array[swap_inventory_index]
+			cell_selected.frame = stash_item_array[dest_inventory_index]
 
 	# reset registers
 	
 	swap_cell.scale *= 0.8
 	enable_stash_edits = true
-	swap_cell_id = 0;
+	swap_cell_id = 0
+	swap_cell_type = 2
 	swap_inventory_index = swap_inventory_index_empty
 	swap_in_progress = false
 
