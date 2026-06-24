@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://ds3b5tal44hr8"]
 
 [ext_resource type="Texture2D" uid="uid://dyhhrqcdonllp" path="res://assets/fridge_inside.png" id="1_ipvyg"]
+[ext_resource type="Texture2D" uid="uid://nsyyxynnt8j2" path="res://assets/fridge_closed.png" id="2_s2lay"]
 [ext_resource type="Script" uid="uid://dfnvvs5s7ml48" path="res://scripts/fridge.gd" id="3_buvrw"]
 [ext_resource type="Script" uid="uid://b0xawac0vvxw5" path="res://scripts/skybox.gd" id="4_husjh"]
+[ext_resource type="Script" uid="uid://5o47sdhdufep" path="res://scripts/stash_init.gd" id="4_nm1dx"]
 [ext_resource type="Script" uid="uid://c1gt0wwr3gvxt" path="res://scripts/parallax_background.gd" id="4_npr5r"]
 [ext_resource type="Texture2D" uid="uid://dan8bmestv28h" path="res://assets/clouds.png" id="5_npr5r"]
 [ext_resource type="Texture2D" uid="uid://57xmjwbynog7" path="res://assets/office1.png" id="7_mq0tr"]
@@ -10,6 +12,21 @@
 [ext_resource type="Texture2D" uid="uid://bfauu7v4jlohq" path="res://assets/Employee1.png" id="8_cx14s"]
 [ext_resource type="Texture2D" uid="uid://u4bhle2chw6i" path="res://assets/Employee2.png" id="9_mq0tr"]
 [ext_resource type="Texture2D" uid="uid://cl153ofc4vinp" path="res://assets/Employee3.png" id="10_s2lay"]
+[ext_resource type="PackedScene" uid="uid://bvfa18ddvvaon" path="res://scenes/UI.tscn" id="11_s2lay"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i7dow"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_s2lay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_ipvyg")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 1.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t2fjl"]
 atlas = ExtResource("7_nm1dx")
@@ -1159,20 +1176,33 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_s2lay")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"default",
-"speed": 0.1
+"speed": 1.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abnil"]
+size = Vector2(29.49907, 73.080635)
+
 [node name="Fridge" type="Node2D" unique_id=672302043]
+z_index = 1
 position = Vector2(10, -1)
 script = ExtResource("3_buvrw")
 
-[node name="FridgeInside" type="Sprite2D" parent="." unique_id=62022446]
+[node name="ShakeTimer" type="Timer" parent="." unique_id=928900059]
+wait_time = 2.0
+one_shot = true
+
+[node name="OpenTimer" type="Timer" parent="." unique_id=1642364678]
+wait_time = 5.0
+one_shot = true
+
+[node name="FridgeInside" type="AnimatedSprite2D" parent="." unique_id=1580268042]
 z_index = -1
 position = Vector2(630, 541)
 scale = Vector2(8, 8)
-texture = ExtResource("1_ipvyg")
+sprite_frames = SubResource("SpriteFrames_i7dow")
+frame_progress = 0.7204942
 
 [node name="Area1" type="Area2D" parent="." unique_id=2124120713]
 position = Vector2(-2, -22)
@@ -1259,47 +1289,52 @@ position = Vector2(1020.00006, 907.00006)
 scale = Vector2(13.979357, 13.979357)
 shape = SubResource("CircleShape2D_buvrw")
 
-[node name="Stash100" type="Area2D" parent="." unique_id=394698429]
-z_index = 1
+[node name="Stash100" type="Area2D" parent="." unique_id=394698429 groups=["stash_cells"]]
+z_index = 5
 position = Vector2(1339, -240)
+script = ExtResource("4_nm1dx")
 
-[node name="Cell100" type="AnimatedSprite2D" parent="Stash100" unique_id=180398834]
+[node name="Cell100" type="AnimatedSprite2D" parent="Stash100" unique_id=180398834 groups=["stash_cells"]]
+z_index = 5
 position = Vector2(251.00003, 417)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_u8bke")
 frame = 35
 
-[node name="Collision100" type="CollisionShape2D" parent="Stash100" unique_id=1159099581]
+[node name="Collision100" type="CollisionShape2D" parent="Stash100" unique_id=1159099581 groups=["stash_cells"]]
 position = Vector2(252, 413.00003)
 scale = Vector2(13.979357, 13.979357)
 shape = SubResource("CircleShape2D_buvrw")
 
-[node name="Stash101" type="Area2D" parent="." unique_id=754821852]
-z_index = 1
+[node name="Stash101" type="Area2D" parent="." unique_id=754821852 groups=["stash_cells"]]
+z_index = 5
 position = Vector2(1341, 131)
+script = ExtResource("4_nm1dx")
 
-[node name="Cell101" type="AnimatedSprite2D" parent="Stash101" unique_id=1906242593]
+[node name="Cell101" type="AnimatedSprite2D" parent="Stash101" unique_id=1906242593 groups=["stash_cells"]]
+z_index = 5
 position = Vector2(251.00003, 417)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_u8bke")
 frame = 35
 
-[node name="Collision101" type="CollisionShape2D" parent="Stash101" unique_id=1475958206]
+[node name="Collision101" type="CollisionShape2D" parent="Stash101" unique_id=1475958206 groups=["stash_cells"]]
 position = Vector2(252, 413.00003)
 scale = Vector2(13.979357, 13.979357)
 shape = SubResource("CircleShape2D_buvrw")
 
-[node name="Stash102" type="Area2D" parent="." unique_id=68831125]
-z_index = 1
+[node name="Stash102" type="Area2D" parent="." unique_id=68831125 groups=["stash_cells"]]
+z_index = 5
 position = Vector2(1340, 489)
+script = ExtResource("4_nm1dx")
 
-[node name="Cell102" type="AnimatedSprite2D" parent="Stash102" unique_id=2144828167]
+[node name="Cell102" type="AnimatedSprite2D" parent="Stash102" unique_id=2144828167 groups=["stash_cells"]]
 position = Vector2(251.00003, 417)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_u8bke")
 frame = 35
 
-[node name="Collision102" type="CollisionShape2D" parent="Stash102" unique_id=700102036]
+[node name="Collision102" type="CollisionShape2D" parent="Stash102" unique_id=700102036 groups=["stash_cells"]]
 z_index = 1
 position = Vector2(252, 413.00003)
 scale = Vector2(13.979357, 13.979357)
@@ -1355,10 +1390,12 @@ z_index = -1
 position = Vector2(640, 540)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_abnil")
-autoplay = "default"
 frame_progress = 0.03833704
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1776431082]
+[node name="SidePanel" type="Area2D" parent="." unique_id=1070063216]
+z_index = 2
+
+[node name="ColorRect" type="ColorRect" parent="SidePanel" unique_id=1776431082]
 z_index = -3
 offset_left = 1270.0
 offset_top = 1.0
@@ -1367,6 +1404,19 @@ offset_bottom = 1081.0
 mouse_filter = 2
 color = Color(0.3019608, 0.3019608, 0.3019608, 1)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SidePanel" unique_id=908327499]
+position = Vector2(1591, 541.5)
+rotation = 3.1415925
+scale = Vector2(21.6956, 14.791881)
+shape = SubResource("RectangleShape2D_abnil")
+
+[node name="UI" parent="." unique_id=1826785090 instance=ExtResource("11_s2lay")]
+layer = 0
+
+[connection signal="timeout" from="ShakeTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="ShakeTimer" to="." method="_on_shake_timer_timeout"]
+[connection signal="timeout" from="OpenTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="OpenTimer" to="." method="_on_open_timer_timeout"]
 [connection signal="input_event" from="Area1" to="." method="_on_cell_input_event" binds= [NodePath("Area1/Cell1"), 1]]
 [connection signal="input_event" from="Area2" to="." method="_on_cell_input_event" binds= [NodePath("Area2/Cell2"), 2]]
 [connection signal="input_event" from="Area3" to="." method="_on_cell_input_event" binds= [NodePath("Area3/Cell3"), 3]]
@@ -1376,3 +1426,4 @@ color = Color(0.3019608, 0.3019608, 0.3019608, 1)
 [connection signal="input_event" from="Stash100" to="." method="_on_stash_input_event" binds= [NodePath("Stash100/Cell100"), 0]]
 [connection signal="input_event" from="Stash101" to="." method="_on_stash_input_event" binds= [NodePath("Stash101/Cell101"), 1]]
 [connection signal="input_event" from="Stash102" to="." method="_on_stash_input_event" binds= [NodePath("Stash102/Cell102"), 2]]
+[connection signal="input_event" from="SidePanel" to="." method="_on_side_panel_input_event"]

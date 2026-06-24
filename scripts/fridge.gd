@@ -14,8 +14,10 @@ extends Node
 @onready var stash101: AnimatedSprite2D = $Stash101/Cell101
 @onready var stash102: AnimatedSprite2D = $Stash102/Cell102
 
+var fridge_original_position: Vector2
+var cell_original_positions: Array[Vector2]
+
 var rng = RandomNumberGenerator.new()
-var turn_counter = 0
 var level = 0
 
 const swap_inventory_index_empty: int = 69420 # this should break the code if used
@@ -57,10 +59,13 @@ var item102: int = item_empty
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	fridge_original_position = fridge_sprite.position
+	cell_original_positions = [cell1.position, cell2.position, cell3.position, cell4.position, cell5.position, cell6.position]
+	
 	# call cutscene? can be done in a diff script
 	
 	door_status.text = "init"
-	
+		
 	# INIT
 	
 	# randomly generate cells 1-6
@@ -189,7 +194,7 @@ func fridge_fill(cell_id, item_no, inventory_index):
 	
 	if stash_item_array[inventory_index] == item_empty:
 		return
-	elif stash_item_array.has(item_empty) == false:
+	elif cell_item_array.has(item_empty) == false:
 		# if the stash is full, then swap the item instead with one that the user chooses
 		
 		# grow the item to show it has been selected
@@ -254,6 +259,8 @@ func swap_helper(dest_cell_id, dest_inventory_index, dest_cell_type):
 	if dest_cell_type == 0: # player clicked on normal cell
 		dest_inventory_index -= 1
 		
+		print("normal cell")
+		
 		if cell_item_array[dest_inventory_index] == item_empty or swap_cell_type == 1:
 			return
 		
@@ -271,10 +278,13 @@ func swap_helper(dest_cell_id, dest_inventory_index, dest_cell_type):
 			swap_cell.frame = stash_item_array[swap_inventory_index]
 		
 	elif dest_cell_type == 1: # player clicked on stash cell
+		print("stash cell")
 		
-		if stash_item_array[dest_inventory_index] == item_empty or swap_cell_type == 0:
+		if swap_cell_type == 0:
 			return
-		
+		elif stash_item_array[dest_inventory_index] == item_empty:
+			swap_cell.frame = cell_item_array[swap_inventory_index]
+			cell_selected.frame = stash_item_array[dest_inventory_index]
 		else:
 			print("player clicked on stash cell")
 			print("dest_inventory_index = " + str(dest_inventory_index))
@@ -314,6 +324,66 @@ func _on_stash_input_event(viewport: Node, event: InputEvent, shape_idx: int, ex
 		elif event.button_index == MOUSE_BUTTON_LEFT and enable_stash_edits == false and swap_in_progress == true:
 			swap_helper(extra_arg_0, extra_arg_1, 1) 
 
+
+@export var shake_amount: float = 5.0
+@onready var fridge_sprite: AnimatedSprite2D = $FridgeInside
+@onready var employee: AnimatedSprite2D = $ParallaxBackground/ParallaxLayer2/AnimatedSprite2D
+@onready var shake_timer = $ShakeTimer
+@onready var open_timer = $OpenTimer
+
+const CLOSED = 0
+const OPEN = 1
+var turn_count: int = 0
+
+# Temporary trigger for testing
+func _on_side_panel_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT and turn_count % 2 == 0:
+			advance_turn()
+			
+func get_random_employee():
+	var frame_count = employee.sprite_frames.get_frame_count("default")
+	var random_frame = randi_range(0, frame_count - 1)
+	print(random_frame)
+	employee.frame = random_frame
+			
+func advance_turn():
+	turn_count += 1
+	print("Turn: " + str(turn_count))
+	
+	if turn_count % 2 != 0:
+		shake_timer.start()
+	else:
+		fridge_sprite.frame = CLOSED
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if not shake_timer.is_stopped() and shake_timer.time_left <= 1.0:
+		var shake_offset = Vector2(randf_range(-shake_amount, shake_amount), randf_range(-shake_amount, shake_amount))
+		fridge_sprite.position = fridge_original_position + shake_offset
+		for i in cell_array.size():
+			cell_array[i].position = cell_original_positions[i] + shake_offset
+
+func _on_shake_timer_timeout() -> void:
+	fridge_sprite.position = fridge_original_position
+	for i in cell_array.size():
+		cell_array[i].position = cell_original_positions[i]
+		
+	get_random_employee()
+	fridge_sprite.frame = OPEN
+	
+	open_timer.start()
+
+func _on_open_timer_timeout() -> void:
+	var valid_cells = [] # Only cells that have items
+	for i in cell_array.size():
+		if cell_item_array[i] != item_empty:
+			valid_cells.append(i)
+			
+	if not valid_cells.is_empty():
+		var random_idx = randi_range(0, valid_cells.size() - 1)
+		var chosen_idx = valid_cells[random_idx]
+		cell_item_array[chosen_idx] = item_empty
+		cell_array[chosen_idx].frame = item_empty
+		
+	advance_turn()

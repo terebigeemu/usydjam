@@ -4,11 +4,12 @@ extends CanvasLayer
 @onready var main_menu = $PanelContainer/MarginContainer/MainMenu
 @onready var interface_1 = $PanelContainer/MarginContainer/ShopPage
 @onready var interface_2 = $PanelContainer/MarginContainer/EmployeePage
+@onready var interface_3 = $PanelContainer/MarginContainer/StashPage
 
 # --- BUTTONS ---
 @onready var btn_menu_1 = $PanelContainer/MarginContainer/MainMenu/ShopBtn
 @onready var btn_menu_2 = $PanelContainer/MarginContainer/MainMenu/EmployeesBtn
-#@onready var btn_nest = $PanelContainer/MarginContainer/Interface1/NestedButton
+@onready var btn_menu_3 = $PanelContainer/MarginContainer/MainMenu/StashBtn
 
 # Grab the navigation buttons (Assuming you named them consistently)
 #@onready var back_btns = [
@@ -17,19 +18,22 @@ extends CanvasLayer
 #]
 @onready var home_btns = [
 	$PanelContainer/MarginContainer/ShopPage/TopBar/BtnHome,
-	$PanelContainer/MarginContainer/EmployeePage/TopBar/BtnHome
-	#$PanelContainer/MarginContainer/Interface1A/TopBar/BtnHome
+	$PanelContainer/MarginContainer/EmployeePage/TopBar/BtnHome,
+	$PanelContainer/MarginContainer/StashPage/TopBar/BtnHome
 ]
 
 # This array keeps track of our breadcrumbs!
 var menu_history : Array[Control] = []
 var current_menu : Control
 
+@onready var stash_cells = get_tree().get_nodes_in_group("stash_cells")
+
 func _ready():
+	
 	# 1. Connect Main Menu Buttons
 	btn_menu_1.pressed.connect(func(): open_page(interface_1))
 	btn_menu_2.pressed.connect(func(): open_page(interface_2))
-	#btn_nest.pressed.connect(func(): open_page(interface_1a))
+	btn_menu_3.pressed.connect(func(): open_page(interface_3))
 	
 	# 2. Connect all Back and Home buttons via loops to save typing
 	#for btn in back_btns:
@@ -72,7 +76,24 @@ func go_home():
 	main_menu.hide()
 	interface_1.hide()
 	interface_2.hide()
+	interface_3.hide()
 	
 	# Show only the main menu
 	current_menu = main_menu
 	current_menu.show()
+
+
+func _exit_tree() -> void:
+	pass # Replace with function body.
+
+func _open_stash_ui() -> void:
+	for i in stash_cells:
+		i.visible = true
+		print("made " + str(i) + " visible")
+	print("enter")
+
+func _close_stash_ui() -> void:
+	for i in stash_cells:
+		i.visible = false
+	print("close")
+	pass # Replace with function body.
