@@ -20,5 +20,10 @@ func setup(item_data: ItemData):
 	buy_button.pressed.connect(_on_buy_pressed)
 
 func _on_buy_pressed():
-	print("Player wants to buy: ", current_item.item_name)
+	print("Player wants to buy: " + current_item.item_name + " with ID " + str(current_item.item_id))
+	
+	if Globals.player_bal >= current_item.cost:
+		Globals.add_purchase_to_inventory.emit(current_item.item_id, current_item.cost)
+	else:
+		print("Too poor!")
 	# You can emit a signal here later to tell your inventory to add the item!

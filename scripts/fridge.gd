@@ -3,6 +3,12 @@
 
 extends Node
 
+@export var shop_item_slot: PackedScene
+
+# these variables should've been global but i realised too late.... xD xD xD
+# no aaron, no one cares that your comp1001 lecturer said not to use globals
+# i shall do what i want and i shall live freely in doing so
+
 @onready var door_status: Label = $DoorStatus
 @onready var cell1: AnimatedSprite2D = $Area1/Cell1
 @onready var cell2: AnimatedSprite2D = $Area2/Cell2
@@ -22,7 +28,7 @@ var cell_original_positions: Array[Vector2]
 var rng = RandomNumberGenerator.new()
 var level = 0
 
-const swap_inventory_index_empty: int = 69420 # this should break the code if used
+const swap_inventory_index_empty: int = 69420 # this should break the code if used... yippee!
 
 # registers
 
@@ -53,19 +59,22 @@ var item102: int = item_empty
 # cell_array and cell_item_array should generally never diverge except for
 # momentary instances where the frames of a sprite might need to change
 
+# yep these numbers totally aren't going to be confusing AT ALL
+
 @onready var cell_array = [cell1, cell2, cell3, cell4, cell5, cell6]
 @onready var cell_item_array = [item1, item2, item3, item4, item5, item6]
 
 @onready var stash_array = [stash100, stash101, stash102]
 @onready var stash_item_array = [item100, item101, item102]
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	fridge_original_position = fridge_sprite.position
 	cell_original_positions = [cell1.position, cell2.position, cell3.position, cell4.position, cell5.position, cell6.position]
 	
 	# call cutscene? can be done in a diff script
 	
+	Globals.add_purchase_to_inventory.connect(_on_inventory_update)
 	door_status.text = "init"
 		
 	# INIT
@@ -122,6 +131,8 @@ func _ready() -> void:
 	# todo: swap fn for fridge
 	
 	start_btn.pressed.connect(_on_start_btn_pressed)
+	
+# if only i thought ahead and to abstract these functions... oh well
 	
 func stash_fill(cell_id, item_no, inventory_index):
 	
@@ -265,9 +276,21 @@ func swap_helper(dest_cell_id, dest_inventory_index, dest_cell_type):
 		
 		print("normal cell")
 		
-		if cell_item_array[dest_inventory_index] == item_empty or swap_cell_type == 1:
+		if cell_item_array[dest_inventory_index] == item_empty:
 			return
-		
+		elif swap_cell_type == 1:
+			print("player clicked on normal cell with swap_cell_type = 1")
+			print("dest_inventory_index = " + str(dest_inventory_index))
+			print("swap_inventory_index = " + str(swap_inventory_index))
+			
+			var temp = cell_item_array[dest_inventory_index]
+			
+			cell_item_array[dest_inventory_index] = cell_item_array[swap_inventory_index]
+			cell_item_array[swap_inventory_index] = temp
+			
+			cell_selected.frame = cell_item_array[dest_inventory_index]
+			swap_cell.frame = cell_item_array[swap_inventory_index]
+			
 		else:
 			print("player clicked on normal cell")
 			print("dest_inventory_index = " + str(dest_inventory_index))
@@ -284,11 +307,20 @@ func swap_helper(dest_cell_id, dest_inventory_index, dest_cell_type):
 	elif dest_cell_type == 1: # player clicked on stash cell
 		print("stash cell")
 		
-		if swap_cell_type == 0:
+		if stash_item_array[dest_inventory_index] == item_empty:
 			return
-		elif stash_item_array[dest_inventory_index] == item_empty:
-			swap_cell.frame = cell_item_array[swap_inventory_index]
+		elif swap_cell_type == 0:
+			print("player clicked on stash cell with swap_cell_type = 1")
+			print("dest_inventory_index = " + str(dest_inventory_index))
+			print("swap_inventory_index = " + str(swap_inventory_index))
+			
+			var temp = stash_item_array[dest_inventory_index]
+			
+			stash_item_array[dest_inventory_index] = stash_item_array[swap_inventory_index]
+			stash_item_array[swap_inventory_index] = temp
+			
 			cell_selected.frame = stash_item_array[dest_inventory_index]
+			swap_cell.frame = stash_item_array[swap_inventory_index]
 		else:
 			print("player clicked on stash cell")
 			print("dest_inventory_index = " + str(dest_inventory_index))
@@ -313,6 +345,8 @@ func swap_helper(dest_cell_id, dest_inventory_index, dest_cell_type):
 
 # extra_arg_0 = cell_id
 # extra_arg_1 = index in array + 1 for normal cells, index in array + 100 for stash
+
+# i promise this is just as hellish as it looks particularly with all the redundant conditions becuz i don't have time to figure out which one matters or not 
 func _on_cell_input_event(viewport: Node, event: InputEvent, shape_idx: int, extra_arg_0: NodePath, extra_arg_1: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT and enable_stash_edits == true and swap_in_progress == false:
@@ -327,7 +361,6 @@ func _on_stash_input_event(viewport: Node, event: InputEvent, shape_idx: int, ex
 			fridge_edit(extra_arg_0, extra_arg_1, viewport, event, shape_idx)
 		elif event.button_index == MOUSE_BUTTON_LEFT and enable_stash_edits == false and swap_in_progress == true:
 			swap_helper(extra_arg_0, extra_arg_1, 1) 
-
 
 @export var shake_amount: float = 5.0
 @onready var fridge_sprite: AnimatedSprite2D = $FridgeInside
@@ -396,3 +429,45 @@ func _on_open_timer_timeout() -> void:
 		cell_array[chosen_idx].frame = item_empty
 		
 	advance_turn()
+
+# Shop updates
+
+func _on_inventory_update(id: int, cost: int) -> void: # this is only to be used by buy-shop
+	
+	var has_filled: bool = false
+	
+	var n_i: int = 0
+	var n_j: int = 0
+	 
+	for i in stash_item_array:
+		if has_filled == true:
+			break
+		elif i == item_empty and has_filled == false:
+			stash_item_array[n_i] = id
+			stash_array[n_i].frame = id
+			has_filled = true
+			break
+		n_i += 1
+
+	for j in cell_item_array:
+		if has_filled == true:
+			break
+		elif j == item_empty and has_filled == false:
+			cell_item_array[n_j] = id
+			cell_array[n_j].frame = id
+			has_filled = true
+			break
+		n_j += 1
+			
+	if has_filled == false:
+		print("No space in inventory")	
+	elif has_filled == true:
+		Globals.player_bal -= cost	
+		has_filled = false # just in case yknow
+	
+func update_cell(id: Variant) -> void:
+	#todo: finish this function lol
+	print("Update cell")
+	pass
+
+# it works right? no complaining~

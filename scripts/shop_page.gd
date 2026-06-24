@@ -7,10 +7,11 @@ extends Control
 const ITEMS_FOLDER = "res://items/"
 
 @onready var buy_grid = $BuySection/BuyGrid
+@onready var coins_label = $CoinsLabel
 
 var all_game_items: Array[ItemData] = []
 
-func _ready():
+func _ready():	
 	load_all_items_from_folder()
 	roll_new_shop_items()
 
@@ -55,3 +56,9 @@ func roll_new_shop_items():
 		# 6. Pass the item data (including the icon) into the slot
 		new_slot.setup(chosen_item)
 		print(str(chosen_item))
+		
+func _process(delta: float) -> void:
+	# the smart thing to do would be to use a signal to update this
+	# the lazy thing to do is just chuck it here
+	# huh what's optimisation?
+	coins_label.text = "You have " + str(Globals.player_bal) + " coins!"
