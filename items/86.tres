@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cql2xw0k40ssg"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cgh4e7cw4ne85"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_bn5vc"]
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_e6lkw"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_gwvpo"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bn5vc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7bx1"]
 atlas = ExtResource("1_bn5vc")
 region = Rect2(192, 160, 32, 32)
 
 [resource]
-script = ExtResource("1_e6lkw")
+script = ExtResource("2_gwvpo")
 item_id = 86
+name = "Avocado Halves"
 attrb = "Earthy, Creamy, Vegetable"
 cost = 2
-icon = SubResource("AtlasTexture_bn5vc")
+icon = SubResource("AtlasTexture_t7bx1")

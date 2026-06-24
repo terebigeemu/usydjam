@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bwe2xysm02ai0"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ctmyv2oqovum6"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_ujvf3"]
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_wxkkk"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_ex0og"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ujvf3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_yalbs"]
 atlas = ExtResource("1_ujvf3")
 region = Rect2(448, 256, 32, 32)
 
 [resource]
-script = ExtResource("1_wxkkk")
+script = ExtResource("2_ex0og")
 item_id = 142
+name = "Purple Grapes"
 attrb = "Sweet, Sour, Fruit"
 cost = 2
-icon = SubResource("AtlasTexture_ujvf3")
+icon = SubResource("AtlasTexture_yalbs")

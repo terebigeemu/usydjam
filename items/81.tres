@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bh3ocsl2gxmfg"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dx7chtb5kem0i"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_2iims"]
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_m5h13"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_j8f6h"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2iims"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cweg"]
 atlas = ExtResource("1_2iims")
 region = Rect2(32, 160, 32, 32)
 
 [resource]
-script = ExtResource("1_m5h13")
+script = ExtResource("2_j8f6h")
 item_id = 81
+name = "Chocolate Ice Cream Cone"
 attrb = "Sweet, Dessert "
 cost = 2
-icon = SubResource("AtlasTexture_2iims")
+icon = SubResource("AtlasTexture_0cweg")

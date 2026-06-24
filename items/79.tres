@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bg8vs36a6ejbo"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dgdyxuumat2e4"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_be5tw"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_ikc8k"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_cr72o"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ikc8k"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_84rxb"]
 atlas = ExtResource("1_ikc8k")
 region = Rect2(480, 128, 32, 32)
 
 [resource]
-script = ExtResource("1_be5tw")
+script = ExtResource("2_cr72o")
 item_id = 79
+name = "Iced Coffee / Latte"
 attrb = "Sweet, Bitter, Drink"
 cost = 3
-icon = SubResource("AtlasTexture_ikc8k")
+icon = SubResource("AtlasTexture_84rxb")

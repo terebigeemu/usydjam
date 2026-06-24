@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bta3qh37pexc5"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ryneqwa6wev0"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_6hxxb"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_osbi5"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_xk3of"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_osbi5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijmn8"]
 atlas = ExtResource("1_osbi5")
 region = Rect2(160, 160, 32, 32)
 
 [resource]
-script = ExtResource("1_6hxxb")
+script = ExtResource("2_xk3of")
 item_id = 85
+name = "Matcha Pocky Sticks"
 attrb = "Sweet, Earthy, Bitter, Dessert "
 cost = 2
-icon = SubResource("AtlasTexture_osbi5")
+icon = SubResource("AtlasTexture_ijmn8")

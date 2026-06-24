@@ -2,7 +2,7 @@
 extends EditorScript
 
 const SAVE_PATH = "res://items/"
-const CSV_PATH = "res://data/Item_Table.csv"
+const CSV_PATH = "res://data/itemTable.csv"
 const SPRITE_SHEET_PATH = "res://assets/fruit-art.png" 
 const ICON_SIZE = 32
 const SHEET_COLUMNS = 16 
@@ -32,8 +32,9 @@ func _run():
 			
 		var new_item = ItemData.new()
 		new_item.item_id = line[0]
-		new_item.attrb = line[1]
-		new_item.cost = line[2].to_int()
+		new_item.name = line[1]
+		new_item.attrb = line[2]
+		new_item.cost = line[3].to_int()
 		# Calculates the exact grid coordinates based on the item_id
 		var grid_x = item_id % SHEET_COLUMNS
 		var grid_y = item_id / SHEET_COLUMNS

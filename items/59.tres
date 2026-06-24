@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dgh8gtlf68tfm"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b6k0yd1y3d1ci"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_o1bbu"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_p8cjb"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_tfdni"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p8cjb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg32a"]
 atlas = ExtResource("1_p8cjb")
 region = Rect2(352, 96, 32, 32)
 
 [resource]
-script = ExtResource("1_o1bbu")
+script = ExtResource("2_tfdni")
 item_id = 59
+name = "French Fries"
 attrb = "Savory, Salty, Carbs"
 cost = 2
-icon = SubResource("AtlasTexture_p8cjb")
+icon = SubResource("AtlasTexture_pg32a")

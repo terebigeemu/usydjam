@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://t67m2fda5b3j"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cts2mj2u5sffk"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_k0ksa"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_vs726"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_x1ga8"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vs726"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bjwi"]
 atlas = ExtResource("1_vs726")
 region = Rect2(352, 64, 32, 32)
 
 [resource]
-script = ExtResource("1_k0ksa")
+script = ExtResource("2_x1ga8")
 item_id = 43
+name = "Chocolate Covered Strawberry 1"
 attrb = "Sweet, Sour, Dessert "
 cost = 2
-icon = SubResource("AtlasTexture_vs726")
+icon = SubResource("AtlasTexture_0bjwi")

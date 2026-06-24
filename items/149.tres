@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dywdaht68kqfs"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cav2d25yb0xep"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_cfomy"]
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_wty7c"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_cyd2u"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cfomy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjskq"]
 atlas = ExtResource("1_cfomy")
 region = Rect2(160, 288, 32, 32)
 
 [resource]
-script = ExtResource("1_wty7c")
+script = ExtResource("2_cyd2u")
 item_id = 149
+name = "Pink Mini Donuts"
 attrb = "Sweet, Pastry "
 cost = 3
-icon = SubResource("AtlasTexture_cfomy")
+icon = SubResource("AtlasTexture_sjskq")

@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cs4hs0hbcuech"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://yik3pwa2e5qv"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_721k3"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_fivju"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_8qdfd"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fivju"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifibd"]
 atlas = ExtResource("1_fivju")
 region = Rect2(416, 96, 32, 32)
 
 [resource]
-script = ExtResource("1_721k3")
+script = ExtResource("2_8qdfd")
 item_id = 61
+name = "Plain Waffle"
 attrb = "Sweet, Pastry "
 cost = 3
-icon = SubResource("AtlasTexture_fivju")
+icon = SubResource("AtlasTexture_ifibd")

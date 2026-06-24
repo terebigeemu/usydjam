@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://uh60k3pim4g2"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cims3gybqkkmf"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_wm5vv"]
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_wnx58"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_7w6qf"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wm5vv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tqg4"]
 atlas = ExtResource("1_wm5vv")
 region = Rect2(224, 192, 32, 32)
 
 [resource]
-script = ExtResource("1_wnx58")
+script = ExtResource("2_7w6qf")
 item_id = 103
+name = "Blue Cake Slice"
 attrb = "Sweet, Dessert "
 cost = 3
-icon = SubResource("AtlasTexture_wm5vv")
+icon = SubResource("AtlasTexture_3tqg4")

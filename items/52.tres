@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d4glwyhvvds2w"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cdtpfhcg0vp2m"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_cewen"]
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_wy7ag"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_801v0"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cewen"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_odj5k"]
 atlas = ExtResource("1_cewen")
 region = Rect2(128, 96, 32, 32)
 
 [resource]
-script = ExtResource("1_wy7ag")
+script = ExtResource("2_801v0")
 item_id = 52
+name = "Folded Crepe"
 attrb = "Sweet, Pastry "
 cost = 3
-icon = SubResource("AtlasTexture_cewen")
+icon = SubResource("AtlasTexture_odj5k")

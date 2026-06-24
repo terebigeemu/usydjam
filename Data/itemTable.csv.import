@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dbisck76wg4rl"
+
+[deps]
+
+files=["res://Data/itemTable.Description.translation", "res://Data/itemTable.Attributes.translation", "res://Data/itemTable.Cost.translation", "res://Data/itemTable.X.translation", "res://Data/itemTable.Y.translation"]
+
+source_file="res://Data/itemTable.csv"
+dest_files=["res://Data/itemTable.Description.translation", "res://Data/itemTable.Attributes.translation", "res://Data/itemTable.Cost.translation", "res://Data/itemTable.X.translation", "res://Data/itemTable.Y.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

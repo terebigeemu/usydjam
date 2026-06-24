@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bcw83y1rfg3d7"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://q8aik6lva55d"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_bhq1g"]
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_h06np"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_23ypy"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bhq1g"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7x1nd"]
 atlas = ExtResource("1_bhq1g")
 region = Rect2(352, 160, 32, 32)
 
 [resource]
-script = ExtResource("1_h06np")
+script = ExtResource("2_23ypy")
 item_id = 91
+name = "Matcha Square Cake"
 attrb = "Sweet, Earthy, Bitter, Dessert "
 cost = 4
-icon = SubResource("AtlasTexture_bhq1g")
+icon = SubResource("AtlasTexture_7x1nd")

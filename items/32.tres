@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://s1g7u0h700hr"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://btl8a6hk56k7p"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_i0cno"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_pcu3l"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_0rai2"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pcu3l"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_idosw"]
 atlas = ExtResource("1_pcu3l")
 region = Rect2(0, 64, 32, 32)
 
 [resource]
-script = ExtResource("1_i0cno")
+script = ExtResource("2_0rai2")
 item_id = 32
+name = "Bagel Sandwich 1"
 attrb = "Savory, Salty, Carbs"
 cost = 4
-icon = SubResource("AtlasTexture_pcu3l")
+icon = SubResource("AtlasTexture_idosw")

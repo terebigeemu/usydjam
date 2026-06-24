@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bm6cvi8tvd0qk"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cilowdsqmy3ue"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_2ycyj"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_kirnq"]
@@ -10,6 +10,7 @@ region = Rect2(320, 32, 32, 32)
 [resource]
 script = ExtResource("1_kirnq")
 item_id = 26
+name = "Chocolate Bar in Red Wrapper"
 attrb = "Sweet, Dessert "
 cost = 1
 icon = SubResource("AtlasTexture_2ycyj")

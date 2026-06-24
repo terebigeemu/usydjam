@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bjh0pjtchrt33"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d4nlj745sbiuw"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_drutq"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_q7sed"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_mte6f"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q7sed"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqxp5"]
 atlas = ExtResource("1_q7sed")
 region = Rect2(32, 256, 32, 32)
 
 [resource]
-script = ExtResource("1_drutq")
+script = ExtResource("2_mte6f")
 item_id = 129
+name = "Taro / Purple Boba Tea"
 attrb = "Sweet, Drink"
 cost = 2
-icon = SubResource("AtlasTexture_q7sed")
+icon = SubResource("AtlasTexture_eqxp5")

@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bbqknsmhddc51"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://n466hk5tibft"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_cmall"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_qxugr"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_4dmgx"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qxugr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bypum"]
 atlas = ExtResource("1_qxugr")
 region = Rect2(288, 192, 32, 32)
 
 [resource]
-script = ExtResource("1_cmall")
+script = ExtResource("2_4dmgx")
 item_id = 105
+name = "Blue Cheese / Moldy Cheese"
 attrb = "Savory, Salty, Tangy, Pungent, Dairy "
 cost = 4
-icon = SubResource("AtlasTexture_qxugr")
+icon = SubResource("AtlasTexture_bypum")

@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bwyljbg5j2hww"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d3a2bj2la4i5j"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_35ylj"]
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_c3x0y"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_bdxbd"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_35ylj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pksi7"]
 atlas = ExtResource("1_35ylj")
 region = Rect2(256, 160, 32, 32)
 
 [resource]
-script = ExtResource("1_c3x0y")
+script = ExtResource("2_bdxbd")
 item_id = 88
+name = "Matcha Soup / Dip Bowl"
 attrb = "Earthy, Savory, Condiment / Ingredient"
 cost = 3
-icon = SubResource("AtlasTexture_35ylj")
+icon = SubResource("AtlasTexture_pksi7")

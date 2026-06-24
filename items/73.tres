@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://pjh7p4f7lhk0"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bgns8mlkdcfrv"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_08vv5"]
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_38d26"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_80icm"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_08vv5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkkq0"]
 atlas = ExtResource("1_08vv5")
 region = Rect2(288, 128, 32, 32)
 
 [resource]
-script = ExtResource("1_38d26")
+script = ExtResource("2_80icm")
 item_id = 73
+name = "Stacked Pancakes"
 attrb = "Sweet, Pastry "
 cost = 5
-icon = SubResource("AtlasTexture_08vv5")
+icon = SubResource("AtlasTexture_jkkq0")

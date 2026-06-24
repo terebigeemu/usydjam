@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b1os6ugqp18qc"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bv4x2rbd3yeiy"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_u6md6"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_vri4o"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_j2jc7"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vri4o"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wakj"]
 atlas = ExtResource("1_vri4o")
 region = Rect2(448, 128, 32, 32)
 
 [resource]
-script = ExtResource("1_u6md6")
+script = ExtResource("2_j2jc7")
 item_id = 78
+name = "Chocolate Donut with Sprinkles"
 attrb = "Sweet, Pastry "
 cost = 3
-icon = SubResource("AtlasTexture_vri4o")
+icon = SubResource("AtlasTexture_3wakj")

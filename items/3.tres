@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://caa14ucwa1ucl"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://8rwipkrlhc3c"]
 
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_4qegy"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_mmpqk"]
@@ -10,6 +10,7 @@ region = Rect2(96, 0, 32, 32)
 [resource]
 script = ExtResource("1_4qegy")
 item_id = 3
+name = "Red Macarons"
 attrb = "Sweet, Pastry "
 cost = 5
 icon = SubResource("AtlasTexture_mmpqk")

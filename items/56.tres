@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bo3rvsvsga2r"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dfaie444jg8mw"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_vek3r"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_xxbyl"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_thljh"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xxbyl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6iu8s"]
 atlas = ExtResource("1_xxbyl")
 region = Rect2(256, 96, 32, 32)
 
 [resource]
-script = ExtResource("1_vek3r")
+script = ExtResource("2_thljh")
 item_id = 56
+name = "Raw Corn on the Cob"
 attrb = "Earthy, Savory, Vegetable"
 cost = 1
-icon = SubResource("AtlasTexture_xxbyl")
+icon = SubResource("AtlasTexture_6iu8s")

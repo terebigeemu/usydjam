@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bsecunw3pj4ig"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://djlcfc0jurulu"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_e041u"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_funbg"]
@@ -10,6 +10,7 @@ region = Rect2(384, 32, 32, 32)
 [resource]
 script = ExtResource("1_funbg")
 item_id = 28
+name = "Plain Glazed Donut"
 attrb = "Sweet, Pastry "
 cost = 2
 icon = SubResource("AtlasTexture_e041u")

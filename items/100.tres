@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dm8n4h1suww6t"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://gxmb3ujqgj38"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_0iwcc"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_bvec4"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_s042h"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bvec4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ak4w"]
 atlas = ExtResource("1_bvec4")
 region = Rect2(128, 192, 32, 32)
 
 [resource]
-script = ExtResource("1_0iwcc")
+script = ExtResource("2_s042h")
 item_id = 100
+name = "Green Mochi"
 attrb = "Sweet, Dessert "
 cost = 3
-icon = SubResource("AtlasTexture_bvec4")
+icon = SubResource("AtlasTexture_1ak4w")

@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dlxwhorrgngpu"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bo36ticqpvusk"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_kta26"]
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_rckq3"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_c83d2"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kta26"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_no1p3"]
 atlas = ExtResource("1_kta26")
 region = Rect2(192, 288, 32, 32)
 
 [resource]
-script = ExtResource("1_rckq3")
+script = ExtResource("2_c83d2")
 item_id = 150
+name = "Pink Swiss Roll"
 attrb = "Sweet, Dessert "
 cost = 3
-icon = SubResource("AtlasTexture_kta26")
+icon = SubResource("AtlasTexture_no1p3")

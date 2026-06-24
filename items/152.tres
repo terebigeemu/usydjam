@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dct2sw2au2ox2"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dn5uxden37bv4"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_a6qgl"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_tlh67"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_mkbul"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tlh67"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjjih"]
 atlas = ExtResource("1_tlh67")
 region = Rect2(256, 288, 32, 32)
 
 [resource]
-script = ExtResource("1_a6qgl")
+script = ExtResource("2_mkbul")
 item_id = 152
+name = "Strawberry Chocolate Bar"
 attrb = "Sweet, Sour, Dessert "
 cost = 2
-icon = SubResource("AtlasTexture_tlh67")
+icon = SubResource("AtlasTexture_vjjih")

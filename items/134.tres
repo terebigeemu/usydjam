@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b8cv4q6qf71cr"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c05rd65eu4bhn"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_08joy"]
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_8y8md"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_sjg7u"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_08joy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhh43"]
 atlas = ExtResource("1_08joy")
 region = Rect2(192, 256, 32, 32)
 
 [resource]
-script = ExtResource("1_8y8md")
+script = ExtResource("2_sjg7u")
 item_id = 134
+name = "Purple Chocolate Bar 1"
 attrb = "Sweet, Dessert "
 cost = 2
-icon = SubResource("AtlasTexture_08joy")
+icon = SubResource("AtlasTexture_vhh43")

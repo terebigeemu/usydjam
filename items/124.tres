@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bb172isow14hd"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bpaukftdds73h"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_eyng2"]
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_kgagv"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_fxhwi"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_eyng2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bmsi"]
 atlas = ExtResource("1_eyng2")
 region = Rect2(384, 224, 32, 32)
 
 [resource]
-script = ExtResource("1_kgagv")
+script = ExtResource("2_fxhwi")
 item_id = 124
+name = "Onigiri in Purple Wrapper"
 attrb = "Savory, Salty, Carbs"
 cost = 2
-icon = SubResource("AtlasTexture_eyng2")
+icon = SubResource("AtlasTexture_1bmsi")

@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dlnj4hmlfbivg"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://sun8yv3pu6d"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_1kjh1"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_42nj7"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_36i0f"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_42nj7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ui8fn"]
 atlas = ExtResource("1_42nj7")
 region = Rect2(320, 256, 32, 32)
 
 [resource]
-script = ExtResource("1_1kjh1")
+script = ExtResource("2_36i0f")
 item_id = 138
+name = "Purple Pastry / Donut"
 attrb = "Sweet, Pastry "
 cost = 3
-icon = SubResource("AtlasTexture_42nj7")
+icon = SubResource("AtlasTexture_ui8fn")

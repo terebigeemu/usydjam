@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://wjoyjp1efhx1"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://pn2t435ukq7x"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_7gpcn"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_63wn4"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_00vdc"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_63wn4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_25lhi"]
 atlas = ExtResource("1_63wn4")
 region = Rect2(0, 192, 32, 32)
 
 [resource]
-script = ExtResource("1_7gpcn")
+script = ExtResource("2_00vdc")
 item_id = 96
+name = "Green Leaves / Mint"
 attrb = "Earthy, Minty, Vegetable"
 cost = 1
-icon = SubResource("AtlasTexture_63wn4")
+icon = SubResource("AtlasTexture_25lhi")

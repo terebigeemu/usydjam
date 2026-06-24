@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ccqgehl8fg0mu"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ms74d31lw3p7"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_7bbie"]
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_g2sjw"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_8ww7k"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7bbie"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nl4wc"]
 atlas = ExtResource("1_7bbie")
 region = Rect2(416, 64, 32, 32)
 
 [resource]
-script = ExtResource("1_g2sjw")
+script = ExtResource("2_8ww7k")
 item_id = 45
+name = "Chocolate Pastry / Pan au Chocolat"
 attrb = "Sweet, Pastry "
 cost = 3
-icon = SubResource("AtlasTexture_7bbie")
+icon = SubResource("AtlasTexture_nl4wc")

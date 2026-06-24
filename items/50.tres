@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c4erlbonmjehb"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://biqyt4sup8b7k"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_b1o4c"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_mj5jk"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_y51nc"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mj5jk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y2ld"]
 atlas = ExtResource("1_mj5jk")
 region = Rect2(64, 96, 32, 32)
 
 [resource]
-script = ExtResource("1_b1o4c")
+script = ExtResource("2_y51nc")
 item_id = 50
+name = "Takoyaki"
 attrb = "Savory, Salty,  Savory"
 cost = 3
-icon = SubResource("AtlasTexture_mj5jk")
+icon = SubResource("AtlasTexture_6y2ld")

@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ctlhjyparb48y"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ddosb8yrpci4x"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_4im1e"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_i6yk1"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_wecps"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i6yk1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_frpdu"]
 atlas = ExtResource("1_i6yk1")
 region = Rect2(384, 96, 32, 32)
 
 [resource]
-script = ExtResource("1_4im1e")
+script = ExtResource("2_wecps")
 item_id = 60
+name = "Macaroni / Cereal Bowl"
 attrb = "Savory, Salty, Carbs"
 cost = 5
-icon = SubResource("AtlasTexture_i6yk1")
+icon = SubResource("AtlasTexture_frpdu")

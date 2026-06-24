@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b6jee046wucv8"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d1r0gwt0a56q5"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_ddfx2"]
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_wkke5"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_0243g"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ddfx2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6b5m"]
 atlas = ExtResource("1_ddfx2")
 region = Rect2(480, 96, 32, 32)
 
 [resource]
-script = ExtResource("1_wkke5")
+script = ExtResource("2_0243g")
 item_id = 63
+name = "Frappuccino / Milkshake"
 attrb = "Sweet, Drink"
 cost = 4
-icon = SubResource("AtlasTexture_ddfx2")
+icon = SubResource("AtlasTexture_p6b5m")

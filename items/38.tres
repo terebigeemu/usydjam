@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ecrp6sifn6r5"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://csakfic1nsl1j"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_05uud"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_t7j5c"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_vlkol"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t7j5c"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xqaq"]
 atlas = ExtResource("1_t7j5c")
 region = Rect2(192, 64, 32, 32)
 
 [resource]
-script = ExtResource("1_05uud")
+script = ExtResource("2_vlkol")
 item_id = 38
+name = "Corn Dog"
 attrb = "Savory, Salty, Earthy, Vegetable"
 cost = 2
-icon = SubResource("AtlasTexture_t7j5c")
+icon = SubResource("AtlasTexture_6xqaq")

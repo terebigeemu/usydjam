@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bcv1j87agq77u"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cfasyebxuiqbw"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_f41du"]
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_tg8wi"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_byi1n"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f41du"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtfle"]
 atlas = ExtResource("1_f41du")
 region = Rect2(448, 96, 32, 32)
 
 [resource]
-script = ExtResource("1_tg8wi")
+script = ExtResource("2_byi1n")
 item_id = 62
+name = "Waffle with Syrup"
 attrb = "Sweet, Pastry "
 cost = 4
-icon = SubResource("AtlasTexture_f41du")
+icon = SubResource("AtlasTexture_jtfle")

@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c0jyapx2erb0c"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://47thc2gnwfwf"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_hf8p2"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_t01t2"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_fq2pf"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t01t2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mye3l"]
 atlas = ExtResource("1_t01t2")
 region = Rect2(352, 128, 32, 32)
 
 [resource]
-script = ExtResource("1_hf8p2")
+script = ExtResource("2_fq2pf")
 item_id = 75
+name = "Cinnamon Roll 2"
 attrb = "Sweet, Pastry "
 cost = 2
-icon = SubResource("AtlasTexture_t01t2")
+icon = SubResource("AtlasTexture_mye3l")

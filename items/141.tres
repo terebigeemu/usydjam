@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cqdmg1f761hdn"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c38r0mnprcql2"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_p0um1"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_wkhp5"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_35b01"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wkhp5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cddwa"]
 atlas = ExtResource("1_wkhp5")
 region = Rect2(416, 256, 32, 32)
 
 [resource]
-script = ExtResource("1_p0um1")
+script = ExtResource("2_35b01")
 item_id = 141
+name = "Blueberry / Blackberry Cake Slice"
 attrb = "Sweet, Sour, Dessert "
 cost = 4
-icon = SubResource("AtlasTexture_wkhp5")
+icon = SubResource("AtlasTexture_cddwa")

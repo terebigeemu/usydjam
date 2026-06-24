@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://1m5tpr5uflmm"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bpv5ugld454kg"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_jxtmg"]
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_qkykm"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_cyj0v"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jxtmg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_v48x6"]
 atlas = ExtResource("1_jxtmg")
 region = Rect2(320, 224, 32, 32)
 
 [resource]
-script = ExtResource("1_qkykm")
+script = ExtResource("2_cyj0v")
 item_id = 122
+name = "Dark Chocolate Bar"
 attrb = "Sweet, Bitter, Dessert "
 cost = 3
-icon = SubResource("AtlasTexture_jxtmg")
+icon = SubResource("AtlasTexture_v48x6")

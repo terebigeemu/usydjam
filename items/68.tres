@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://50eiofe7sy28"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://di8bdvkmjmxs6"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_dl88l"]
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_flk00"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_7skwv"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dl88l"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmnin"]
 atlas = ExtResource("1_dl88l")
 region = Rect2(128, 128, 32, 32)
 
 [resource]
-script = ExtResource("1_flk00")
+script = ExtResource("2_7skwv")
 item_id = 68
+name = "Brown Boba Tea"
 attrb = "Sweet, Drink"
 cost = 3
-icon = SubResource("AtlasTexture_dl88l")
+icon = SubResource("AtlasTexture_wmnin")

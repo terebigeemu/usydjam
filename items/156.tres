@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bpavb52wh6qu8"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bo8en7e0hjcx5"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_4jfkb"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_s2y1j"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_bh6k5"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s2y1j"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_naehx"]
 atlas = ExtResource("1_s2y1j")
 region = Rect2(384, 288, 32, 32)
 
 [resource]
-script = ExtResource("1_4jfkb")
+script = ExtResource("2_bh6k5")
 item_id = 156
+name = "Pink Heart Cookie"
 attrb = "Sweet, Dessert "
 cost = 1
-icon = SubResource("AtlasTexture_s2y1j")
+icon = SubResource("AtlasTexture_naehx")

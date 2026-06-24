@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://2p8lgih0u6i5"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://df0pnhl6hub0g"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_03xja"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_xn1x4"]
@@ -10,6 +10,7 @@ region = Rect2(128, 32, 32, 32)
 [resource]
 script = ExtResource("1_xn1x4")
 item_id = 20
+name = "Strawberry Jam Jar"
 attrb = "Sweet, Sour, Condiment / Ingredient"
 cost = 2
 icon = SubResource("AtlasTexture_03xja")

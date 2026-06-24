@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://0nhggojv75hv"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cq0vyq8hja5os"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_cj53f"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_kcsnf"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_0qhf1"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kcsnf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_l70rj"]
 atlas = ExtResource("1_kcsnf")
 region = Rect2(32, 128, 32, 32)
 
 [resource]
-script = ExtResource("1_cj53f")
+script = ExtResource("2_0qhf1")
 item_id = 65
+name = "Plate of Rice / Food"
 attrb = "Savory, Salty, Carbs"
 cost = 2
-icon = SubResource("AtlasTexture_kcsnf")
+icon = SubResource("AtlasTexture_l70rj")

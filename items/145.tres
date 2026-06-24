@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bxxx0dupieuyl"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dgb24s51oeepd"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_oeauv"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_xqcjp"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_erti0"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xqcjp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_msw34"]
 atlas = ExtResource("1_xqcjp")
 region = Rect2(32, 288, 32, 32)
 
 [resource]
-script = ExtResource("1_oeauv")
+script = ExtResource("2_erti0")
 item_id = 145
+name = "Pink Frosted Cake (Whole)"
 attrb = "Sweet, Dessert "
 cost = 5
-icon = SubResource("AtlasTexture_xqcjp")
+icon = SubResource("AtlasTexture_msw34")

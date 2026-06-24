@@ -1,0 +1,158 @@
+Sprite ID,Description,Attributes,Cost,X,Y
+0,Raspberries,"Sweet, Sour, Fruit",2,0,0
+1,Chili Peppers,"Spicy, Vegetable",1,0,0
+2,Chocolate Cake Slice with Red Berries,"Sweet, Dessert ",3,0,0
+3,Red Macarons,"Sweet, Pastry ",5,0,0
+4,Red Gelatin / Jelly,"Sweet, Dessert ",1,0,0
+5,Watermelon Slices,"Sweet, Drink",1,0,0
+6,Red Juice / Cocktail,"Sweet, Drink",4,0,0
+7,Red Glazed Donut,"Sweet, Pastry ",2,0,0
+8,Red Frosted Donut with Sprinkles,"Sweet, Pastry ",3,0,0
+9,Red Cupcake,"Sweet, Dessert ",2,0,0
+10,Strawberry Tart,"Sweet, Sour, Pastry ",3,0,0
+11,Strawberry Shortcake Slice,"Sweet, Sour, Pastry ",3,0,0
+12,Red Popsicle,"Sweet, Dessert ",1,0,0
+13,Orange Popsicle,"Sweet, Dessert ",1,0,0
+14,Watermelon Popsicle,"Sweet, Drink",1,0,0
+15,Red Apple,"Sweet, Fruit",1,0,0
+16,Red Chips Bag,"Savory, Salty, Snack",1,0,0
+17,Red Soda Bottle,"Sweet, Drink",2,0,0
+18,Pink Cotton Candy,"Sweet, Dessert ",1,0,0
+19,Red Soda Can,"Sweet, Drink",1,0,0
+20,Strawberry Jam Jar,"Sweet, Sour, Condiment / Ingredient",2,0,0
+21,Red Grapes / Currants,"Sweet, Sour, Fruit",2,0,0
+22,Whole Strawberry Cake,"Sweet, Sour, Dessert ",5,0,0
+23,Fresh Strawberries,"Sweet, Sour, Fruit",2,0,0
+24,Dragonfruit (Green/Red),"Sweet, Fruit",2,0,0
+25,Dragonfruit (Pink/White),"Sweet, Fruit",2,0,0
+26,Chocolate Bar in Red Wrapper,"Sweet, Dessert ",1,0,0
+27,Chocolate Pocky Sticks,"Sweet, Dessert ",1,0,0
+28,Plain Glazed Donut,"Sweet, Pastry ",2,0,0
+29,Plain Glazed Donut with Sprinkles,"Sweet, Pastry ",3,0,0
+30,Chocolate Frosted Donut,"Sweet, Pastry ",2,0,0
+31,Chocolate Frosted Donut with Sprinkles,"Sweet, Pastry ",3,0,0
+32,Bagel Sandwich 1,"Savory, Salty, Carbs",4,0,0
+33,Bagel Sandwich 2,"Savory, Salty, Carbs",4,0,0
+34,Hamburger,"Savory, Salty,  Savory",4,0,0
+35,Cheeseburger,"Savory, Salty,  Savory",3,0,0
+36,Cheese Pizza Slice,"Savory, Salty,  Savory",3,0,0
+37,Pepperoni Pizza Slice,"Savory, Salty,  Savory",3,0,0
+38,Corn Dog,"Savory, Salty, Earthy, Vegetable",2,0,0
+39,Quiche / Cheese Pie Slice,"Savory, Salty,  Savory",4,0,0
+40,Carrot Cake Slice,"Sweet, Dessert ",3,0,0
+41,Baguette / Bread Loaf,"Savory, Salty, Carbs",2,0,0
+42,Croissant,"Savory, Salty, Pastry ",3,0,0
+43,Chocolate Covered Strawberry 1,"Sweet, Sour, Dessert ",2,0,0
+44,Chocolate Covered Strawberry 2,"Sweet, Sour, Dessert ",2,0,0
+45,Chocolate Pastry / Pan au Chocolat,"Sweet, Pastry ",3,0,0
+46,Orange Popsicle,"Sweet, Dessert ",1,0,0
+47,Egg Tart,"Sweet, Pastry ",3,0,0
+48,Spaghetti / Noodles,"Savory, Salty, Carbs",4,0,0
+49,Orange Chips Bag,"Savory, Salty, Snack",1,0,0
+50,Takoyaki,"Savory, Salty,  Savory",3,0,0
+51,Orange Slices,"Sweet, Sour, Fruit",1,0,0
+52,Folded Crepe,"Sweet, Pastry ",3,0,0
+53,Crepe with Strawberries,"Sweet, Sour, Pastry ",4,0,0
+54,Peeled Banana,"Sweet, Fruit",1,0,0
+55,Honey / Yellow Jam Jar,"Sweet, Condiment / Ingredient",2,0,0
+56,Raw Corn on the Cob,"Earthy, Savory, Vegetable",1,0,0
+57,Cooked Corn on the Cob,"Earthy, Savory, Vegetable",2,0,0
+58,Lemon Meringue Pie Slice,"Sweet, Sour, Pastry ",4,0,0
+59,French Fries,"Savory, Salty, Carbs",2,0,0
+60,Macaroni / Cereal Bowl,"Savory, Salty, Carbs",5,0,0
+61,Plain Waffle,"Sweet, Pastry ",3,0,0
+62,Waffle with Syrup,"Sweet, Pastry ",4,0,0
+63,Frappuccino / Milkshake,"Sweet, Drink",4,0,0
+64,Apple Pie Slice,"Sweet, Fruit",3,0,0
+65,Plate of Rice / Food,"Savory, Salty, Carbs",2,0,0
+66,Orange Juice Bottle,"Sweet, Drink",2,0,0
+67,Orange Juice Glass,"Sweet, Drink",1,0,0
+68,Brown Boba Tea,"Sweet, Drink",3,0,0
+69,Brown Boba Tea 2,"Sweet, Drink",3,0,0
+70,Plain Pancakes,"Sweet, Pastry ",3,0,0
+71,Pancakes with Butter,"Sweet, Pastry ",4,0,0
+72,Pancakes with Syrup,"Sweet, Pastry ",5,0,0
+73,Stacked Pancakes,"Sweet, Pastry ",5,0,0
+74,Cinnamon Roll 1,"Sweet, Pastry ",2,0,0
+75,Cinnamon Roll 2,"Sweet, Pastry ",2,0,0
+76,Orange Cocktail,"Sweet, Drink",5,0,0
+77,Chocolate Donut,"Sweet, Pastry ",2,0,0
+78,Chocolate Donut with Sprinkles,"Sweet, Pastry ",3,0,0
+79,Iced Coffee / Latte,"Sweet, Bitter, Drink",3,0,0
+80,Vanilla Ice Cream Cone,"Sweet, Dessert ",2,0,0
+81,Chocolate Ice Cream Cone,"Sweet, Dessert ",2,0,0
+82,Matcha Ice Cream Cone 1,"Sweet, Earthy, Bitter, Dessert ",3,0,0
+83,Matcha Ice Cream Cone 2,"Sweet, Earthy, Bitter, Dessert ",3,0,0
+84,Green Candy Box,"Sweet, Dessert ",4,0,0
+85,Matcha Pocky Sticks,"Sweet, Earthy, Bitter, Dessert ",2,0,0
+86,Avocado Halves,"Earthy, Creamy, Vegetable",2,0,0
+87,Green Apple,"Sweet, Fruit",1,0,0
+88,Matcha Soup / Dip Bowl,"Earthy, Savory, Condiment / Ingredient",3,0,0
+89,Broccoli,"Earthy, Savory, Vegetable",1,0,0
+90,Pickle Jar,"Sour, Condiment / Ingredient",2,0,0
+91,Matcha Square Cake,"Sweet, Earthy, Bitter, Dessert ",4,0,0
+92,Asparagus / Celery Sticks,"Earthy, Savory, Vegetable",1,0,0
+93,Green Beans / Edamame,"Earthy, Savory, Vegetable",1,0,0
+94,Salad Bowl,"Earthy, Savory, Salad",2,0,0
+95,Green Soup / Dip,"Sweet, Condiment / Ingredient",1,0,0
+96,Green Leaves / Mint,"Earthy, Minty, Vegetable",1,0,0
+97,Green Soda Bottle,"Sweet, Drink",3,0,0
+98,Matcha Cake Slice,"Sweet, Earthy, Bitter, Dessert ",4,0,0
+99,Green Grapes,"Sweet, Sour, Fruit",2,0,0
+100,Green Mochi,"Sweet, Dessert ",3,0,0
+101,Margarita / Green Cocktail,"Sour, Sweet, Drink",5,0,0
+102,Blue Swiss Roll,"Sweet, Dessert ",2,0,0
+103,Blue Cake Slice,"Sweet, Dessert ",3,0,0
+104,Blue Milk Carton,"Creamy, Mild Sweet, Drink",2,0,0
+105,Blue Cheese / Moldy Cheese,"Savory, Salty, Tangy, Pungent, Dairy ",4,0,0
+106,Blue Cocktail,"Sweet, Drink",5,0,0
+107,Blue Lollipop,"Sweet, Dessert ",1,0,0
+108,Blue Popsicle,"Sweet, Dessert ",1,0,0
+109,Water Bottle,"Neutral, Drink",1,0,0
+110,Blue Granola / Snack Bar,"Sweet, Snack",1,0,0
+111,Blue Chips Bag,"Savory, Salty, Snack",1,0,0
+112,Blue Ice Cream Bowl,"Sweet, Dessert ",3,0,0
+113,Blue Cereal / Rice Bowl,"Savory, Salty, Carbs",2,0,0
+114,Blue Cotton Candy,"Sweet, Dessert ",2,0,0
+115,Blue Energy Drink Can,"Sweet, Drink",3,0,0
+116,Vanilla Beans / Spices,"Sweet, Earthy, Condiment / Ingredient",5,0,0
+117,Blackberries,"Sweet, Sour, Fruit",2,0,0
+118,Blueberries / Olives,"Sweet, Sour, Earthy, Salty, Bitter, Fruit",2,0,0
+119,Chocolate Cookies (Oreos),"Sweet, Dessert ",2,0,0
+120,Dark Chocolate Cake Slice,"Sweet, Bitter, Dessert ",3,0,0
+121,Chocolate Brownie,"Sweet, Dessert ",3,0,0
+122,Dark Chocolate Bar,"Sweet, Bitter, Dessert ",3,0,0
+123,Purple Chocolate Snack,"Sweet, Dessert ",2,0,0
+124,Onigiri in Purple Wrapper,"Savory, Salty, Carbs",2,0,0
+125,Purple Snack Bag,"Savory, Salty, Snack",1,0,0
+126,Green Energy Drink Can,"Sweet, Drink",3,0,0
+127,Purple Soda Can 1,"Sweet, Drink",2,0,0
+128,Figs,"Sweet, Fruit",3,0,0
+129,Taro / Purple Boba Tea,"Sweet, Drink",2,0,0
+130,Purple Popsicle,"Sweet, Dessert ",1,0,0
+131,Purple Pocky Sticks,"Sweet, Dessert ",2,0,0
+132,Purple Soda Can 2,"Sweet, Drink",2,0,0
+133,Purple Soda Can 3,"Sweet, Drink",2,0,0
+134,Purple Chocolate Bar 1,"Sweet, Dessert ",2,0,0
+135,Purple Chocolate Bar 2,"Sweet, Dessert ",2,0,0
+136,Purple Chocolate Bar 3,"Sweet, Dessert ",2,0,0
+137,Purple Chocolate Bar 4,"Sweet, Dessert ",2,0,0
+138,Purple Pastry / Donut,"Sweet, Pastry ",3,0,0
+139,Eggplant,"Earthy, Savory, Vegetable",1,0,0
+140,Purple Jam Jar / Potion,"Sweet, Drink",2,0,0
+141,Blueberry / Blackberry Cake Slice,"Sweet, Sour, Dessert ",4,0,0
+142,Purple Grapes,"Sweet, Sour, Fruit",2,0,0
+143,Purple Chips Bag,"Savory, Salty, Snack",1,0,0
+144,Purple Berry Cake (Whole),"Sweet, Dessert ",5,0,0
+145,Pink Frosted Cake (Whole),"Sweet, Dessert ",5,0,0
+146,Pink Strawberry,"Sweet, Sour, Fruit",3,0,0
+147,Pink Dragonfruit,"Sweet, Fruit",4,0,0
+148,Pink Dragonfruit Half,"Sweet, Fruit",3,0,0
+149,Pink Mini Donuts,"Sweet, Pastry ",3,0,0
+150,Pink Swiss Roll,"Sweet, Dessert ",3,0,0
+151,Cherry Cake Slice,"Sweet, Sour, Dessert ",4,0,0
+152,Strawberry Chocolate Bar,"Sweet, Sour, Dessert ",2,0,0
+153,Pink Mochi,"Sweet, Dessert ",3,0,0
+154,Strawberry Frappuccino / Drink,"Sweet, Sour, Drink",4,0,0
+155,Pink Cocktail / Martini,"Sweet, Drink",5,0,0
+156,Pink Heart Cookie,"Sweet, Dessert ",1,0,0

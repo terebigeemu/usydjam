@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bjdqc82fbcwfv"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c44r2wcnyj070"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_3fct5"]
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_rg3da"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_w4gmq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3fct5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0uv8"]
 atlas = ExtResource("1_3fct5")
 region = Rect2(0, 288, 32, 32)
 
 [resource]
-script = ExtResource("1_rg3da")
+script = ExtResource("2_w4gmq")
 item_id = 144
+name = "Purple Berry Cake (Whole)"
 attrb = "Sweet, Dessert "
 cost = 5
-icon = SubResource("AtlasTexture_3fct5")
+icon = SubResource("AtlasTexture_f0uv8")

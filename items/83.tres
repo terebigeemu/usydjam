@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://j440fe0myys0"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dj2rji6mr6q8o"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_1kf5l"]
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_ystlu"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_yshbf"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1kf5l"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkcm6"]
 atlas = ExtResource("1_1kf5l")
 region = Rect2(96, 160, 32, 32)
 
 [resource]
-script = ExtResource("1_ystlu")
+script = ExtResource("2_yshbf")
 item_id = 83
+name = "Matcha Ice Cream Cone 2"
 attrb = "Sweet, Earthy, Bitter, Dessert "
 cost = 3
-icon = SubResource("AtlasTexture_1kf5l")
+icon = SubResource("AtlasTexture_hkcm6")

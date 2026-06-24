@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://brvnen28qpvcc"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://f5vi42xmlo6o"]
 
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_5ki0f"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_h8gpf"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_0caub"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h8gpf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_esrb6"]
 atlas = ExtResource("1_h8gpf")
 region = Rect2(416, 224, 32, 32)
 
 [resource]
-script = ExtResource("1_5ki0f")
+script = ExtResource("2_0caub")
 item_id = 125
+name = "Purple Snack Bag"
 attrb = "Savory, Salty, Snack"
 cost = 1
-icon = SubResource("AtlasTexture_h8gpf")
+icon = SubResource("AtlasTexture_esrb6")

@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bs6y1oc2ed7ch"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bj4e5lkxhnlhc"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_0r6wp"]
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_2ah6j"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_07emj"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0r6wp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmv4n"]
 atlas = ExtResource("1_0r6wp")
 region = Rect2(224, 96, 32, 32)
 
 [resource]
-script = ExtResource("1_2ah6j")
+script = ExtResource("2_07emj")
 item_id = 55
+name = "Honey / Yellow Jam Jar"
 attrb = "Sweet, Condiment / Ingredient"
 cost = 2
-icon = SubResource("AtlasTexture_0r6wp")
+icon = SubResource("AtlasTexture_hmv4n")

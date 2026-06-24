@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cmab62x0tdnhr"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cewf0mml6vshq"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_0uisj"]
-[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_kr18c"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_ktitn"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0uisj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xh5y"]
 atlas = ExtResource("1_0uisj")
 region = Rect2(352, 256, 32, 32)
 
 [resource]
-script = ExtResource("1_kr18c")
+script = ExtResource("2_ktitn")
 item_id = 139
+name = "Eggplant"
 attrb = "Earthy, Savory, Vegetable"
 cost = 1
-icon = SubResource("AtlasTexture_0uisj")
+icon = SubResource("AtlasTexture_7xh5y")
