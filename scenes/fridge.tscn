@@ -3,7 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://dyhhrqcdonllp" path="res://assets/fridge_inside.png" id="1_ipvyg"]
 [ext_resource type="Script" uid="uid://dfnvvs5s7ml48" path="res://scripts/fridge.gd" id="3_buvrw"]
 [ext_resource type="Script" uid="uid://b0xawac0vvxw5" path="res://scripts/skybox.gd" id="4_husjh"]
+[ext_resource type="Script" uid="uid://c1gt0wwr3gvxt" path="res://scripts/parallax_background.gd" id="4_npr5r"]
+[ext_resource type="Texture2D" uid="uid://dan8bmestv28h" path="res://assets/clouds.png" id="5_npr5r"]
+[ext_resource type="Texture2D" uid="uid://57xmjwbynog7" path="res://assets/office1.png" id="7_mq0tr"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="7_nm1dx"]
+[ext_resource type="Texture2D" uid="uid://bfauu7v4jlohq" path="res://assets/Employee1.png" id="8_cx14s"]
+[ext_resource type="Texture2D" uid="uid://u4bhle2chw6i" path="res://assets/Employee2.png" id="9_mq0tr"]
+[ext_resource type="Texture2D" uid="uid://cl153ofc4vinp" path="res://assets/Employee3.png" id="10_s2lay"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t2fjl"]
 atlas = ExtResource("7_nm1dx")
@@ -1136,9 +1142,27 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_buvrw"]
 
 [sub_resource type="Gradient" id="Gradient_buvrw"]
+colors = PackedColorArray(0.68235296, 0.91764706, 0.9882353, 1, 0.47058824, 0.8666667, 0.98039216, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_u8bke"]
 gradient = SubResource("Gradient_buvrw")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_abnil"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_cx14s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mq0tr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_s2lay")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 0.1
+}]
 
 [node name="Fridge" type="Node2D" unique_id=672302043]
 position = Vector2(10, -1)
@@ -1146,7 +1170,7 @@ script = ExtResource("3_buvrw")
 
 [node name="FridgeInside" type="Sprite2D" parent="." unique_id=62022446]
 z_index = -1
-position = Vector2(631, 541)
+position = Vector2(630, 541)
 scale = Vector2(8, 8)
 texture = ExtResource("1_ipvyg")
 
@@ -1284,24 +1308,56 @@ offset_right = 99.0
 offset_bottom = -15.0
 text = "InitialState"
 
-[node name="Background" type="Sprite2D" parent="." unique_id=880272330]
-position = Vector2(4, 8)
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=949502797]
+script = ExtResource("4_npr5r")
 
-[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=466734330]
-position = Vector2(16, 1)
-
-[node name="Parallax2D" type="Parallax2D" parent="Background" unique_id=1899894768]
-
-[node name="TextureRect" type="TextureRect" parent="Background" unique_id=1341369736]
-z_index = -10
-offset_left = -28.000004
-offset_top = 1087.0
-offset_right = 35.999996
-offset_bottom = 1151.0
-rotation = -1.5693567
-scale = Vector2(17.310328, 21.097878)
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground" unique_id=1341369736]
+z_index = -12
+offset_left = -65.0
+offset_top = 1138.0
+offset_right = -1.0
+offset_bottom = 1202.0
+rotation = -1.5707964
+scale = Vector2(18.95033, 21.977877)
 texture = SubResource("GradientTexture2D_u8bke")
 script = ExtResource("4_husjh")
+
+[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground" unique_id=1899894768]
+repeat_size = Vector2(1280, 1080)
+autoscroll = Vector2(-10, -5)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D" unique_id=466734330]
+modulate = Color(1, 1, 1, 0.78431374)
+z_index = -11
+position = Vector2(626, 533)
+scale = Vector2(8, 8)
+texture = ExtResource("5_npr5r")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=697077190]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1247990419]
+z_index = -10
+position = Vector2(640, 540)
+scale = Vector2(8, 8)
+texture = ExtResource("7_mq0tr")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1389560730]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=1948833750]
+position = Vector2(640, 540)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_abnil")
+autoplay = "default"
+frame_progress = 0.03833704
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1776431082]
+z_index = -1
+offset_left = 1270.0
+offset_top = 1.0
+offset_right = 1910.0
+offset_bottom = 1081.0
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
 
 [connection signal="input_event" from="Area1" to="." method="_on_cell_input_event" binds= [NodePath("Area1/Cell1"), 1]]
 [connection signal="input_event" from="Area2" to="." method="_on_cell_input_event" binds= [NodePath("Area2/Cell2"), 2]]
