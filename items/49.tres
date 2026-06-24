@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ccrfjhadekhsa"]
+
+[ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_2urpx"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_uyjfr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2urpx"]
+atlas = ExtResource("1_2urpx")
+region = Rect2(32, 96, 32, 32)
+
+[resource]
+script = ExtResource("1_uyjfr")
+item_id = 49
+attrb = "Savory, Salty, Snack"
+cost = 1
+icon = SubResource("AtlasTexture_2urpx")

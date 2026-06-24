@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c4r84rif7x3pu"]
+
+[ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_fw4mu"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_o7kbo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fw4mu"]
+atlas = ExtResource("1_fw4mu")
+region = Rect2(128, 224, 32, 32)
+
+[resource]
+script = ExtResource("1_o7kbo")
+item_id = 116
+attrb = "Sweet, Earthy, Condiment / Ingredient"
+cost = 5
+icon = SubResource("AtlasTexture_fw4mu")

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cql2xw0k40ssg"]
+
+[ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_bn5vc"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_e6lkw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bn5vc"]
+atlas = ExtResource("1_bn5vc")
+region = Rect2(192, 160, 32, 32)
+
+[resource]
+script = ExtResource("1_e6lkw")
+item_id = 86
+attrb = "Earthy, Creamy, Vegetable"
+cost = 2
+icon = SubResource("AtlasTexture_bn5vc")

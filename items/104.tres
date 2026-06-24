@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bkt2njmd3kmxd"]
+
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_gssnc"]
+[ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_va2ts"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_va2ts"]
+atlas = ExtResource("1_va2ts")
+region = Rect2(256, 192, 32, 32)
+
+[resource]
+script = ExtResource("1_gssnc")
+item_id = 104
+attrb = "Creamy, Mild Sweet, Drink"
+cost = 2
+icon = SubResource("AtlasTexture_va2ts")

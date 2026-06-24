@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://chemn7wapwtqa"]
+
+[ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_4n1cx"]
+[ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="1_u3px1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4n1cx"]
+atlas = ExtResource("1_4n1cx")
+region = Rect2(192, 192, 32, 32)
+
+[resource]
+script = ExtResource("1_u3px1")
+item_id = 102
+attrb = "Sweet, Dessert "
+cost = 2
+icon = SubResource("AtlasTexture_4n1cx")
