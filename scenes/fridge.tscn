@@ -1286,7 +1286,6 @@ text = "InitialState"
 
 [node name="Background" type="Sprite2D" parent="." unique_id=880272330]
 position = Vector2(4, 8)
-script = ExtResource("4_husjh")
 
 [node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=466734330]
 position = Vector2(16, 1)
@@ -1302,6 +1301,7 @@ offset_bottom = 1151.0
 rotation = -1.5693567
 scale = Vector2(17.310328, 21.097878)
 texture = SubResource("GradientTexture2D_u8bke")
+script = ExtResource("4_husjh")
 
 [connection signal="input_event" from="Area1" to="." method="_on_cell_input_event" binds= [NodePath("Area1/Cell1"), 1]]
 [connection signal="input_event" from="Area2" to="." method="_on_cell_input_event" binds= [NodePath("Area2/Cell2"), 2]]
