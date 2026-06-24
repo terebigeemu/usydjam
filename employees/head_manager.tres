@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EmployeeData" format=3 uid="uid://cw4wuft2vagwh"]
+
+[ext_resource type="Texture2D" uid="uid://cd35v3u2u4t5x" path="res://assets/EmployeeTest.png" id="1_tm0pg"]
+[ext_resource type="Script" uid="uid://bjohfio4ovnil" path="res://scripts/employee_data.gd" id="2_yyqhm"]
+
+[resource]
+script = ExtResource("2_yyqhm")
+title = "Head Manager"
+level = "Manager, C-Suite"
+promotion = true
+death = true
+encounter = 0.25
+preferencecount = 2
+preferences = "Carbs, Pungent"
+icon = ExtResource("1_tm0pg")

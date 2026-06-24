@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EmployeeData" format=3 uid="uid://cdx46rkyvencp"]
+
+[ext_resource type="Texture2D" uid="uid://cd35v3u2u4t5x" path="res://assets/EmployeeTest.png" id="1_m3pq4"]
+[ext_resource type="Script" uid="uid://bjohfio4ovnil" path="res://scripts/employee_data.gd" id="2_qgfv2"]
+
+[resource]
+script = ExtResource("2_qgfv2")
+title = "Lead Sales"
+level = "Team Leader"
+death = true
+encounter = 0.1667
+preferencecount = 3
+preferences = "Minty, Drink, Salty"
+icon = ExtResource("1_m3pq4")

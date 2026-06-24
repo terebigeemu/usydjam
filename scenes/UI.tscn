@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://bumd02qjvf6oq" path="res://scripts/shop_page.gd" id="2_5en4g"]
 [ext_resource type="Texture2D" uid="uid://daxeu2jb62n32" path="res://assets/HomeBtnSprite.png" id="2_ro3t7"]
 [ext_resource type="PackedScene" uid="uid://dxk7bln4rt0n5" path="res://scenes/shop_item_slot.tscn" id="3_ua6yw"]
+[ext_resource type="Script" uid="uid://wy22hl6qt8ns" path="res://scripts/employee_page.gd" id="5_75u2n"]
+[ext_resource type="PackedScene" uid="uid://bh8j711jxlgyh" path="res://scenes/employee_slot.tscn" id="6_3wlde"]
 
 [node name="UI" type="CanvasLayer" unique_id=1826785090]
 script = ExtResource("1_dj8aq")
@@ -24,7 +26,6 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="MainMenu" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=176046976]
-visible = false
 layout_mode = 2
 mouse_filter = 2
 
@@ -105,6 +106,8 @@ layout_mode = 2
 
 [node name="EmployeePage" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1176839180]
 layout_mode = 2
+script = ExtResource("5_75u2n")
+employee_slot_scene = ExtResource("6_3wlde")
 
 [node name="TopBar" type="HBoxContainer" parent="PanelContainer/MarginContainer/EmployeePage" unique_id=1830381082]
 layout_mode = 2
@@ -124,4 +127,6 @@ size_flags_stretch_ratio = 7.0
 
 [node name="EGrid" type="GridContainer" parent="PanelContainer/MarginContainer/EmployeePage/EmployeeSection" unique_id=1907066367]
 layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
 columns = 6

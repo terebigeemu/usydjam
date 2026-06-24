@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://b654mrhvst2sy"
+
+[deps]
+
+files=["res://Data/EmployeeTable.Level.translation", "res://Data/EmployeeTable.Affinity.translation", "res://Data/EmployeeTable.Can promote you.translation", "res://Data/EmployeeTable.Can Remove you.translation", "res://Data/EmployeeTable.Percentage.translation", "res://Data/EmployeeTable.Preferences.translation", "res://Data/EmployeeTable.SeenStatus.translation"]
+
+source_file="res://Data/EmployeeTable.csv"
+dest_files=["res://Data/EmployeeTable.Level.translation", "res://Data/EmployeeTable.Affinity.translation", "res://Data/EmployeeTable.Can promote you.translation", "res://Data/EmployeeTable.Can Remove you.translation", "res://Data/EmployeeTable.Percentage.translation", "res://Data/EmployeeTable.Preferences.translation", "res://Data/EmployeeTable.SeenStatus.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

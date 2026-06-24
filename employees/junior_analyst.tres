@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EmployeeData" format=3 uid="uid://b2bqimmhcfdxc"]
+
+[ext_resource type="Texture2D" uid="uid://cd35v3u2u4t5x" path="res://assets/EmployeeTest.png" id="1_nldgu"]
+[ext_resource type="Script" uid="uid://bjohfio4ovnil" path="res://scripts/employee_data.gd" id="2_8jfpr"]
+
+[resource]
+script = ExtResource("2_8jfpr")
+title = "Junior Analyst"
+level = "Employee"
+encounter = 0.2
+preferencecount = 4
+seenstatus = true
+preferences = "Neutral, Dessert, Dairy, Spicy"
+icon = ExtResource("1_nldgu")

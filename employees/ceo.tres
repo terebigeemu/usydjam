@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EmployeeData" format=3 uid="uid://b1aju2x1cjbi0"]
+
+[ext_resource type="Texture2D" uid="uid://cd35v3u2u4t5x" path="res://assets/EmployeeTest.png" id="1_7ksum"]
+[ext_resource type="Script" uid="uid://bjohfio4ovnil" path="res://scripts/employee_data.gd" id="2_v2nip"]
+
+[resource]
+script = ExtResource("2_v2nip")
+title = "CEO"
+level = "C-Suite"
+promotion = true
+death = true
+encounter = 0.1
+preferencecount = 1
+preferences = "Mild Sweet"
+icon = ExtResource("1_7ksum")

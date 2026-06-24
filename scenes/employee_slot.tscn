@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bh8j711jxlgyh"]
+
+[ext_resource type="Script" uid="uid://bhma7pllcmtf7" path="res://scripts/employee_slot.gd" id="1_fqy7q"]
+
+[node name="EmployeeSlot" type="VBoxContainer" unique_id=1479440974]
+custom_minimum_size = Vector2(200, 300)
+offset_right = 200.0
+offset_bottom = 300.0
+script = ExtResource("1_fqy7q")
+
+[node name="IconRect" type="TextureRect" parent="." unique_id=1362136692]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="." unique_id=859677394]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+
+[node name="InfoLabel" type="Label" parent="." unique_id=1141599933]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 2

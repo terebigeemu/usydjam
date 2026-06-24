@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EmployeeData" format=3 uid="uid://brwhh1b7ebon7"]
+
+[ext_resource type="Texture2D" uid="uid://cd35v3u2u4t5x" path="res://assets/EmployeeTest.png" id="1_1eboh"]
+[ext_resource type="Script" uid="uid://bjohfio4ovnil" path="res://scripts/employee_data.gd" id="2_ptub2"]
+
+[resource]
+script = ExtResource("2_ptub2")
+title = "Intern 2"
+level = "Employee"
+encounter = 0.2
+preferencecount = 4
+seenstatus = true
+preferences = "Pungent, Dairy, Snack, Sour"
+icon = ExtResource("1_1eboh")
