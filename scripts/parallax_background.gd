@@ -1,22 +1,10 @@
-extends ParallaxBackground
+extends Node2D
 
-# screen size
-var viewport_size = Vector2(1920, 1080)
-
-@onready var parallax_layer: ParallaxLayer = $ParallaxLayer
-@onready var parallax_layer_2: ParallaxLayer = $ParallaxLayer2
-
+@onready var employee: Parallax2D = $Employee
+@onready var office: Parallax2D = $Office
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		var mouse_x = event.position.x
-		var mouse_y = event.position.y
-		
-		var relative_x = (mouse_x - (viewport_size.x/2)) / (viewport_size.x/2)
-		var relative_y = (mouse_y - (viewport_size.y/2)) / (viewport_size.y/2)
-		
-		parallax_layer.motion_offset.x = 8 * relative_x
-		parallax_layer.motion_offset.y = 8 * relative_y
-
-		parallax_layer_2.motion_offset.x = 4 * relative_x
-		parallax_layer_2.motion_offset.y = 4 * relative_y
+		var mouse_pos = get_viewport().get_mouse_position()
+		employee.scroll_offset = 0.01 * mouse_pos
+		office.scroll_offset = 0.005 * mouse_pos

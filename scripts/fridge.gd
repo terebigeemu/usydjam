@@ -16,9 +16,9 @@ extends Node
 @onready var cell4: AnimatedSprite2D = $Area4/Cell4
 @onready var cell5: AnimatedSprite2D = $Area5/Cell5
 @onready var cell6: AnimatedSprite2D = $Area6/Cell6
-@onready var stash100: AnimatedSprite2D = $Stash100/Cell100
-@onready var stash101: AnimatedSprite2D = $Stash101/Cell101
-@onready var stash102: AnimatedSprite2D = $Stash102/Cell102
+@onready var stash100: AnimatedSprite2D = $UI/Stash100/Cell100
+@onready var stash101: AnimatedSprite2D = $UI/Stash101/Cell101
+@onready var stash102: AnimatedSprite2D = $UI/Stash102/Cell102
 @onready var start_btn = $UI/PanelContainer/MarginContainer/MainMenu/StartBtn
 
 
@@ -194,7 +194,7 @@ func fridge_fill(cell_id, item_no, inventory_index):
 	
 	# literally just copied and pasted but i reversed everything LMFAO
 	
-	var stash_selected: AnimatedSprite2D = get_node(cell_id)
+	var stash_selected: AnimatedSprite2D = get_node("UI/" + str(cell_id))
 	
 	print("calling fridge_fill with param " + str(cell_id) + " and " + str(item_no))
 
@@ -254,8 +254,11 @@ func fridge_edit(cell_id, inventory_index, viewport: Node, event: InputEvent, sh
 func swap_helper(dest_cell_id, dest_inventory_index, dest_cell_type):
 	
 	# dest_cell_type type: 0 = player clicked on normal cell, 1 = player clicked on stash cell
-	
-	var cell_selected: AnimatedSprite2D = get_node(dest_cell_id)
+	var cell_path = dest_cell_id
+	if dest_cell_type != 0:
+		cell_path = "UI/" + str(dest_cell_id)
+		
+	var cell_selected: AnimatedSprite2D = get_node(cell_path)
 	var swap_cell: AnimatedSprite2D = get_node(swap_cell_id)
 	
 	var item_id: int
@@ -358,7 +361,7 @@ func _on_stash_input_event(viewport: Node, event: InputEvent, shape_idx: int, ex
 
 @export var shake_amount: float = 5.0
 @onready var fridge_sprite: AnimatedSprite2D = $FridgeInside
-@onready var employee: AnimatedSprite2D = $ParallaxBackground/ParallaxLayer2/AnimatedSprite2D
+@onready var employee: AnimatedSprite2D = $Background/Employee/AnimatedSprite2D
 @onready var shake_timer = $ShakeTimer
 @onready var open_timer = $OpenTimer
 
@@ -367,7 +370,7 @@ const OPEN = 1
 var turn_count: int = 0
 
 # Temporary trigger for testing
-#func _on_side_panel_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+#func _on_temp_next_turn_button_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	#if event is InputEventMouseButton and event.pressed:
 		#if event.button_index == MOUSE_BUTTON_LEFT and turn_count % 2 == 0:
 			#advance_turn()

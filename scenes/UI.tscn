@@ -7,6 +7,9 @@
 [ext_resource type="Script" uid="uid://wy22hl6qt8ns" path="res://scripts/employee_page.gd" id="5_75u2n"]
 [ext_resource type="PackedScene" uid="uid://bh8j711jxlgyh" path="res://scenes/employee_slot.tscn" id="6_3wlde"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ua6yw"]
+bg_color = Color(0.17283267, 0.17283267, 0.17283258, 1)
+
 [node name="UI" type="CanvasLayer" unique_id=1826785090]
 script = ExtResource("1_dj8aq")
 
@@ -15,11 +18,12 @@ anchors_preset = -1
 anchor_left = 0.667
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 0.16799974
+offset_left = -0.64001465
 grow_horizontal = 2
 grow_vertical = 2
 offset_transform_enabled = true
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ua6yw")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=281203841]
 layout_mode = 2

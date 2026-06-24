@@ -14,6 +14,29 @@
 [ext_resource type="Texture2D" uid="uid://cl153ofc4vinp" path="res://assets/Employee3.png" id="10_s2lay"]
 [ext_resource type="PackedScene" uid="uid://bvfa18ddvvaon" path="res://scenes/UI.tscn" id="11_s2lay"]
 
+[sub_resource type="Gradient" id="Gradient_buvrw"]
+colors = PackedColorArray(0.68235296, 0.91764706, 0.9882353, 1, 0.47058824, 0.8666667, 0.98039216, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_iod1f"]
+gradient = SubResource("Gradient_buvrw")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5l13h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_cx14s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mq0tr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_s2lay")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 1.0
+}]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_i7dow"]
 animations = [{
 "frames": [{
@@ -27,6 +50,9 @@ animations = [{
 "name": &"default",
 "speed": 1.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tfbev"]
+size = Vector2(12.237506, 13.504028)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t2fjl"]
 atlas = ExtResource("7_nm1dx")
@@ -1158,36 +1184,51 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_buvrw"]
 
-[sub_resource type="Gradient" id="Gradient_buvrw"]
-colors = PackedColorArray(0.68235296, 0.91764706, 0.9882353, 1, 0.47058824, 0.8666667, 0.98039216, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_u8bke"]
-gradient = SubResource("Gradient_buvrw")
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_abnil"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_cx14s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_mq0tr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_s2lay")
-}],
-"loop": 0,
-"name": &"default",
-"speed": 1.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_abnil"]
-size = Vector2(29.49907, 73.080635)
-
 [node name="Fridge" type="Node2D" unique_id=672302043]
-z_index = 1
 position = Vector2(10, -1)
 script = ExtResource("3_buvrw")
+
+[node name="Background" type="Node2D" parent="." unique_id=1262001329]
+z_index = -2
+position = Vector2(-10, 1)
+script = ExtResource("4_npr5r")
+
+[node name="TextureRect" type="TextureRect" parent="Background" unique_id=1749315235]
+z_index = -12
+offset_left = -75.0
+offset_top = 1139.0
+offset_right = -11.0
+offset_bottom = 1203.0
+rotation = -1.5707964
+scale = Vector2(18.95033, 21.977877)
+texture = SubResource("GradientTexture2D_iod1f")
+script = ExtResource("4_husjh")
+
+[node name="Clouds" type="Parallax2D" parent="Background" unique_id=1400604343]
+texture_repeat = 2
+repeat_size = Vector2(1280, 1080)
+autoscroll = Vector2(-10, -5)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Clouds" unique_id=1856467704]
+modulate = Color(1, 1, 1, 0.78431374)
+position = Vector2(626, 533)
+scale = Vector2(8, 8)
+texture = ExtResource("5_npr5r")
+
+[node name="Office" type="Parallax2D" parent="Background" unique_id=1723716411]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Office" unique_id=1659687288]
+position = Vector2(640, 540)
+scale = Vector2(8, 8)
+texture = ExtResource("7_mq0tr")
+
+[node name="Employee" type="Parallax2D" parent="Background" unique_id=359773424]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Background/Employee" unique_id=232142265]
+position = Vector2(640, 540)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_5l13h")
 
 [node name="ShakeTimer" type="Timer" parent="." unique_id=928900059]
 wait_time = 2.0
@@ -1203,6 +1244,68 @@ position = Vector2(630, 541)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_i7dow")
 frame_progress = 0.7204942
+
+[node name="TempNextTurnButton" type="Area2D" parent="." unique_id=269629004]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TempNextTurnButton" unique_id=166603213]
+position = Vector2(1136.75, 102.125)
+rotation = 3.1415925
+scale = Vector2(21.6956, 14.791881)
+shape = SubResource("RectangleShape2D_tfbev")
+
+[node name="UI" parent="." unique_id=1826785090 instance=ExtResource("11_s2lay")]
+
+[node name="Stash100" type="Area2D" parent="UI" unique_id=394698429 groups=["stash_cells"]]
+z_index = 999
+z_as_relative = false
+position = Vector2(1349, -241)
+script = ExtResource("4_nm1dx")
+
+[node name="Cell100" type="AnimatedSprite2D" parent="UI/Stash100" unique_id=180398834 groups=["stash_cells"]]
+z_index = 5
+position = Vector2(251.00003, 417)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_u8bke")
+frame = 35
+
+[node name="Collision100" type="CollisionShape2D" parent="UI/Stash100" unique_id=1159099581 groups=["stash_cells"]]
+position = Vector2(252, 413.00003)
+scale = Vector2(13.979357, 13.979357)
+shape = SubResource("CircleShape2D_buvrw")
+
+[node name="Stash101" type="Area2D" parent="UI" unique_id=754821852 groups=["stash_cells"]]
+z_index = 5
+position = Vector2(1351, 130)
+script = ExtResource("4_nm1dx")
+
+[node name="Cell101" type="AnimatedSprite2D" parent="UI/Stash101" unique_id=1906242593 groups=["stash_cells"]]
+z_index = 5
+position = Vector2(251.00003, 417)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_u8bke")
+frame = 35
+
+[node name="Collision101" type="CollisionShape2D" parent="UI/Stash101" unique_id=1475958206 groups=["stash_cells"]]
+position = Vector2(252, 413.00003)
+scale = Vector2(13.979357, 13.979357)
+shape = SubResource("CircleShape2D_buvrw")
+
+[node name="Stash102" type="Area2D" parent="UI" unique_id=68831125 groups=["stash_cells"]]
+z_index = 5
+position = Vector2(1350, 488)
+script = ExtResource("4_nm1dx")
+
+[node name="Cell102" type="AnimatedSprite2D" parent="UI/Stash102" unique_id=2144828167 groups=["stash_cells"]]
+position = Vector2(251.00003, 417)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_u8bke")
+frame = 35
+
+[node name="Collision102" type="CollisionShape2D" parent="UI/Stash102" unique_id=700102036 groups=["stash_cells"]]
+z_index = 1
+position = Vector2(252, 413.00003)
+scale = Vector2(13.979357, 13.979357)
+shape = SubResource("CircleShape2D_buvrw")
 
 [node name="Area1" type="Area2D" parent="." unique_id=2124120713]
 position = Vector2(-2, -22)
@@ -1289,57 +1392,6 @@ position = Vector2(1020.00006, 907.00006)
 scale = Vector2(13.979357, 13.979357)
 shape = SubResource("CircleShape2D_buvrw")
 
-[node name="Stash100" type="Area2D" parent="." unique_id=394698429 groups=["stash_cells"]]
-z_index = 5
-position = Vector2(1339, -240)
-script = ExtResource("4_nm1dx")
-
-[node name="Cell100" type="AnimatedSprite2D" parent="Stash100" unique_id=180398834 groups=["stash_cells"]]
-z_index = 5
-position = Vector2(251.00003, 417)
-scale = Vector2(8, 8)
-sprite_frames = SubResource("SpriteFrames_u8bke")
-frame = 35
-
-[node name="Collision100" type="CollisionShape2D" parent="Stash100" unique_id=1159099581 groups=["stash_cells"]]
-position = Vector2(252, 413.00003)
-scale = Vector2(13.979357, 13.979357)
-shape = SubResource("CircleShape2D_buvrw")
-
-[node name="Stash101" type="Area2D" parent="." unique_id=754821852 groups=["stash_cells"]]
-z_index = 5
-position = Vector2(1341, 131)
-script = ExtResource("4_nm1dx")
-
-[node name="Cell101" type="AnimatedSprite2D" parent="Stash101" unique_id=1906242593 groups=["stash_cells"]]
-z_index = 5
-position = Vector2(251.00003, 417)
-scale = Vector2(8, 8)
-sprite_frames = SubResource("SpriteFrames_u8bke")
-frame = 35
-
-[node name="Collision101" type="CollisionShape2D" parent="Stash101" unique_id=1475958206 groups=["stash_cells"]]
-position = Vector2(252, 413.00003)
-scale = Vector2(13.979357, 13.979357)
-shape = SubResource("CircleShape2D_buvrw")
-
-[node name="Stash102" type="Area2D" parent="." unique_id=68831125 groups=["stash_cells"]]
-z_index = 5
-position = Vector2(1340, 489)
-script = ExtResource("4_nm1dx")
-
-[node name="Cell102" type="AnimatedSprite2D" parent="Stash102" unique_id=2144828167 groups=["stash_cells"]]
-position = Vector2(251.00003, 417)
-scale = Vector2(8, 8)
-sprite_frames = SubResource("SpriteFrames_u8bke")
-frame = 35
-
-[node name="Collision102" type="CollisionShape2D" parent="Stash102" unique_id=700102036 groups=["stash_cells"]]
-z_index = 1
-position = Vector2(252, 413.00003)
-scale = Vector2(13.979357, 13.979357)
-shape = SubResource("CircleShape2D_buvrw")
-
 [node name="DoorStatus" type="Label" parent="." unique_id=403201848]
 offset_left = 33.0
 offset_top = -100.0
@@ -1347,76 +1399,15 @@ offset_right = 118.0
 offset_bottom = -77.0
 text = "InitialState"
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=949502797]
-script = ExtResource("4_npr5r")
-
-[node name="TextureRect" type="TextureRect" parent="ParallaxBackground" unique_id=1341369736]
-z_index = -12
-offset_left = -65.0
-offset_top = 1138.0
-offset_right = -1.0
-offset_bottom = 1202.0
-rotation = -1.5707964
-scale = Vector2(18.95033, 21.977877)
-texture = SubResource("GradientTexture2D_u8bke")
-script = ExtResource("4_husjh")
-
-[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground" unique_id=1899894768]
-z_index = -1
-repeat_size = Vector2(1280, 1080)
-autoscroll = Vector2(-10, -5)
-repeat_times = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D" unique_id=466734330]
-modulate = Color(1, 1, 1, 0.78431374)
-z_index = -11
-position = Vector2(626, 533)
-scale = Vector2(8, 8)
-texture = ExtResource("5_npr5r")
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=697077190]
-z_index = -1
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1247990419]
-z_index = -10
-position = Vector2(640, 540)
-scale = Vector2(8, 8)
-texture = ExtResource("7_mq0tr")
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1389560730]
-z_index = -1
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=1948833750]
-position = Vector2(640, 540)
-scale = Vector2(8, 8)
-sprite_frames = SubResource("SpriteFrames_abnil")
-frame_progress = 0.03833704
-
-[node name="SidePanel" type="Area2D" parent="." unique_id=1070063216]
-z_index = 2
-
-[node name="ColorRect" type="ColorRect" parent="SidePanel" unique_id=1776431082]
-z_index = -3
-offset_left = 1270.0
-offset_top = 1.0
-offset_right = 1910.0
-offset_bottom = 1081.0
-mouse_filter = 2
-color = Color(0.3019608, 0.3019608, 0.3019608, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SidePanel" unique_id=908327499]
-position = Vector2(1591, 541.5)
-rotation = 3.1415925
-scale = Vector2(21.6956, 14.791881)
-shape = SubResource("RectangleShape2D_abnil")
-
-[node name="UI" parent="." unique_id=1826785090 instance=ExtResource("11_s2lay")]
-layer = 0
-
 [connection signal="timeout" from="ShakeTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="ShakeTimer" to="." method="_on_shake_timer_timeout"]
 [connection signal="timeout" from="OpenTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="OpenTimer" to="." method="_on_open_timer_timeout"]
+[connection signal="input_event" from="TempNextTurnButton" to="." method="_on_temp_next_turn_button_input_event"]
+[connection signal="input_event" from="TempNextTurnButton" to="." method="_on_side_panel_input_event"]
+[connection signal="input_event" from="UI/Stash100" to="." method="_on_stash_input_event" binds= [NodePath("Stash100/Cell100"), 0]]
+[connection signal="input_event" from="UI/Stash101" to="." method="_on_stash_input_event" binds= [NodePath("Stash101/Cell101"), 1]]
+[connection signal="input_event" from="UI/Stash102" to="." method="_on_stash_input_event" binds= [NodePath("Stash102/Cell102"), 2]]
 [connection signal="input_event" from="Area1" to="." method="_on_cell_input_event" binds= [NodePath("Area1/Cell1"), 1]]
 [connection signal="input_event" from="Area2" to="." method="_on_cell_input_event" binds= [NodePath("Area2/Cell2"), 2]]
 [connection signal="input_event" from="Area3" to="." method="_on_cell_input_event" binds= [NodePath("Area3/Cell3"), 3]]
