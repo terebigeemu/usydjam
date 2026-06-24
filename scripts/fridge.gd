@@ -415,6 +415,7 @@ func _on_shake_timer_timeout() -> void:
 		cell_array[i].position = cell_original_positions[i]
 		
 	get_random_employee()
+	
 	fridge_sprite.frame = OPEN
 	
 	open_timer.start()
