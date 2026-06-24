@@ -89,6 +89,7 @@ func _ready() -> void:
 
 	for i in stash_array:
 		i.frame = stash_item_array[n_stash]
+		i.visible = false
 		n_stash += 1
 	
 	for i in cell_array:
