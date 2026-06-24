@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="usydjam"
-run/main_scene="uid://bvfa18ddvvaon"
+run/main_scene="uid://ds3b5tal44hr8"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Globals="*uid://ikfwvoeqjlys"
 
 [display]
 

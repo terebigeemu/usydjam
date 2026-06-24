@@ -26,6 +26,7 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="MainMenu" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=176046976]
+visible = false
 layout_mode = 2
 mouse_filter = 2
 
@@ -85,6 +86,12 @@ texture_normal = ExtResource("2_ro3t7")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="CoinsLabel" type="Label" parent="PanelContainer/MarginContainer/ShopPage" unique_id=1575846367]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "erm you should not see this"
+horizontal_alignment = 1
+
 [node name="ShopLabel" type="Label" parent="PanelContainer/MarginContainer/ShopPage" unique_id=875980187]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
@@ -111,6 +118,7 @@ size_flags_stretch_ratio = 3.5
 layout_mode = 2
 
 [node name="EmployeePage" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1176839180]
+visible = false
 layout_mode = 2
 script = ExtResource("5_75u2n")
 employee_slot_scene = ExtResource("6_3wlde")
@@ -138,6 +146,7 @@ theme_override_constants/v_separation = 20
 columns = 6
 
 [node name="StashPage" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=376075644]
+visible = false
 layout_mode = 2
 
 [node name="TopBar" type="HBoxContainer" parent="PanelContainer/MarginContainer/StashPage" unique_id=530167626]
