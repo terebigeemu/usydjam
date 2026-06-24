@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bvfa18ddvvaon"]
 
 [ext_resource type="Script" uid="uid://b4eh34uyoaj51" path="res://scripts/ui.gd" id="1_dj8aq"]
+[ext_resource type="Texture2D" uid="uid://daxeu2jb62n32" path="res://assets/HomeBtnSprite.png" id="2_ro3t7"]
 
 [node name="UI" type="CanvasLayer" unique_id=1826785090]
 script = ExtResource("1_dj8aq")
@@ -14,14 +15,29 @@ offset_top = 0.16799974
 grow_horizontal = 2
 grow_vertical = 2
 offset_transform_enabled = true
+mouse_filter = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=281203841]
 layout_mode = 2
+mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=176046976]
+[node name="MainMenu" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=176046976]
+visible = false
 layout_mode = 2
+mouse_filter = 2
 
-[node name="Employees" type="MenuButton" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1341166046]
+[node name="ShopBtn" type="MenuButton" parent="PanelContainer/MarginContainer/MainMenu" unique_id=1611310431]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.9999997, 0.8563485, 0.55233353, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 70
+text = "Shop
+"
+
+[node name="EmployeesBtn" type="MenuButton" parent="PanelContainer/MarginContainer/MainMenu" unique_id=1341166046]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 0.8217194, 0.86063063, 1)
@@ -31,21 +47,68 @@ theme_override_constants/h_separation = 4
 theme_override_font_sizes/font_size = 70
 text = "Employees"
 
-[node name="Shop" type="MenuButton" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1611310431]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.9999997, 0.8563485, 0.55233353, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 20
-theme_override_font_sizes/font_size = 70
-text = "Shop
-"
-
-[node name="Market" type="MenuButton" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=680675728]
+[node name="MarketBtn" type="MenuButton" parent="PanelContainer/MarginContainer/MainMenu" unique_id=680675728]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.83274853, 0.94195986, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 20
 theme_override_font_sizes/font_size = 70
 text = "Market
 "
+
+[node name="ShopPage" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1092376491]
+layout_mode = 2
+
+[node name="TopBar" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopPage" unique_id=1705407923]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BtnHome" type="TextureButton" parent="PanelContainer/MarginContainer/ShopPage/TopBar" unique_id=1099208062]
+custom_minimum_size = Vector2(80, 60)
+layout_mode = 2
+texture_normal = ExtResource("2_ro3t7")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BuySection" type="ScrollContainer" parent="PanelContainer/MarginContainer/ShopPage" unique_id=1887645602]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.5
+
+[node name="BuyGrid" type="GridContainer" parent="PanelContainer/MarginContainer/ShopPage/BuySection" unique_id=1811093333]
+layout_mode = 2
+columns = 6
+
+[node name="SellSection" type="ScrollContainer" parent="PanelContainer/MarginContainer/ShopPage" unique_id=950362076]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.5
+
+[node name="SellGrid" type="GridContainer" parent="PanelContainer/MarginContainer/ShopPage/SellSection" unique_id=1365918977]
+layout_mode = 2
+
+[node name="EmployeePage" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1176839180]
+layout_mode = 2
+
+[node name="TopBar" type="HBoxContainer" parent="PanelContainer/MarginContainer/EmployeePage" unique_id=1830381082]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BtnHome" type="TextureButton" parent="PanelContainer/MarginContainer/EmployeePage/TopBar" unique_id=1595406917]
+custom_minimum_size = Vector2(80, 60)
+layout_mode = 2
+texture_normal = ExtResource("2_ro3t7")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="EmployeeSection" type="ScrollContainer" parent="PanelContainer/MarginContainer/EmployeePage" unique_id=1161835678]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 7.0
+
+[node name="EGrid" type="GridContainer" parent="PanelContainer/MarginContainer/EmployeePage/EmployeeSection" unique_id=1907066367]
+layout_mode = 2
+columns = 6
