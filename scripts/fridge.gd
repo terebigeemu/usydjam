@@ -432,7 +432,7 @@ func _on_open_timer_timeout() -> void:
 
 # Shop updates
 
-func _on_inventory_update(id: int, cost: int) -> void: # this is only to be used by buy-shop
+func _on_inventory_update(id: int, cost: int, store_array_index: int) -> void: # this is only to be used by buy-shop
 	
 	var has_filled: bool = false
 	
@@ -463,6 +463,7 @@ func _on_inventory_update(id: int, cost: int) -> void: # this is only to be used
 		print("No space in inventory")	
 	elif has_filled == true:
 		Globals.player_bal -= cost	
+		Globals.remove_item_from_shop.emit(store_array_index)
 		has_filled = false # just in case yknow
 	
 func update_cell(id: Variant) -> void:

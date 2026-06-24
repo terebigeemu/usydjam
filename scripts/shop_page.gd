@@ -12,6 +12,8 @@ const ITEMS_FOLDER = "res://items/"
 var all_game_items: Array[ItemData] = []
 
 func _ready():	
+	Globals.remove_item_from_shop.connect(_on_remove_item_from_shop)
+
 	load_all_items_from_folder()
 	roll_new_shop_items()
 
@@ -43,7 +45,7 @@ func roll_new_shop_items():
 		
 	# 3. Create a temporary copy of our items array and shuffle it
 	var temp_items = all_game_items.duplicate()
-	temp_items.shuffle() # This uses Godot's built-in RNG to randomize the array!
+	temp_items.shuffle() 
 	
 	# 4. Grab the first 3 items from the newly shuffled array
 	for i in range(3):
@@ -56,9 +58,14 @@ func roll_new_shop_items():
 		# 6. Pass the item data (including the icon) into the slot
 		new_slot.setup(chosen_item)
 		print(str(chosen_item))
-		
+
+func _on_remove_item_from_shop(store_array_index: int) -> void:	
+	print("called _on_remove_item_from_shop with store_array_index " + str(store_array_index))
+	buy_grid.get_child(store_array_index).queue_free()
+
 func _process(delta: float) -> void:
 	# the smart thing to do would be to use a signal to update this
 	# the lazy thing to do is just chuck it here
+	# i do the lazy thing
 	# huh what's optimisation?
 	coins_label.text = "You have " + str(Globals.player_bal) + " coins!"
