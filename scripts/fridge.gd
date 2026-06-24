@@ -13,6 +13,8 @@ extends Node
 @onready var stash100: AnimatedSprite2D = $Stash100/Cell100
 @onready var stash101: AnimatedSprite2D = $Stash101/Cell101
 @onready var stash102: AnimatedSprite2D = $Stash102/Cell102
+@onready var start_btn = $UI/PanelContainer/MarginContainer/MainMenu/StartBtn
+
 
 var fridge_original_position: Vector2
 var cell_original_positions: Array[Vector2]
@@ -71,7 +73,7 @@ func _ready() -> void:
 	# randomly generate cells 1-6
 	
 	# background should be person putting in food
-
+	
 	
 	var n_stash: int = 0
 	var n_cell: int = 0
@@ -118,6 +120,8 @@ func _ready() -> void:
 	# todo: detect hoverover
 	
 	# todo: swap fn for fridge
+	
+	start_btn.pressed.connect(_on_start_btn_pressed)
 	
 func stash_fill(cell_id, item_no, inventory_index):
 	
@@ -336,11 +340,16 @@ const OPEN = 1
 var turn_count: int = 0
 
 # Temporary trigger for testing
-func _on_side_panel_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.pressed:
-		if event.button_index == MOUSE_BUTTON_LEFT and turn_count % 2 == 0:
-			advance_turn()
-			
+#func _on_side_panel_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	#if event is InputEventMouseButton and event.pressed:
+		#if event.button_index == MOUSE_BUTTON_LEFT and turn_count % 2 == 0:
+			#advance_turn()
+			#
+# Function that runs when Start is clicked
+func _on_start_btn_pressed():
+	if turn_count % 2 == 0:
+		advance_turn()
+		
 func get_random_employee():
 	var frame_count = employee.sprite_frames.get_frame_count("default")
 	var random_frame = randi_range(0, frame_count - 1)

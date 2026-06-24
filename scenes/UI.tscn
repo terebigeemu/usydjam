@@ -29,6 +29,12 @@ mouse_filter = 2
 layout_mode = 2
 mouse_filter = 2
 
+[node name="StartBtn" type="Button" parent="PanelContainer/MarginContainer/MainMenu" unique_id=1007978610]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 60
+text = "START ROUND"
+
 [node name="ShopBtn" type="MenuButton" parent="PanelContainer/MarginContainer/MainMenu" unique_id=1611310431]
 layout_mode = 2
 size_flags_vertical = 3
