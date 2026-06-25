@@ -592,20 +592,21 @@ func _on_temp_button_input_event(viewport: Node, event: InputEvent, shape_idx: i
 			advance_level()
 	
 func advance_level():
-	level += 1
-	print("Level: " + str(level))
-	city.position.y += 200
+	pass
+	#level += 1
+	#print("Level: " + str(level))
+	#city.position.y += 200
 	
 func win_game():
 	win_game_screen.visible = true
-	final_score_label.text = "You impressed " + Globals.chosen_employee.title + " and they're having you moved upstairs! You were promoted in " + str(turn_count) + " turns."
+	final_score_label.text = "You impressed " + Globals.chosen_employee.title + " and they're having you moved upstairs!\nYou were promoted in " + str(turn_count) + " turns."
 	final_score_label.visible = true
 	input_blocker.show()
 	background_music.fade_audio(-80.0, 0.01)
 	
 func end_game():
 	game_over_screen.visible = true
-	final_score_label.text = "You lost favour with " + Globals.chosen_employee.title + " and they asked for you to be let go. You survived " + str(turn_count) + " turns."
+	final_score_label.text = "You lost favour with " + Globals.chosen_employee.title + " and they asked for you to be let go.\nYou survived " + str(turn_count) + " turns."
 	final_score_label.visible = true
 	input_blocker.show()
 	background_music.fade_audio(-80.0, 0.01)
