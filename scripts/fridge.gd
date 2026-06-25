@@ -364,6 +364,7 @@ func _on_stash_input_event(viewport: Node, event: InputEvent, shape_idx: int, ex
 @export var shake_amount: float = 5.0
 @onready var fridge_sprite: AnimatedSprite2D = $FridgeInside
 @onready var employee: AnimatedSprite2D = $Background/Employee/AnimatedSprite2D
+@onready var city: Sprite2D = $Background/City/Sprite2D
 @onready var shake_timer = $ShakeTimer
 @onready var open_timer = $OpenTimer
 
@@ -371,11 +372,6 @@ const CLOSED = 0
 const OPEN = 1
 var turn_count: int = 0
 
-# Temporary trigger for testing
-#func _on_temp_next_turn_button_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	#if event is InputEventMouseButton and event.pressed:
-		#if event.button_index == MOUSE_BUTTON_LEFT and turn_count % 2 == 0:
-			#advance_turn()
 
 # Function that runs when Start is clicked
 func _on_start_btn_pressed():
@@ -432,6 +428,16 @@ func _on_open_timer_timeout() -> void:
 		cell_array[chosen_idx].frame = item_empty
 		
 	advance_turn()
+	
+func _on_temp_button_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			advance_level()
+	
+func advance_level():
+	level += 1
+	print("Level: " + str(level))
+	city.position.y += 200
 
 # Shop updates
 
