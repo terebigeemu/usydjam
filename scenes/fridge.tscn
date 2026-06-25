@@ -11,6 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://57xmjwbynog7" path="res://assets/office1.png" id="7_mq0tr"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="7_nm1dx"]
 [ext_resource type="PackedScene" uid="uid://bvfa18ddvvaon" path="res://scenes/UI.tscn" id="11_s2lay"]
+[ext_resource type="AudioStream" uid="uid://bjxs8isv8r6jr" path="res://assets/Grab.mp3" id="15_iod1f"]
+[ext_resource type="AudioStream" uid="uid://uajwe0q5i253" path="res://assets/FridgeOpen.mp3" id="16_5l13h"]
+[ext_resource type="AudioStream" uid="uid://dtnn22aeghtf1" path="res://assets/FridgeClose.mp3" id="17_tfbev"]
+[ext_resource type="AudioStream" uid="uid://cwqury6eaejp3" path="res://assets/FridgeBuzz.mp3" id="18_v6xy7"]
 
 [sub_resource type="Gradient" id="Gradient_buvrw"]
 colors = PackedColorArray(0.68235296, 0.91764706, 0.9882353, 1, 0.47058824, 0.8666667, 0.98039216, 1)
@@ -1218,6 +1222,14 @@ texture = ExtResource("7_mq0tr")
 position = Vector2(640, 540)
 scale = Vector2(8, 8)
 
+[node name="OpenSFXTimer" type="Timer" parent="." unique_id=1450692559]
+wait_time = 1.5
+one_shot = true
+
+[node name="CloseSFXTimer" type="Timer" parent="." unique_id=154517874]
+wait_time = 4.5
+one_shot = true
+
 [node name="ShakeTimer" type="Timer" parent="." unique_id=928900059]
 wait_time = 2.0
 one_shot = true
@@ -1246,7 +1258,7 @@ shape = SubResource("RectangleShape2D_tfbev")
 [node name="Stash100" type="Area2D" parent="UI" unique_id=394698429 groups=["stash_cells"]]
 z_index = 999
 z_as_relative = false
-position = Vector2(1349, -241)
+position = Vector2(1350, -241)
 script = ExtResource("4_nm1dx")
 
 [node name="Cell100" type="AnimatedSprite2D" parent="UI/Stash100" unique_id=180398834 groups=["stash_cells"]]
@@ -1263,7 +1275,7 @@ shape = SubResource("CircleShape2D_buvrw")
 
 [node name="Stash101" type="Area2D" parent="UI" unique_id=754821852 groups=["stash_cells"]]
 z_index = 5
-position = Vector2(1351, 130)
+position = Vector2(1350, 130)
 script = ExtResource("4_nm1dx")
 
 [node name="Cell101" type="AnimatedSprite2D" parent="UI/Stash101" unique_id=1906242593 groups=["stash_cells"]]
@@ -1296,88 +1308,76 @@ scale = Vector2(13.979357, 13.979357)
 shape = SubResource("CircleShape2D_buvrw")
 
 [node name="Area1" type="Area2D" parent="." unique_id=2124120713]
-position = Vector2(-2, -22)
+position = Vector2(256, 400)
 
 [node name="Cell1" type="AnimatedSprite2D" parent="Area1" unique_id=249107901]
-position = Vector2(251.00003, 417)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_u8bke")
 frame = 35
 
 [node name="Collision1" type="CollisionShape2D" parent="Area1" unique_id=938111889]
-position = Vector2(252, 413.00003)
-scale = Vector2(13.979357, 13.979357)
+scale = Vector2(14, 14)
 shape = SubResource("CircleShape2D_buvrw")
 
 [node name="Area2" type="Area2D" parent="." unique_id=698623990]
-position = Vector2(-11, -27)
+position = Vector2(632, 400)
 
 [node name="Cell2" type="AnimatedSprite2D" parent="Area2" unique_id=662472063]
-position = Vector2(634, 412)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_u8bke")
 frame = 39
 frame_progress = 0.36576545
 
 [node name="Collision2" type="CollisionShape2D" parent="Area2" unique_id=1439615668]
-position = Vector2(635, 418)
-scale = Vector2(13.979357, 13.979357)
+scale = Vector2(14, 14)
 shape = SubResource("CircleShape2D_buvrw")
 
 [node name="Area3" type="Area2D" parent="." unique_id=43603100]
-position = Vector2(-27, -14)
+position = Vector2(1004, 400)
 
 [node name="Cell3" type="AnimatedSprite2D" parent="Area3" unique_id=1330796320]
-position = Vector2(1028, 407)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_u8bke")
 frame = 43
 
 [node name="Collision3" type="CollisionShape2D" parent="Area3" unique_id=886461438]
-position = Vector2(1039, 404)
-scale = Vector2(13.979357, 13.979357)
+scale = Vector2(14, 14)
 shape = SubResource("CircleShape2D_buvrw")
 
 [node name="Area4" type="Area2D" parent="." unique_id=1025747186]
-position = Vector2(-16, -24)
+position = Vector2(256, 888)
 
 [node name="Cell4" type="AnimatedSprite2D" parent="Area4" unique_id=1068781061]
-position = Vector2(247.00002, 911)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_u8bke")
 frame = 26
 
 [node name="Collision4" type="CollisionShape2D" parent="Area4" unique_id=343126224]
-position = Vector2(253.00002, 900)
-scale = Vector2(13.979357, 13.979357)
+scale = Vector2(14, 14)
 shape = SubResource("CircleShape2D_buvrw")
 
 [node name="Area5" type="Area2D" parent="." unique_id=26352538]
-position = Vector2(-5, -25)
+position = Vector2(632, 888)
 
 [node name="Cell5" type="AnimatedSprite2D" parent="Area5" unique_id=426618104]
-position = Vector2(637, 889)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_u8bke")
 frame = 1
 
 [node name="Collision5" type="CollisionShape2D" parent="Area5" unique_id=1489543006]
-position = Vector2(630, 900)
-scale = Vector2(13.979357, 13.979357)
+scale = Vector2(14, 14)
 shape = SubResource("CircleShape2D_buvrw")
 
 [node name="Area6" type="Area2D" parent="." unique_id=32644874]
-position = Vector2(-4, -29)
+position = Vector2(1004, 888)
 
 [node name="Cell6" type="AnimatedSprite2D" parent="Area6" unique_id=1128920026]
-position = Vector2(1035.0001, 899.00006)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_u8bke")
 frame = 50
 
 [node name="Collision1" type="CollisionShape2D" parent="Area6" unique_id=1203720936]
-position = Vector2(1020.00006, 907.00006)
-scale = Vector2(13.979357, 13.979357)
+scale = Vector2(14, 14)
 shape = SubResource("CircleShape2D_buvrw")
 
 [node name="DoorStatus" type="Label" parent="." unique_id=403201848]
@@ -1387,6 +1387,24 @@ offset_right = 118.0
 offset_bottom = -77.0
 text = "InitialState"
 
+[node name="FridgeOpenSFX" type="AudioStreamPlayer2D" parent="." unique_id=223705715]
+stream = ExtResource("16_5l13h")
+volume_db = 24.0
+
+[node name="FridgeCloseSFX" type="AudioStreamPlayer2D" parent="." unique_id=472742746]
+stream = ExtResource("17_tfbev")
+volume_db = 20.0
+
+[node name="FridgeBuzzSFX" type="AudioStreamPlayer2D" parent="." unique_id=1513846490]
+stream = ExtResource("18_v6xy7")
+volume_db = 10.0
+
+[node name="FridgeGrabSFX" type="AudioStreamPlayer2D" parent="." unique_id=1921800784]
+stream = ExtResource("15_iod1f")
+volume_db = 10.0
+
+[connection signal="timeout" from="OpenSFXTimer" to="." method="_on_open_sfx_timer_timeout"]
+[connection signal="timeout" from="CloseSFXTimer" to="." method="_on_close_sfx_timer_timeout"]
 [connection signal="timeout" from="ShakeTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="ShakeTimer" to="." method="_on_shake_timer_timeout"]
 [connection signal="timeout" from="OpenTimer" to="." method="_on_timer_timeout"]
