@@ -56,6 +56,7 @@ signal refresh_buy_shop
 signal employee_takes_from_fridge(employee_title)
 signal release_menu()
 signal block_menu()
+signal update_slot_tooltip_signal(i, id)
 
 var affinity_to_add: int = 0;
 var affinity_to_add_hasbeenadded: bool = true;

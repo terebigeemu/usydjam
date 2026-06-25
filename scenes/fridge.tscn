@@ -1471,7 +1471,6 @@ script = ExtResource("12_nm1dx")
 
 [node name="StageScreen" type="CanvasLayer" parent="." unique_id=1987877174]
 layer = 2
-visible = false
 
 [node name="InputBlocker" type="ColorRect" parent="StageScreen" unique_id=343126667]
 offset_right = 1920.0

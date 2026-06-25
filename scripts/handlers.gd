@@ -156,6 +156,8 @@ func _employee_picks_food_from_fridge_or_smth_idk(employee_title: String) -> voi
 		cell_item_array[best_food_index] = Globals.item_empty
 		cell_array[best_food_index].frame = cell_item_array[best_food_index]
 		
+		Globals.update_slot_tooltip_signal.emit(cell_array[best_food_index], Globals.item_empty)
+		
 		print("food was taken: name = " + str(best_food_name))
 		
 	#var return_data: Array = []

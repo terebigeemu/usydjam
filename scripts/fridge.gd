@@ -155,6 +155,7 @@ func _ready() -> void:
 	
 	Globals.add_purchase_to_inventory.connect(_on_inventory_update)
 	Globals.action_sale_in_inventory.connect(_on_action_sale_in_inventory)
+	Globals.update_slot_tooltip_signal.connect(update_slot_tooltip)
 	
 	door_status.text = "init"
 		
@@ -176,7 +177,6 @@ func _ready() -> void:
 		i.visible = false
 			
 	for i in cell_array:
-		await get_tree().create_timer(0.05).timeout
 		cell_item_array[n_cell] = rng.randi_range(0, 156)
 		i.frame = cell_item_array[n_cell]
 		i.visible = true
