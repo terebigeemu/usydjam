@@ -17,7 +17,7 @@ func load_all_employees():
 				all_game_employees.append(emp)
 
 # We changed this function slightly to RETURN the chosen employee data
-func get_random_employee(current_player_level: String) -> EmployeeData:
+func summon_employee(current_player_level: String) -> EmployeeData:
 	var valid_pool: Array[EmployeeData] = []
 	var total_encounter_weight: float = 0.0
 	

@@ -1,6 +1,7 @@
 extends Node
 
 var player_bal: int = 10
+var player_level: String = "Employee"
 
 @onready var cell1: AnimatedSprite2D = get_node("../Fridge/Area1/Cell1")
 @onready var cell2: AnimatedSprite2D = get_node("../Fridge/Area2/Cell2")

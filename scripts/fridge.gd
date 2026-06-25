@@ -365,7 +365,7 @@ func _on_stash_input_event(viewport: Node, event: InputEvent, shape_idx: int, ex
 
 @export var shake_amount: float = 5.0
 @onready var fridge_sprite: AnimatedSprite2D = $FridgeInside
-@onready var employee: AnimatedSprite2D = $Background/Employee/AnimatedSprite2D
+@onready var employee: Sprite2D = $Background/Employee/AnimatedSprite2D
 @onready var city: Sprite2D = $Background/City/Sprite2D
 @onready var shake_timer = $ShakeTimer
 @onready var open_timer = $OpenTimer
@@ -389,13 +389,24 @@ func _on_start_btn_pressed():
 
 
 ########
-func get_random_employee():
-	var frame_count = employee.sprite_frames.get_frame_count("default")
-	var random_frame = randi_range(0, frame_count - 1)
-	print(random_frame)
-	employee.frame = random_frame
+#func get_random_employee():
+	#var frame_count = employee.sprite_frames.get_frame_count("default")
+	#var random_frame = randi_range(0, frame_count - 1)
+	#print(random_frame)
+	#employee.frame = random_frame
 ##########
-
+# We now pass the current level into the function (e.g. "Level 1")
+func summon_employee(current_player_level: String):
+	
+	# Ask the Autoload for a random employee based on the level
+	var chosen_employee = EmployeeManager.summon_employee(current_player_level)
+	
+	# Safety check: Make sure it actually found someone
+	if chosen_employee != null:
+		print("Spawned Employee: ", chosen_employee.title)
+		
+		# Apply the employee's icon directly to your visual node!
+		employee.texture = chosen_employee.icon
 
 
 
@@ -426,7 +437,7 @@ func _on_shake_timer_timeout() -> void:
 	for i in cell_array.size():
 		cell_array[i].position = cell_original_positions[i]
 		
-	get_random_employee()
+	summon_employee(Globals.player_level)
 	
 	fridge_sprite.frame = OPEN
 	

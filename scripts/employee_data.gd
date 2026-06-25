@@ -9,7 +9,5 @@ class_name EmployeeData
 @export var encounter: float = 0.0
 @export var preferencecount: int = 0
 @export var seenstatus: bool = false
-
-# The two newly requested columns
 @export var preferences: String = ""
 @export var icon: Texture2D
