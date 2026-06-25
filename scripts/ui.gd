@@ -88,10 +88,6 @@ func go_home(mute_sound = false):
 	current_menu.show()
 
 
-func _exit_tree() -> void:
-	pass # Replace with function body.
-
-
 func _open_stash_ui() -> void:
 	for i in stash_cells:
 		i.visible = true
