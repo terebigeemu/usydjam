@@ -33,7 +33,7 @@ func food_attribute_parser(id: int) -> Array:
 	unparsed_attrb_array = unparsed_attrb.split(",")
 	
 	# this is where our clean array should theoretically go
-	var attrb_array = ["AMOGUS", "AMOGUS", "AMOGUS", "AMOGUS"] # prefill with empty items
+	var attrb_array = ["AMOGUS", "AMOGUS", "AMOGUS", "AMOGUS", "AMOGUS"] # prefill with empty items
 	
 	var j: int = 0
 	

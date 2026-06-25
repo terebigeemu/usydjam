@@ -394,6 +394,7 @@ var turn_count: int = 0
 # Function that runs when Start is clicked
 func _on_start_btn_pressed():
 	if turn_count % 2 == 0:
+		Globals.block_menu.emit()
 		advance_turn()
 		
 # Chooses employee from available ones in employees folder based on whether 
@@ -430,6 +431,7 @@ func advance_turn():
 		print((turn_count % 15) + 7)
 	else:
 		fridge_sprite.frame = CLOSED
+		Globals.release_menu.emit()
 		background_music.fade_audio(10.0, 2)
 		fridge_buzz_sfx.stop()
 

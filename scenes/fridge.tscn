@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://57xmjwbynog7" path="res://assets/office1.png" id="7_mq0tr"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="7_nm1dx"]
 [ext_resource type="PackedScene" uid="uid://bvfa18ddvvaon" path="res://scenes/UI.tscn" id="11_s2lay"]
+[ext_resource type="Script" uid="uid://fe2ybq5u4hj1" path="res://scripts/cover_menu.gd" id="12_6s3sb"]
 [ext_resource type="Script" uid="uid://io1qtrhejmyp" path="res://scripts/handlers.gd" id="12_nm1dx"]
 [ext_resource type="Texture2D" uid="uid://b32whxssbahlv" path="res://assets/roy.png" id="12_t2fjl"]
 [ext_resource type="AudioStream" uid="uid://bjxs8isv8r6jr" path="res://assets/Grab.mp3" id="15_iod1f"]
@@ -1263,8 +1264,17 @@ shape = SubResource("RectangleShape2D_tfbev")
 
 [node name="UI" parent="." unique_id=1826785090 instance=ExtResource("11_s2lay")]
 
+[node name="CoverMenu" type="Panel" parent="UI" unique_id=234450630]
+z_index = 25
+offset_left = 1282.0
+offset_top = -3.999998
+offset_right = 1322.0
+offset_bottom = 36.0
+scale = Vector2(15.954549, 27.273582)
+script = ExtResource("12_6s3sb")
+
 [node name="Stash100" type="Area2D" parent="UI" unique_id=394698429 groups=["stash_cells"]]
-z_index = 999
+z_index = 19
 z_as_relative = false
 position = Vector2(1350, -241)
 script = ExtResource("4_nm1dx")
