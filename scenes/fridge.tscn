@@ -1483,7 +1483,6 @@ position = Vector2(960, 540)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_abnil")
 autoplay = "default"
-frame_progress = 0.1397391
 script = ExtResource("28_qqhkm")
 
 [node name="Cutscene4Label" type="Label" parent="StageScreen" unique_id=2014072875]

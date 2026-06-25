@@ -477,8 +477,6 @@ func _on_stash_input_event(viewport: Node, event: InputEvent, shape_idx: int, ex
 @onready var background_music = $BackgroundMusic
 @onready var canvas_modulate = $Background/DayNightCycle
 @onready var game_over_screen = $StageScreen/GameOverScreen
-@onready var cutscene = $StageScreen/Cutscene
-@onready var input_blocker = $StageScreen/InputBlocker
 
 const CLOSED = 0
 const OPEN = 1
