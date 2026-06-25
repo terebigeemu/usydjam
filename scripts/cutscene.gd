@@ -24,5 +24,6 @@ func _on_input_blocker_gui_input(event: InputEvent) -> void:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			self.hide()
 			input_blocker.hide()
+			cutscene4_label.hide()
 			cutscene5_label.hide()
 			cutscene5_label2.hide()
