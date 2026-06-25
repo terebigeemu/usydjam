@@ -1,8 +1,8 @@
 NPC,Level,Affinity,Can promote you,Can Remove you,Percentage,Preferences,SeenStatus
-Intern 1,Employee,0,FALSE,FALSE,0.2,4,TRUE
-Intern 2,Employee,0,FALSE,FALSE,0.2,4,TRUE
+Intern 1,Employee,0,FALSE,FALSE,0.2,4,FALSE
+Intern 2,Employee,0,FALSE,FALSE,0.2,4,FALSE
 Intern 3 (CEOs son),Employee,0,TRUE,FALSE,0.2,4,FALSE
-Junior Analyst,Employee,0,FALSE,FALSE,0.2,4,TRUE
+Junior Analyst,Employee,0,FALSE,FALSE,0.2,4,FALSE
 Senior Analyst,Employee,0,TRUE,TRUE,0.2,4,FALSE
 Senior Analyst,Team Leader,0,FALSE,FALSE,0.1667,4,FALSE
 Lead Analyst,Team Leader,0,TRUE,TRUE,0.1667,3,FALSE
@@ -13,7 +13,8 @@ Lead Manager,Team Leader,0,TRUE,TRUE,0.1667,3,FALSE
 Lead Manager,Manager,0,FALSE,FALSE,0.25,3,FALSE
 Branch Manager,Manager,0,FALSE,TRUE,0.25,2,FALSE
 Region Manager,Manager,0,TRUE,TRUE,0.25,2,FALSE
-Head Manager,"Manager, C-Suite",0,TRUE,TRUE,0.25,2,FALSE
+Head Manager,Manager,0,TRUE,TRUE,0.25,2,FALSE
+Head Manager,C-Suite,1,TRUE,TRUE,0.25,2,FALSE
 COO,C-Suite,0,FALSE,TRUE,0.3,1,FALSE
 CTO,C-Suite,0,FALSE,TRUE,0.3,1,FALSE
 CFO,C-Suite,0,FALSE,TRUE,0.3,1,FALSE

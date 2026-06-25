@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EmployeeData" format=3 uid="uid://bmmhlvivxixs1"]
+
+[ext_resource type="Texture2D" uid="uid://u4bhle2chw6i" path="res://assets/senior_analyst.png" id="1_1hklj"]
+[ext_resource type="Script" uid="uid://bjohfio4ovnil" path="res://scripts/employee_data.gd" id="2_70pg3"]
+
+[resource]
+script = ExtResource("2_70pg3")
+title = "Senior Analyst"
+level = "Employee"
+promotion = true
+death = true
+encounter = 0.2
+preferencecount = 4
+preferences = "Carbs, Dairy, Salad, Neutral"
+icon = ExtResource("1_1hklj")

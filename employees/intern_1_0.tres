@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EmployeeData" format=3 uid="uid://nmm4oqy3li56"]
+
+[ext_resource type="Texture2D" uid="uid://buen4c87sltbn" path="res://assets/intern_1.png" id="1_4ppbk"]
+[ext_resource type="Script" uid="uid://bjohfio4ovnil" path="res://scripts/employee_data.gd" id="2_ffx2y"]
+
+[resource]
+script = ExtResource("2_ffx2y")
+title = "Intern 1"
+level = "Employee"
+encounter = 0.2
+preferencecount = 4
+preferences = "Sour, Dairy, Mild Sweet, Pungent"
+icon = ExtResource("1_4ppbk")

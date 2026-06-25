@@ -1,5 +1,10 @@
 extends Node
 
+signal new_employee_encountered
+
+###
+signal update_affinity
+###
 const EMP_FOLDER = "res://employees/"
 var all_game_employees: Array[EmployeeData] = []
 
@@ -45,5 +50,8 @@ func summon_employee(current_player_level: String) -> EmployeeData:
 	# Mark them as seen in the database right when they are rolled!
 	if chosen_employee.seenstatus == false:
 		chosen_employee.seenstatus = true
+		
+		# 2. Broadcast the signal to the rest of the game!
+		new_employee_encountered.emit()
 		
 	return chosen_employee

@@ -2,7 +2,7 @@
 extends EditorScript
 
 const SAVE_PATH = "res://employees/"
-const CSV_PATH = "res://data/EmployeeTable.csv"
+const CSV_PATH = "res://Data/EmployeeTable.csv"
 
 # Put all possible preference words here!
 const PREF_WORDS = [
@@ -52,10 +52,10 @@ func _run():
 		# Join them together into a single string (e.g., "Coffee, Quiet, Money")
 		emp.preferences = ", ".join(chosen_prefs)
 		
-		# --- PNG ICON LOGIC ---
+		# PNG ICON LOGIC
 		# Assumes your icons are named after the employee title (e.g., "manager.png")
 		var clean_title = emp.title.to_lower().replace(" ", "_")
-		var icon_path = "res://assets/EmployeeTest/" + clean_title + ".png"
+		var icon_path = "res://assets/" + clean_title + ".png"
 		
 		if ResourceLoader.exists(icon_path):
 			emp.icon = load(icon_path)
@@ -65,8 +65,8 @@ func _run():
 			if ResourceLoader.exists("res://assets/EmployeeTest.png"):
 				emp.icon = load("res://assets/EmployeeTest.png")
 		
-		# Save the resource
-		var full_save_path = SAVE_PATH + clean_title + ".tres"
+		# Save the resource with a unique ID (count) to prevent overwriting duplicates
+		var full_save_path = SAVE_PATH + clean_title + "_" + str(count) + ".tres"
 		ResourceSaver.save(emp, full_save_path)
 		count += 1
 		

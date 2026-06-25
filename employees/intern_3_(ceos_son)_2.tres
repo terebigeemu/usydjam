@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EmployeeData" format=3 uid="uid://ckmjybkoexmhj"]
+
+[ext_resource type="Texture2D" uid="uid://cl153ofc4vinp" path="res://assets/intern_3_(ceos_son).png" id="1_xw8ty"]
+[ext_resource type="Script" uid="uid://bjohfio4ovnil" path="res://scripts/employee_data.gd" id="2_85ndv"]
+
+[resource]
+script = ExtResource("2_85ndv")
+title = "Intern 3 (CEOs son)"
+level = "Employee"
+promotion = true
+encounter = 0.2
+preferencecount = 4
+preferences = "Neutral, Vegetable, Carbs, Spicy"
+icon = ExtResource("1_xw8ty")

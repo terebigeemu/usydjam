@@ -380,22 +380,8 @@ func _on_start_btn_pressed():
 	if turn_count % 2 == 0:
 		advance_turn()
 		
-# Need to get this connected to each employee, need to expand this so 
-# only employees of appropriate levels can show up, based on fridges level
-
-
-
-
-
-
-########
-#func get_random_employee():
-	#var frame_count = employee.sprite_frames.get_frame_count("default")
-	#var random_frame = randi_range(0, frame_count - 1)
-	#print(random_frame)
-	#employee.frame = random_frame
-##########
-# We now pass the current level into the function (e.g. "Level 1")
+# Chooses employee from available ones in employees folder based on whether 
+# they have the same level as player and based on a probability
 func summon_employee(current_player_level: String):
 	
 	# Ask the Autoload for a random employee based on the level

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EmployeeData" format=3 uid="uid://dvxgt838bwbyb"]
+
+[ext_resource type="Texture2D" uid="uid://u4bhle2chw6i" path="res://assets/senior_analyst.png" id="1_i58wu"]
+[ext_resource type="Script" uid="uid://bjohfio4ovnil" path="res://scripts/employee_data.gd" id="2_add3h"]
+
+[resource]
+script = ExtResource("2_add3h")
+title = "Senior Analyst"
+level = "Team Leader"
+encounter = 0.1667
+preferencecount = 4
+preferences = "Dessert, Minty, Drink, Pastry"
+icon = ExtResource("1_i58wu")
