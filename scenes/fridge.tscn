@@ -6,11 +6,13 @@
 [ext_resource type="Script" uid="uid://b0xawac0vvxw5" path="res://scripts/skybox.gd" id="4_husjh"]
 [ext_resource type="Script" uid="uid://5o47sdhdufep" path="res://scripts/stash_init.gd" id="4_nm1dx"]
 [ext_resource type="Script" uid="uid://c1gt0wwr3gvxt" path="res://scripts/parallax_background.gd" id="4_npr5r"]
+[ext_resource type="Texture2D" uid="uid://bwmnshfr8ch06" path="res://assets/city.png" id="5_2icyl"]
 [ext_resource type="Texture2D" uid="uid://dan8bmestv28h" path="res://assets/clouds.png" id="5_npr5r"]
 [ext_resource type="Texture2D" uid="uid://57xmjwbynog7" path="res://assets/office1.png" id="7_mq0tr"]
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="7_nm1dx"]
 [ext_resource type="Texture2D" uid="uid://bfauu7v4jlohq" path="res://assets/Employee1.png" id="8_cx14s"]
 [ext_resource type="Texture2D" uid="uid://u4bhle2chw6i" path="res://assets/Employee2.png" id="9_mq0tr"]
+[ext_resource type="Texture2D" uid="uid://buen4c87sltbn" path="res://assets/Employee4.png" id="10_iod1f"]
 [ext_resource type="Texture2D" uid="uid://cl153ofc4vinp" path="res://assets/Employee3.png" id="10_s2lay"]
 [ext_resource type="PackedScene" uid="uid://bvfa18ddvvaon" path="res://scenes/UI.tscn" id="11_s2lay"]
 
@@ -31,6 +33,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("10_s2lay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_iod1f")
 }],
 "loop": 0,
 "name": &"default",
@@ -1216,7 +1221,15 @@ position = Vector2(626, 533)
 scale = Vector2(8, 8)
 texture = ExtResource("5_npr5r")
 
+[node name="City" type="Parallax2D" parent="Background" unique_id=1116702067]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/City" unique_id=306686288]
+position = Vector2(640, 540)
+scale = Vector2(8, 8)
+texture = ExtResource("5_2icyl")
+
 [node name="Office" type="Parallax2D" parent="Background" unique_id=1723716411]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Office" unique_id=1659687288]
 position = Vector2(640, 540)
@@ -1245,9 +1258,9 @@ scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_i7dow")
 frame_progress = 0.7204942
 
-[node name="TempNextTurnButton" type="Area2D" parent="." unique_id=269629004]
+[node name="TempButton" type="Area2D" parent="." unique_id=269629004]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TempNextTurnButton" unique_id=166603213]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TempButton" unique_id=166603213]
 position = Vector2(1136.75, 102.125)
 rotation = 3.1415925
 scale = Vector2(21.6956, 14.791881)
@@ -1403,8 +1416,7 @@ text = "InitialState"
 [connection signal="timeout" from="ShakeTimer" to="." method="_on_shake_timer_timeout"]
 [connection signal="timeout" from="OpenTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="OpenTimer" to="." method="_on_open_timer_timeout"]
-[connection signal="input_event" from="TempNextTurnButton" to="." method="_on_side_panel_input_event"]
-[connection signal="input_event" from="TempNextTurnButton" to="." method="_on_temp_next_turn_button_input_event"]
+[connection signal="input_event" from="TempButton" to="." method="_on_temp_button_input_event"]
 [connection signal="input_event" from="UI/Stash100" to="." method="_on_stash_input_event" binds= [NodePath("UI/Stash100/Cell100"), 0]]
 [connection signal="input_event" from="UI/Stash101" to="." method="_on_stash_input_event" binds= [NodePath("UI/Stash101/Cell101"), 1]]
 [connection signal="input_event" from="UI/Stash102" to="." method="_on_stash_input_event" binds= [NodePath("UI/Stash102/Cell102"), 2]]
