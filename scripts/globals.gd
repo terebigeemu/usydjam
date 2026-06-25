@@ -35,3 +35,31 @@ signal add_purchase_to_inventory(id, cost, store_array_index)
 signal action_sale_in_inventory(id, cost, combined_inventory_index)
 signal remove_item_from_shop(store_array_index)
 signal refresh_sell_shop
+
+# grab attributes from foods and spit them out as separate values
+
+const ITEMS_FOLDER = "res://items/"
+
+func food_attribute_parser(id: int) -> Array:
+	var filepath: String = ITEMS_FOLDER + str(id) + ".tres"
+	print("accessing " + filepath)
+	var clean_name = filepath.replace(".remap", "")
+	var item = load(ITEMS_FOLDER + clean_name) as ItemData
+	
+	var unparsed_attrb = item.attrb
+	
+	# remove whitespace
+	unparsed_attrb = unparsed_attrb.replace(" ","")
+	
+	# split amongst commas
+	unparsed_attrb = unparsed_attrb.split(",")
+	
+	var attrb_array: Array
+	
+	attrb_array = unparsed_attrb.resize(4)
+	
+	print(attrb_array)
+	return attrb_array
+	
+
+			
