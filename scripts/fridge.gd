@@ -75,6 +75,8 @@ func _ready() -> void:
 	# call cutscene? can be done in a diff script
 	
 	Globals.add_purchase_to_inventory.connect(_on_inventory_update)
+	Globals.action_sale_in_inventory.connect(_on_action_sale_in_inventory)
+	
 	door_status.text = "init"
 		
 	# INIT
@@ -469,15 +471,28 @@ func _on_inventory_update(id: int, cost: int, store_array_index: int) -> void: #
 		n_j += 1
 			
 	if has_filled == false:
-		print("No space in inventory")	
+		print("No space in inventory")	# need to handle this with notifications
 	elif has_filled == true:
 		Globals.player_bal -= cost	
 		Globals.remove_item_from_shop.emit(store_array_index)
 		has_filled = false # just in case yknow
+		
+func _on_action_sale_in_inventory(id: int, cost: int, combined_inventory_index: int) -> void:
+	if combined_inventory_index <= 5:	# in fridge
+		item_update_handler(false, combined_inventory_index, item_empty)
+	else:								# in stash
+		item_update_handler(true, combined_inventory_index - 6, item_empty)
+		
+	Globals.player_bal += cost	
+	Globals.refresh_sell_shop.emit()
 	
-func update_cell(id: Variant) -> void:
-	#todo: finish this function lol
-	print("Update cell")
-	pass
+func item_update_handler(is_stash: bool, index: int, update_to_item_id: int) -> void:
+	if is_stash == false:	# in fridge
+		cell_item_array[index] = update_to_item_id
+		cell_array[index].frame = cell_item_array[index]
+	elif is_stash == true:
+		stash_item_array[index] = update_to_item_id
+		stash_array[index].frame = stash_item_array[index] 
+
 
 # it works right? no complaining~

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bumd02qjvf6oq" path="res://scripts/shop_page.gd" id="2_5en4g"]
 [ext_resource type="Texture2D" uid="uid://daxeu2jb62n32" path="res://assets/HomeBtnSprite.png" id="2_ro3t7"]
 [ext_resource type="PackedScene" uid="uid://dxk7bln4rt0n5" path="res://scenes/shop_item_slot.tscn" id="3_ua6yw"]
+[ext_resource type="PackedScene" uid="uid://c8de8mxb0by25" path="res://scenes/sell_item_slot.tscn" id="4_xpksx"]
 [ext_resource type="Script" uid="uid://wy22hl6qt8ns" path="res://scripts/employee_page.gd" id="5_75u2n"]
 [ext_resource type="PackedScene" uid="uid://bh8j711jxlgyh" path="res://scenes/employee_slot.tscn" id="6_3wlde"]
 
@@ -78,6 +79,7 @@ text = "Hidden Inventory
 layout_mode = 2
 script = ExtResource("2_5en4g")
 item_slot_scene = ExtResource("3_ua6yw")
+sell_slot_scene = ExtResource("4_xpksx")
 
 [node name="TopBar" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopPage" unique_id=1705407923]
 layout_mode = 2
@@ -120,6 +122,8 @@ size_flags_stretch_ratio = 3.5
 
 [node name="SellGrid" type="GridContainer" parent="PanelContainer/MarginContainer/ShopPage/SellSection" unique_id=1365918977]
 layout_mode = 2
+size_flags_horizontal = 3
+columns = 3
 
 [node name="EmployeePage" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1176839180]
 visible = false

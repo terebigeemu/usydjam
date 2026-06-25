@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://blx6ry7mbhkld"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ci6ryn4nk1v50"]
 
 [ext_resource type="Texture2D" uid="uid://ds4lqrf3qse6w" path="res://assets/fruit-art.png" id="1_s2y1j"]
 [ext_resource type="Script" uid="uid://b6o1lxa7nceqg" path="res://scripts/ItemData.gd" id="2_bh6k5"]

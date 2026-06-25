@@ -32,4 +32,6 @@ var item102: int = item_empty
 @onready var stash_item_array = [item100, item101, item102]
 
 signal add_purchase_to_inventory(id, cost, store_array_index)
+signal action_sale_in_inventory(id, cost, combined_inventory_index)
 signal remove_item_from_shop(store_array_index)
+signal refresh_sell_shop
