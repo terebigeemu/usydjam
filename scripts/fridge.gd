@@ -74,6 +74,8 @@ func _ready() -> void:
 	fridge_original_position = fridge_sprite.position
 	cell_original_positions = [cell1.position, cell2.position, cell3.position, cell4.position, cell5.position, cell6.position]
 	
+	EasyNotify.add_notification({"amogus": "amogus"})	# need to handle this with notifications
+
 	# call cutscene? can be done in a diff script
 	
 	Globals.add_purchase_to_inventory.connect(_on_inventory_update)
@@ -89,7 +91,6 @@ func _ready() -> void:
 	for i in stash_array:
 		i.frame = stash_item_array[n_stash]
 		i.visible = false
-		print("yes")
 		n_stash += 1
 	
 	for i in cell_array:
@@ -165,7 +166,7 @@ func stash_fill(cell_id, item_no, inventory_index):
 					
 			if is_filled == true:
 				# if a slot has already been filled during this function execution, break the return function
-				print("Filled - break loop")
+				EasyNotify.add_notification({"Added to your hidden inventory!": "Open your hidden inventory to see it :P"})	# need to handle this with notifications
 				break
 			elif i == item_empty and is_filled != true:
 				# if a slot is empty, use that slot
@@ -406,6 +407,9 @@ func summon_employee(current_player_level: String):
 	if chosen_employee != null:
 		print("Spawned Employee: ", chosen_employee.title)
 		
+		Globals.employee_takes_from_fridge.emit(chosen_employee.title)
+		EmployeeManager.add_affinity(current_active_employee, 5) #tbc
+		
 		# Apply the employee's icon directly to your visual node!
 		employee.texture = chosen_employee.icon
 
@@ -447,25 +451,24 @@ func _on_shake_timer_timeout() -> void:
 	close_sfx_timer.start()
 	fridge_buzz_sfx.play()
 
-func _on_open_timer_timeout() -> void:
-	var valid_cells = [] # Only cells that have items
-	for i in cell_array.size():
-		if cell_item_array[i] != item_empty:
-			valid_cells.append(i)
-
-	if not valid_cells.is_empty():
-		var random_idx = randi_range(0, valid_cells.size() - 1)
-		var chosen_idx = valid_cells[random_idx]
-		cell_item_array[chosen_idx] = item_empty
-		cell_array[chosen_idx].frame = item_empty
-
-	######---------#########
-	EmployeeManager.add_affinity(current_active_employee, 5)
-	#######--------#########
 	#
 
-	advance_turn()
+	#var valid_cells = [] # Only cells that have items
+	#for i in cell_array.size():
+		#if cell_item_array[i] != item_empty:
+			#valid_cells.append(i)
+			#
+	#if not valid_cells.is_empty():
+		#var random_idx = randi_range(0, valid_cells.size() - 1)
+		#var chosen_idx = valid_cells[random_idx]
+		#cell_item_array[chosen_idx] = item_empty
+		#cell_array[chosen_idx].frame = item_empty
 
+	# i moved the logic to summon_employee -adrian
+	
+func _on_open_timer_timeout() -> void:
+	advance_turn()
+	
 func _on_open_sfx_timer_timeout() -> void:
 	fridge_open_sfx.play()
 	
@@ -512,7 +515,7 @@ func _on_inventory_update(id: int, cost: int, store_array_index: int) -> void: #
 		n_j += 1
 			
 	if has_filled == false:
-		print("No space in inventory")	# need to handle this with notifications
+		EasyNotify.add_notification({"Your fridge & stash are full!": "Sell items to free up inventory space"})	# need to handle this with notifications
 	elif has_filled == true:
 		Globals.player_bal -= cost	
 		Globals.remove_item_from_shop.emit(store_array_index)
