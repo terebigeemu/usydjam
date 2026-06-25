@@ -168,8 +168,8 @@ theme_override_font_sizes/font_size = 40
 text = "erm you should not see this"
 horizontal_alignment = 2
 
-[node name="Bits" type="Sprite2D" parent="PanelContainer/MarginContainer/ShopPage" unique_id=1614331325]
-position = Vector2(569.00006, 137)
+[node name="Bits" type="Sprite2D" parent="PanelContainer/MarginContainer/ShopPage/MarginContainer" unique_id=1614331325]
+position = Vector2(530, 22)
 scale = Vector2(5, 5)
 texture = ExtResource("8_24e4x")
 

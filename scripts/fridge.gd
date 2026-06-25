@@ -621,8 +621,8 @@ func _check_if_game_over() -> void: # this can also check if the game has been w
 	if Globals.chosen_employee.promotion == true:
 		print("This employee can promote the player")
 
-		if Globals.chosen_employee.affinity >= 8: # i hope this is a reasonable number
-			if rng.randi_range(0, 10) <= 8: # haha rng
+		if Globals.chosen_employee.affinity >= 12: # i hope this is a reasonable number
+			if rng.randi_range(0, 10) <= 5: # haha rng
 				win_game()
 
 # Shop updates
