@@ -406,12 +406,6 @@ func summon_employee(current_player_level: String):
 		employee.texture = chosen_employee.icon
 
 
-
-
-
-
-
-
 func advance_turn():
 	turn_count += 1
 	print("Turn: " + str(turn_count))
@@ -450,17 +444,18 @@ func _on_open_timer_timeout() -> void:
 	for i in cell_array.size():
 		if cell_item_array[i] != item_empty:
 			valid_cells.append(i)
-			
-			######---------#########
-			EmployeeManager.add_affinity(current_active_employee, 5)
-			#######--------##########
-			
+
 	if not valid_cells.is_empty():
 		var random_idx = randi_range(0, valid_cells.size() - 1)
 		var chosen_idx = valid_cells[random_idx]
 		cell_item_array[chosen_idx] = item_empty
 		cell_array[chosen_idx].frame = item_empty
-		
+
+	######---------#########
+	EmployeeManager.add_affinity(current_active_employee, 5)
+	#######--------#########
+	#
+
 	advance_turn()
 
 func _on_open_sfx_timer_timeout() -> void:

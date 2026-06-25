@@ -7,7 +7,6 @@
 script = ExtResource("2_u447l")
 title = "Head Manager"
 level = "C-Suite"
-affinity = 1
 promotion = true
 death = true
 encounter = 0.25
