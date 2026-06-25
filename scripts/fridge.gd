@@ -528,6 +528,7 @@ func advance_turn():
 	print("Turn: " + str(turn_count))
 	
 	Globals.update_pickable_status()
+	Globals.refresh_sell_shop.emit()
 	
 	if turn_count % 2 != 0:
 		background_music.fade_audio(-80.0, 3)
