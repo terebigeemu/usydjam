@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bh8j711jxlgyh"]
 
 [ext_resource type="Script" uid="uid://bhma7pllcmtf7" path="res://scripts/employee_slot.gd" id="1_fqy7q"]
+[ext_resource type="Texture2D" uid="uid://ttjoomuuhxby" path="res://assets/Affinity_icon.png" id="2_yg217"]
 
 [node name="EmployeeSlot" type="VBoxContainer" unique_id=1479440974]
 custom_minimum_size = Vector2(200, 300)
@@ -19,9 +20,31 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 
-[node name="InfoLabel" type="Label" parent="." unique_id=1141599933]
+[node name="LevelLabel" type="Label" parent="." unique_id=1141599933]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1176771701]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="AffinityLabel" type="Label" parent="HBoxContainer" unique_id=1477026365]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1300780726]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("2_yg217")
+stretch_mode = 5
+
+[node name="LikesLabel" type="Label" parent="." unique_id=1927862987]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30

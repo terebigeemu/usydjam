@@ -2,7 +2,7 @@ extends Control
 
 # Drag your UI nodes into these variables in the inspector, or use $NodeName
 @onready var icon_rect = $TextureRect
-@onready var cost_label = $MarginContainer/CostLabel
+@onready var cost_label = $HBoxContainer/CostLabel
 @onready var buy_button = $BuyButton
 
 var current_item: ItemData

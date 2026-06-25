@@ -2,7 +2,11 @@ extends Control
 
 @onready var icon_rect = %IconRect
 @onready var title_label = %TitleLabel
-@onready var info_label = %InfoLabel
+
+# You now need references to all the split-up labels
+@onready var level_label = %LevelLabel 
+@onready var affinity_label = %AffinityLabel
+@onready var likes_label = %LikesLabel
 
 var current_employee: EmployeeData
 
@@ -14,11 +18,9 @@ func setup(emp_data: EmployeeData):
 		
 	title_label.text = emp_data.title
 	
-	# Display a quick summary of their stats
-	var info_text = "Lvl: " + emp_data.level + " | Affinity: " + str(emp_data.affinity)
-	info_text += "\nLikes: " + emp_data.preferences
+	# Update each label individually
+	level_label.text = "Lvl: " + str(emp_data.level)
+	affinity_label.text = str(emp_data.affinity)
+	likes_label.text = "Likes: " + emp_data.preferences
 	
-	info_label.text = info_text
-	
-	# Tooltip for extra hidden info
 	self.tooltip_text = "Encounter Rate: " + str(emp_data.encounter)

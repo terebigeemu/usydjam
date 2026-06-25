@@ -185,7 +185,6 @@ layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
-columns = 2
 
 [node name="StashPage" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=376075644]
 visible = false

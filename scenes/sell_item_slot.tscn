@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c8de8mxb0by25"]
 
 [ext_resource type="Script" uid="uid://bfhnc055hoygp" path="res://scripts/sell_item_slot.gd" id="1_4cun4"]
+[ext_resource type="Texture2D" uid="uid://dmxdwm6824vac" path="res://assets/bits.png" id="2_vbh8o"]
 
 [node name="ItemTable" type="VBoxContainer" unique_id=873649058]
 offset_right = 8.0
@@ -14,10 +15,20 @@ layout_mode = 2
 expand_mode = 1
 stretch_mode = 5
 
-[node name="CostLabel" type="Label" parent="." unique_id=761312351]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=838417286]
+layout_mode = 2
+alignment = 1
+
+[node name="CostLabel" type="Label" parent="HBoxContainer" unique_id=761312351]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1770497166]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("2_vbh8o")
+stretch_mode = 5
 
 [node name="SellButton" type="Button" parent="." unique_id=1646032409]
 layout_mode = 2
