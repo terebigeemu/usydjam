@@ -44,6 +44,30 @@ func food_attribute_parser(id: int) -> Array:
 	print(attrb_array)
 	return attrb_array
 	
+func food_cost(id: int) -> int:
+	# get all the foods
+	
+	var filepath: String = ITEMS_FOLDER + str(id) + ".tres"
+	print("accessing " + filepath)
+	var clean_name = filepath.replace(".remap", "")
+	var item = load(clean_name) as ItemData
+	
+	print(str(item))
+	
+	return item.cost
+
+func food_name(id: int) -> String:
+	# get all the foods
+	
+	var filepath: String = ITEMS_FOLDER + str(id) + ".tres"
+	print("accessing " + filepath)
+	var clean_name = filepath.replace(".remap", "")
+	var item = load(clean_name) as ItemData
+	
+	print(str(item))
+	
+	return item.item_name
+	
 # ctrl-c ctrl-v is my favourite keyboard shortcut
 
 const EMP_FOLDER = "res://employees/"
@@ -58,7 +82,7 @@ func load_all_employees():
 			if emp != null:
 				all_game_employees.append(emp)
 
-func _employee_picks_food_from_fridge_or_smth_idk(employee_title: String) -> int:
+func _employee_picks_food_from_fridge_or_smth_idk(employee_title: String) -> void:
 		
 	# Lookup employee title and match with ID
 	# assumed to be immutable once runtime started. if its mutable then... oop
@@ -93,25 +117,37 @@ func _employee_picks_food_from_fridge_or_smth_idk(employee_title: String) -> int
 	# details of the best food in the fridge
 	
 	var pb_preference_points: int = 0
-	var best_food_id: int = Globals.item_empty			
+	var best_food_id: int = Globals.item_empty		
+	var best_food_name: String
+	var best_food_cost: float
 	var likes_anything: bool = false	# did at least 1 food meet one of their prefs?
+	
+	# let affinity be preference points * arbitrary constant k
+	
+	if valid_cells.is_empty():
+		pb_preference_points = -1
 		
-	if not valid_cells.is_empty():
+	elif not valid_cells.is_empty():
 
 		for i in valid_cells:											# for each food
 			print("currently analysing " + str(i))						# what's in the fridge?!
 			var food_attrb_array: Array = food_attribute_parser(i)		# return prefs for each item
+			var food_name: String = food_name(i)
+			var food_cost: int = food_cost(i)
 			var preference_points: int = 0								# how many points does this food win
 
 			for j in food_attrb_array:		
 				print("food_attrb_array j = " + j)						# for each j in food_attribute_array
 				if j in employee_preference_array:						# if it matches any attribute in employee_pref_array, +1 point
-					preference_points += 1					#
-				
+					preference_points += 1			
+					
+			preference_points = preference_points + food_cost
+	
 			print("preference points for " + str(i) + " is equal to " + str(preference_points))
 			
 			if preference_points > pb_preference_points:
 				best_food_id = i
+				best_food_name = food_name
 				pb_preference_points = preference_points
 				likes_anything = true
 				print("new pb: preference points for " + str(i) + " is equal to " + str(preference_points))
@@ -120,9 +156,18 @@ func _employee_picks_food_from_fridge_or_smth_idk(employee_title: String) -> int
 		cell_item_array[best_food_index] = Globals.item_empty
 		cell_array[best_food_index].frame = cell_item_array[best_food_index]
 		
-		print("food was taken: id = " + str(best_food_index))
+		print("food was taken: name = " + str(best_food_name))
+		
+	#var return_data: Array = []
+		
+	#return_data.append(best_food_id)
+	#return_data.append(pb_preference_points)
+	
+	# and this is where i remembered this was a receiver method to a signal
+	
+	Globals.affinity_to_add = pb_preference_points
+	Globals.affinity_to_add_hasbeenadded = false
 												
-	return best_food_id
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

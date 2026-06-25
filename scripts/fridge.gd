@@ -408,10 +408,13 @@ func summon_employee(current_player_level: String):
 		print("Spawned Employee: ", chosen_employee.title)
 		
 		Globals.employee_takes_from_fridge.emit(chosen_employee.title)
-		EmployeeManager.add_affinity(current_active_employee, 5) #tbc
-		
-		# Apply the employee's icon directly to your visual node!
 		employee.texture = chosen_employee.icon
+		
+		await get_tree().create_timer(0.2).timeout
+		
+		EmployeeManager.add_affinity(current_active_employee, Globals.affinity_to_add) #tbc
+			
+		# Apply the employee's icon directly to your visual node!
 
 
 func advance_turn():
