@@ -27,6 +27,7 @@ var player_level: String = "Employee"
 @onready var error_sfx = get_node("../Fridge/UI/ErrorSFX")
 @onready var home_sfx = get_node("../Fridge/UI/HomeSFX")
 @onready var menu_sfx = get_node("../Fridge/UI/MenuSFX")
+@onready var buy_sell_sfx = get_node("../Fridge/BuySellSFX")
 
 const item_empty: int = 157
 

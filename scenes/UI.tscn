@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://dr3xodclhv1fq" path="res://assets/button-click-updated.wav" id="11_aputy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ua6yw"]
-bg_color = Color(0.17283267, 0.17283267, 0.17283258, 1)
+bg_color = Color(0.22491127, 0.1524485, 0.13536867, 1)
 
 [node name="UI" type="CanvasLayer" unique_id=1826785090]
 script = ExtResource("1_dj8aq")
@@ -50,7 +50,7 @@ theme_override_colors/font_pressed_color = Color(0.8806696, 0, 0.20713285, 1)
 theme_override_colors/font_hover_color = Color(0.8846734, 0.7217854, 0.09078058, 1)
 theme_override_fonts/font = ExtResource("2_24e4x")
 theme_override_font_sizes/font_size = 60
-text = "START ROUND"
+text = "NEXT TURN"
 
 [node name="ShopBtn" type="MenuButton" parent="PanelContainer/MarginContainer/MainMenu" unique_id=1611310431]
 layout_mode = 2
@@ -69,7 +69,7 @@ text = "Shop
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 0.8217194, 0.86063063, 1)
-theme_override_colors/font_pressed_color = Color(0.98871905, 0.23037633, 5.7756904e-07, 1)
+theme_override_colors/font_pressed_color = Color(0.9411765, 0, 0.24705882, 1)
 theme_override_colors/font_hover_color = Color(0.906929, 0.7869775, 7.70092e-07, 1)
 theme_override_constants/outline_size = 20
 theme_override_constants/h_separation = 4
@@ -80,7 +80,7 @@ text = "Employees"
 [node name="StashBtn" type="MenuButton" parent="PanelContainer/MarginContainer/MainMenu" unique_id=680675728]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.83274853, 0.94195986, 0, 1)
+theme_override_colors/font_color = Color(0.5895579, 0.65290827, 0.79936594, 1)
 theme_override_colors/font_pressed_color = Color(0.94178766, 0, 0.24629304, 1)
 theme_override_colors/font_hover_color = Color(0.81823635, 0.69336426, 3.85046e-07, 1)
 theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
@@ -88,9 +88,7 @@ theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("2_24e4x")
 theme_override_font_sizes/font_size = 70
-text = "Hidden Inventory
-
-"
+text = "Stash"
 switch_on_hover = true
 
 [node name="ShopPage" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1092376491]
@@ -175,6 +173,15 @@ texture_normal = ExtResource("2_ro3t7")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="EmployeeLabel" type="Label" parent="PanelContainer/MarginContainer/EmployeePage" unique_id=1471840041]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "As more visitors take food from you, you'll learn more about them and what they like.
+
+Aim to please those who can help you reach higher places.
+"
+autowrap_mode = 3
+
 [node name="EmployeeSection" type="ScrollContainer" parent="PanelContainer/MarginContainer/EmployeePage" unique_id=1161835678]
 layout_mode = 2
 size_flags_vertical = 3
@@ -202,6 +209,14 @@ layout_mode = 2
 texture_normal = ExtResource("2_ro3t7")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="StashLabel" type="Label" parent="PanelContainer/MarginContainer/StashPage" unique_id=1618034164]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Your stash is a place to hide your treasures from outsiders... it's like a hidden inventory!
+
+Click items in your fridge to add them to your stash."
+autowrap_mode = 3
 
 [node name="StashSection" type="ScrollContainer" parent="PanelContainer/MarginContainer/StashPage" unique_id=500202458]
 layout_mode = 2

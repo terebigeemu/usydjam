@@ -27,3 +27,5 @@ func _on_input_blocker_gui_input(event: InputEvent) -> void:
 			cutscene4_label.hide()
 			cutscene5_label.hide()
 			cutscene5_label2.hide()
+			
+			stop()

@@ -603,6 +603,7 @@ func _on_inventory_update(id: int, cost: int, store_array_index: int) -> void: #
 			stash_item_array[n_i] = id
 			stash_array[n_i].frame = id
 			has_filled = true
+			Globals.buy_sell_sfx.play()
 			ToastX.fridgesim("Delivered to the hidden inventory!")
 			break
 		n_i += 1
@@ -614,6 +615,7 @@ func _on_inventory_update(id: int, cost: int, store_array_index: int) -> void: #
 			cell_item_array[n_j] = id
 			cell_array[n_j].frame = id
 			has_filled = true
+			Globals.buy_sell_sfx.play()
 			ToastX.fridgesim("Delivered to the fridge!")
 			break
 		n_j += 1
@@ -635,6 +637,7 @@ func _on_action_sale_in_inventory(id: int, cost: int, combined_inventory_index: 
 		item_update_handler(true, combined_inventory_index - 6, item_empty)
 	
 	ToastX.fridgesim("Sold item! You got " + str(cost) + " bits!")
+	Globals.buy_sell_sfx.play()
 		
 	Globals.player_bal += cost	
 	Globals.refresh_sell_shop.emit()

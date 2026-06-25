@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://by1l5bfq4sse1" path="res://assets/cutscene5.png" id="27_ds0wk"]
 [ext_resource type="Script" uid="uid://cqcrk071qffvv" path="res://scripts/cutscene.gd" id="28_qqhkm"]
 [ext_resource type="FontFile" uid="uid://du80ca1uicgye" path="res://assets/PixelifySans-Bold.ttf" id="29_y6mj6"]
+[ext_resource type="AudioStream" uid="uid://tbkd3ypebeir" path="res://assets/buy_sell_sfx.mp3" id="30_8anqc"]
 
 [sub_resource type="Gradient" id="Gradient_buvrw"]
 colors = PackedColorArray(0.68235296, 0.91764706, 0.9882353, 1, 0.47058824, 0.8666667, 0.98039216, 1)
@@ -1308,7 +1309,8 @@ script = ExtResource("12_6s3sb")
 [node name="Stash100" type="Area2D" parent="UI" unique_id=394698429 groups=["stash_cells"]]
 z_index = 19
 z_as_relative = false
-position = Vector2(1350, -241)
+position = Vector2(1263, 196)
+scale = Vector2(0.7265467, 0.7265467)
 script = ExtResource("4_nm1dx")
 
 [node name="Cell100" type="AnimatedSprite2D" parent="UI/Stash100" unique_id=180398834 groups=["stash_cells"]]
@@ -1325,7 +1327,8 @@ shape = SubResource("CircleShape2D_buvrw")
 
 [node name="Stash101" type="Area2D" parent="UI" unique_id=754821852 groups=["stash_cells"]]
 z_index = 5
-position = Vector2(1350, 130)
+position = Vector2(1573.9999, 339)
+scale = Vector2(0.7386973, 0.7386973)
 script = ExtResource("4_nm1dx")
 
 [node name="Cell101" type="AnimatedSprite2D" parent="UI/Stash101" unique_id=1906242593 groups=["stash_cells"]]
@@ -1342,7 +1345,8 @@ shape = SubResource("CircleShape2D_buvrw")
 
 [node name="Stash102" type="Area2D" parent="UI" unique_id=68831125 groups=["stash_cells"]]
 z_index = 5
-position = Vector2(1350, 488)
+position = Vector2(1334, 584)
+scale = Vector2(0.6852523, 0.6852523)
 script = ExtResource("4_nm1dx")
 
 [node name="Cell102" type="AnimatedSprite2D" parent="UI/Stash102" unique_id=2144828167 groups=["stash_cells"]]
@@ -1525,6 +1529,10 @@ theme_override_fonts/font = ExtResource("29_y6mj6")
 theme_override_font_sizes/font_size = 60
 text = "CLICK ANYWHERE TO START"
 horizontal_alignment = 1
+
+[node name="BuySellSFX" type="AudioStreamPlayer2D" parent="." unique_id=921168803]
+stream = ExtResource("30_8anqc")
+volume_db = -3.0
 
 [connection signal="timeout" from="OpenSFXTimer" to="." method="_on_open_sfx_timer_timeout"]
 [connection signal="timeout" from="CloseSFXTimer" to="." method="_on_close_sfx_timer_timeout"]
