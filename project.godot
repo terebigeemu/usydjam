@@ -36,7 +36,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/easynotify/plugin.cfg", "res://addons/toastx/plugin.cfg")
+enabled=PackedStringArray("res://addons/toastx/plugin.cfg")
 
 [global_group]
 

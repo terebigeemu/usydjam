@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://wy22hl6qt8ns" path="res://scripts/employee_page.gd" id="5_75u2n"]
 [ext_resource type="PackedScene" uid="uid://bh8j711jxlgyh" path="res://scenes/employee_slot.tscn" id="6_3wlde"]
 [ext_resource type="Texture2D" uid="uid://dmxdwm6824vac" path="res://assets/bits.png" id="8_24e4x"]
+[ext_resource type="AudioStream" uid="uid://dem1dl7tiyhsx" path="res://assets/error_glitch.mp3" id="10_w7enk"]
+[ext_resource type="AudioStream" uid="uid://dr3xodclhv1fq" path="res://assets/button-click-updated.wav" id="11_aputy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ua6yw"]
 bg_color = Color(0.17283267, 0.17283267, 0.17283258, 1)
@@ -213,6 +215,18 @@ columns = 6
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/StashPage" unique_id=630965806]
 layout_mode = 2
 stretch_mode = 5
+
+[node name="ErrorSFX" type="AudioStreamPlayer2D" parent="." unique_id=236082278]
+stream = ExtResource("10_w7enk")
+volume_db = 10.0
+
+[node name="HomeSFX" type="AudioStreamPlayer2D" parent="." unique_id=666613853]
+stream = ExtResource("11_aputy")
+volume_db = 10.0
+
+[node name="MenuSFX" type="AudioStreamPlayer2D" parent="." unique_id=844600929]
+stream = ExtResource("11_aputy")
+volume_db = 10.0
 
 [connection signal="draw" from="PanelContainer/MarginContainer/StashPage" to="." method="_open_stash_ui"]
 [connection signal="hidden" from="PanelContainer/MarginContainer/StashPage" to="." method="_close_stash_ui"]

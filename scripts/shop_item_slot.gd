@@ -58,4 +58,5 @@ func _on_buy_pressed():
 	if Globals.player_bal >= current_item.cost:
 		Globals.add_purchase_to_inventory.emit(current_item.item_id, current_item.cost, store_array_index)
 	else:
+		Globals.error_sfx.play()
 		ToastX.fridgesim("You're too poor for that!")

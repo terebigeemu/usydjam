@@ -42,11 +42,12 @@ func _ready():
 		btn.pressed.connect(go_home)
 		
 	# 3. Start the game on the Main Menu
-	go_home()
+	go_home(true)
 
 # --- NAVIGATION LOGIC ---
 
 func open_page(new_page: Control):
+	Globals.menu_sfx.play()
 	print("Attempting to open: ", new_page.name) # ADD THIS LINE
 	# If we are currently on a menu, add it to our history stack
 	if current_menu != null:
@@ -68,7 +69,11 @@ func go_back():
 		# If no history is left, just go home
 		go_home()
 
-func go_home():
+func go_home(mute_sound = false):
+	
+	if mute_sound != true:
+		Globals.home_sfx.play()
+		
 	# Clear the history because we are back at the start
 	menu_history.clear()
 	
