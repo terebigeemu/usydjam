@@ -38,5 +38,10 @@ signal remove_item_from_shop(store_array_index)
 signal refresh_sell_shop
 signal refresh_buy_shop
 signal employee_takes_from_fridge(employee_title)
+signal release_menu()
+signal block_menu()
+
+var affinity_to_add: int = 0;
+var affinity_to_add_hasbeenadded: bool = true;
 
 			

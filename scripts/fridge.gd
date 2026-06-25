@@ -385,6 +385,7 @@ func _on_stash_input_event(viewport: Node, event: InputEvent, shape_idx: int, ex
 @onready var fridge_grab_sfx = $FridgeGrabSFX
 @onready var background_music = $BackgroundMusic
 @onready var canvas_modulate = $Background/DayNightCycle
+@onready var game_over_screen = $StageScreen/GameOverScreen
 
 const CLOSED = 0
 const OPEN = 1
@@ -394,6 +395,7 @@ var turn_count: int = 0
 # Function that runs when Start is clicked
 func _on_start_btn_pressed():
 	if turn_count % 2 == 0:
+		Globals.block_menu.emit()
 		advance_turn()
 		
 # Chooses employee from available ones in employees folder based on whether 
@@ -408,10 +410,13 @@ func summon_employee(current_player_level: String):
 		print("Spawned Employee: ", chosen_employee.title)
 		
 		Globals.employee_takes_from_fridge.emit(chosen_employee.title)
-		EmployeeManager.add_affinity(current_active_employee, 5) #tbc
-		
-		# Apply the employee's icon directly to your visual node!
 		employee.texture = chosen_employee.icon
+		
+		await get_tree().create_timer(0.2).timeout
+		
+		EmployeeManager.add_affinity(current_active_employee, Globals.affinity_to_add) #tbc
+			
+		# Apply the employee's icon directly to your visual node!
 
 
 func advance_turn():
@@ -423,12 +428,19 @@ func advance_turn():
 		shake_timer.start()
 		open_sfx_timer.start()
 		Globals.refresh_buy_shop.emit()
-		canvas_modulate.daynightcycle((turn_count % 8) + 6)
-		print((turn_count % 15) + 7)
+		canvas_modulate.daynightcycle((turn_count % 17) + 8)
 	else:
 		fridge_sprite.frame = CLOSED
+		Globals.release_menu.emit()
 		background_music.fade_audio(10.0, 2)
 		fridge_buzz_sfx.stop()
+		
+		if turn_count % 16 == 0:
+			var n_cell: int = 0
+			for i in cell_array:
+				await get_tree().create_timer(0.05).timeout
+				cell_item_array[n_cell] = rng.randi_range(0, 156)
+				i.frame = cell_item_array[n_cell]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -484,6 +496,10 @@ func advance_level():
 	level += 1
 	print("Level: " + str(level))
 	city.position.y += 200
+	
+func end_game():
+	game_over_screen.visible = true
+	background_music.fade_audio(-80.0, 3)
 
 # Shop updates
 
