@@ -78,6 +78,7 @@ theme_override_font_sizes/font_size = 70
 text = "Hidden Inventory
 
 "
+switch_on_hover = true
 
 [node name="ShopPage" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1092376491]
 layout_mode = 2
@@ -156,12 +157,15 @@ stretch_mode = 5
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 7.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
 
 [node name="EGrid" type="GridContainer" parent="PanelContainer/MarginContainer/EmployeePage/EmployeeSection" unique_id=1907066367]
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
-columns = 6
+columns = 2
 
 [node name="StashPage" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=376075644]
 visible = false
