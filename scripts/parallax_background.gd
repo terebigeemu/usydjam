@@ -1,6 +1,6 @@
-extends Node2D
+extends CanvasLayer
 
-@onready var employee: Parallax2D = $Employee
+@onready var employee: Parallax2D = $"../Employee"
 @onready var office: Parallax2D = $Office
 
 func _input(event):
