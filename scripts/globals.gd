@@ -36,6 +36,7 @@ signal add_purchase_to_inventory(id, cost, store_array_index)
 signal action_sale_in_inventory(id, cost, combined_inventory_index)
 signal remove_item_from_shop(store_array_index)
 signal refresh_sell_shop
+signal refresh_buy_shop
 
 # grab attributes from foods and spit them out as separate values
 

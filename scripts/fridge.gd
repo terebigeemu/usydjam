@@ -347,7 +347,7 @@ func swap_helper(dest_cell_id, dest_inventory_index, dest_cell_type):
 # extra_arg_0 = cell_id
 # extra_arg_1 = index in array + 1 for normal cells, index in array + 100 for stash
 
-# i promise this is just as hellish as it looks particularly with all the redundant conditions becuz i don't have time to figure out which one matters or not 
+# i promise this is just as hellish as it looks, particularly with all the redundant conditions becuz i don't have time to figure out which one matters or not 
 func _on_cell_input_event(viewport: Node, event: InputEvent, shape_idx: int, extra_arg_0: NodePath, extra_arg_1: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT and enable_stash_edits == true and swap_in_progress == false:
@@ -421,6 +421,7 @@ func advance_turn():
 	
 	if turn_count % 2 != 0:
 		shake_timer.start()
+		Globals.refresh_buy_shop.emit()
 	else:
 		fridge_sprite.frame = CLOSED
 

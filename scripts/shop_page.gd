@@ -22,6 +22,7 @@ var all_game_items: Array[ItemData] = []
 func _ready():	
 	Globals.remove_item_from_shop.connect(_on_remove_item_from_shop)
 	Globals.refresh_sell_shop.connect(_on_refresh_sell_shop)
+	Globals.refresh_buy_shop.connect(_on_refresh_buy_shop)
 
 	await get_tree().create_timer(1).timeout
 
@@ -120,11 +121,14 @@ func load_sellable_items():
 			new_slot.setup(chosen_item, n_i)
 			print(str(chosen_item) + str(n_i))
 			
-			n_i += 1
+		n_i += 1
 			
 
 func _on_refresh_sell_shop() -> void:
 	load_sellable_items()
+	
+func _on_refresh_buy_shop() -> void:
+	roll_new_shop_items()
 
 func _on_remove_item_from_shop(store_array_index: int) -> void:	
 	print("called _on_remove_item_from_shop with store_array_index " + str(store_array_index))
