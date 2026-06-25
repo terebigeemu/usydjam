@@ -7,6 +7,7 @@
 script = ExtResource("2_ndliu")
 title = "Intern 2"
 level = "Employee"
+death = true
 encounter = 0.2
 preferencecount = 4
 preferences = "Vegetable, Minty, Dairy, Tangy"

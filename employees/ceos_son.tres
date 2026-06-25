@@ -8,6 +8,7 @@ script = ExtResource("2_85ndv")
 title = "CEO's son"
 level = "Employee"
 promotion = true
+death = true
 encounter = 0.2
 preferencecount = 4
 preferences = "Neutral, Vegetable, Carbs, Spicy"
