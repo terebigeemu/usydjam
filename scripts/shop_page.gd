@@ -58,6 +58,33 @@ func roll_new_shop_items():
 		# 6. Pass the item data (including the icon) into the slot
 		new_slot.setup(chosen_item)
 		print(str(chosen_item))
+		
+func load_sellable_items():
+	## 1. Clear out any old items currently in the grid
+	#for child in sell_grid.get_children():
+		#child.queue_free()
+		#
+	## 2. Safety check: Make sure we have items to pick from
+	#if all_game_items.size() == 0:
+		#print("You will own nothing and be happy")
+		#return
+		#
+	## 3. Create a temporary copy of our items array and shuffle it
+	#var temp_items = all_game_items.duplicate()
+	#temp_items.shuffle() 
+	#
+	## 4. Grab the first 3 items from the newly shuffled array
+	#for i in range(3):
+		#var chosen_item = temp_items[i]
+		#
+		## 5. Spawn the UI slot and add it to the grid
+		#var new_slot = item_slot_scene.instantiate()
+		#buy_grid.add_child(new_slot)
+		#
+		## 6. Pass the item data (including the icon) into the slot
+		#new_slot.setup(chosen_item)
+		#print(str(chosen_item))
+	pass
 
 func _on_remove_item_from_shop(store_array_index: int) -> void:	
 	print("called _on_remove_item_from_shop with store_array_index " + str(store_array_index))

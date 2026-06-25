@@ -10,15 +10,15 @@ extends Node
 # i shall do what i want and i shall live freely in doing so
 
 @onready var door_status: Label = $DoorStatus
-@onready var cell1: AnimatedSprite2D = $Area1/Cell1
-@onready var cell2: AnimatedSprite2D = $Area2/Cell2
-@onready var cell3: AnimatedSprite2D = $Area3/Cell3
-@onready var cell4: AnimatedSprite2D = $Area4/Cell4
-@onready var cell5: AnimatedSprite2D = $Area5/Cell5
-@onready var cell6: AnimatedSprite2D = $Area6/Cell6
-@onready var stash100: AnimatedSprite2D = $Stash100/Cell100
-@onready var stash101: AnimatedSprite2D = $Stash101/Cell101
-@onready var stash102: AnimatedSprite2D = $Stash102/Cell102
+@onready var cell1: AnimatedSprite2D = Globals.cell1
+@onready var cell2: AnimatedSprite2D = Globals.cell2
+@onready var cell3: AnimatedSprite2D = Globals.cell3
+@onready var cell4: AnimatedSprite2D = Globals.cell4
+@onready var cell5: AnimatedSprite2D = Globals.cell5
+@onready var cell6: AnimatedSprite2D = Globals.cell6
+@onready var stash100: AnimatedSprite2D = Globals.stash100
+@onready var stash101: AnimatedSprite2D = Globals.stash101
+@onready var stash102: AnimatedSprite2D = Globals.stash102
 @onready var start_btn = $UI/PanelContainer/MarginContainer/MainMenu/StartBtn
 
 
@@ -41,18 +41,18 @@ var swap_inventory_index: int = swap_inventory_index_empty
 # item values (should be equal to frame ids)
 # should initially be empty
 
-const item_empty: int = 157
+const item_empty: int = Globals.item_empty
 
-var item1: int = item_empty
-var item2: int = item_empty
-var item3: int = item_empty
-var item4: int = item_empty
-var item5: int = item_empty
-var item6: int = item_empty
+var item1: int = Globals.item1
+var item2: int = Globals.item2
+var item3: int = Globals.item3
+var item4: int = Globals.item4
+var item5: int = Globals.item5
+var item6: int = Globals.item6
 
-var item100: int = item_empty
-var item101: int = item_empty
-var item102: int = item_empty
+var item100: int = Globals.item100
+var item101: int = Globals.item101
+var item102: int = Globals.item102
 
 # _array		= contains the NodePath
 # _item_array	= contains the item ID (usually congruent with the spritesheet frame ID)
@@ -61,11 +61,11 @@ var item102: int = item_empty
 
 # yep these numbers totally aren't going to be confusing AT ALL
 
-@onready var cell_array = [cell1, cell2, cell3, cell4, cell5, cell6]
-@onready var cell_item_array = [item1, item2, item3, item4, item5, item6]
+@onready var cell_array = Globals.cell_array
+@onready var cell_item_array = Globals.cell_item_array
 
-@onready var stash_array = [stash100, stash101, stash102]
-@onready var stash_item_array = [item100, item101, item102]
+@onready var stash_array = Globals.stash_array
+@onready var stash_item_array = Globals.stash_item_array
 
 
 func _ready() -> void:
@@ -79,23 +79,17 @@ func _ready() -> void:
 		
 	# INIT
 	
-	# randomly generate cells 1-6
-	
-	# background should be person putting in food
-	
-	
 	var n_stash: int = 0
 	var n_cell: int = 0
 
 	for i in stash_array:
 		i.frame = stash_item_array[n_stash]
+		i.visible = false
 		n_stash += 1
 	
 	for i in cell_array:
 		i.visible = false
-		
-	#await get_tree().create_timer(0.5).timeout
-	
+			
 	for i in cell_array:
 		await get_tree().create_timer(0.05).timeout
 		cell_item_array[n_cell] = rng.randi_range(0, 156)
@@ -182,10 +176,11 @@ func stash_fill(cell_id, item_no, inventory_index):
 		is_filled = false # reset filled variable and end the function
 			
 func stash_edit(cell_id, inventory_index, viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	
+	print("clicked " + str(cell_id))
+	
 	var cell_selected: AnimatedSprite2D = get_node(cell_id)
 	var item_id: int
-
-	print("clicked " + str(cell_id))
 	
 	# sorry i forgot about zero indexing and its cooked now and not bothered to change each signal manually
 	
@@ -260,8 +255,11 @@ func fridge_edit(cell_id, inventory_index, viewport: Node, event: InputEvent, sh
 func swap_helper(dest_cell_id, dest_inventory_index, dest_cell_type):
 	
 	# dest_cell_type type: 0 = player clicked on normal cell, 1 = player clicked on stash cell
-	
-	var cell_selected: AnimatedSprite2D = get_node(dest_cell_id)
+	var cell_path = dest_cell_id
+	if dest_cell_type != 0:
+		cell_path = str(dest_cell_id)
+		
+	var cell_selected: AnimatedSprite2D = get_node(cell_path)
 	var swap_cell: AnimatedSprite2D = get_node(swap_cell_id)
 	
 	var item_id: int
@@ -288,8 +286,8 @@ func swap_helper(dest_cell_id, dest_inventory_index, dest_cell_type):
 			cell_item_array[dest_inventory_index] = cell_item_array[swap_inventory_index]
 			cell_item_array[swap_inventory_index] = temp
 			
-			cell_selected.frame = cell_item_array[dest_inventory_index]
 			swap_cell.frame = cell_item_array[swap_inventory_index]
+			cell_selected.frame = cell_item_array[dest_inventory_index]
 			
 		else:
 			print("player clicked on normal cell")
@@ -319,8 +317,9 @@ func swap_helper(dest_cell_id, dest_inventory_index, dest_cell_type):
 			stash_item_array[dest_inventory_index] = stash_item_array[swap_inventory_index]
 			stash_item_array[swap_inventory_index] = temp
 			
-			cell_selected.frame = stash_item_array[dest_inventory_index]
 			swap_cell.frame = stash_item_array[swap_inventory_index]
+			cell_selected.frame = stash_item_array[dest_inventory_index]
+
 		else:
 			print("player clicked on stash cell")
 			print("dest_inventory_index = " + str(dest_inventory_index))
@@ -364,7 +363,7 @@ func _on_stash_input_event(viewport: Node, event: InputEvent, shape_idx: int, ex
 
 @export var shake_amount: float = 5.0
 @onready var fridge_sprite: AnimatedSprite2D = $FridgeInside
-@onready var employee: AnimatedSprite2D = $ParallaxBackground/ParallaxLayer2/AnimatedSprite2D
+@onready var employee: AnimatedSprite2D = $Background/Employee/AnimatedSprite2D
 @onready var shake_timer = $ShakeTimer
 @onready var open_timer = $OpenTimer
 
@@ -373,7 +372,7 @@ const OPEN = 1
 var turn_count: int = 0
 
 # Temporary trigger for testing
-#func _on_side_panel_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+#func _on_temp_next_turn_button_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	#if event is InputEventMouseButton and event.pressed:
 		#if event.button_index == MOUSE_BUTTON_LEFT and turn_count % 2 == 0:
 			#advance_turn()
