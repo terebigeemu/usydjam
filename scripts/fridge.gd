@@ -75,22 +75,28 @@ var item_database: Dictionary = {}
 # This builds the beautiful tooltip you wanted, bypassing the Global Theme!
 class CustomHoverOverlay extends Control:
 	func _make_custom_tooltip(for_text: String) -> Object:
-		var label = Label.new()
-		label.text = for_text
-		label.add_theme_font_size_override("font_size", 48)
-		label.add_theme_color_override("font_color", Color(1.0, 1.0, 1.0, 1.0))
-		
-		var style = StyleBoxFlat.new()
-		style.bg_color = Color(0.1, 0.1, 0.1, 1.0)
-		style.set_content_margin_all(12)
-		style.border_width_bottom = 2
-		style.border_width_top = 2
-		style.border_width_left = 2
-		style.border_width_right = 2
-		style.border_color = Color(1.0, 1.0, 1.0, 1.0)
-		
-		label.add_theme_stylebox_override("normal", style)
-		return label
+		if for_text != "":
+			var label = Label.new()
+			label.text = for_text
+			label.add_theme_font_size_override("font_size", 48)
+			label.add_theme_color_override("font_color", Color(1.0, 1.0, 1.0, 1.0))
+			
+			var style = StyleBoxFlat.new()
+			style.bg_color = Color(0.1, 0.1, 0.1, 1.0)
+			style.set_content_margin_all(12)
+			style.border_width_bottom = 2
+			style.border_width_top = 2
+			style.border_width_left = 2
+			style.border_width_right = 2
+			style.border_color = Color(1.0, 1.0, 1.0, 1.0)
+			
+			label.add_theme_stylebox_override("normal", style)
+			return label
+			
+		else:
+			var dummy_node = Node2D.new()
+			dummy_node.global_position = Vector2(-100, -100) # out of sight, out of mind
+			return dummy_node
 
 # --- NEW: TOOLTIP HELPER FUNCTIONS ---
 func attach_tooltip_overlay(sprite: AnimatedSprite2D):
