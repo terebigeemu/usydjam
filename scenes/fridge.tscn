@@ -13,7 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://bvfa18ddvvaon" path="res://scenes/UI.tscn" id="11_s2lay"]
 [ext_resource type="AudioStream" uid="uid://bjxs8isv8r6jr" path="res://assets/Grab.mp3" id="15_iod1f"]
 [ext_resource type="AudioStream" uid="uid://uajwe0q5i253" path="res://assets/FridgeOpen.mp3" id="16_5l13h"]
+[ext_resource type="AudioStream" uid="uid://dnyrttxbu3t37" path="res://assets/BackgroundMusic.mp3" id="16_tfbev"]
 [ext_resource type="AudioStream" uid="uid://dtnn22aeghtf1" path="res://assets/FridgeClose.mp3" id="17_tfbev"]
+[ext_resource type="Script" uid="uid://cn7dji2lpdsos" path="res://scripts/background_music.gd" id="17_v6xy7"]
+[ext_resource type="Script" uid="uid://b0q2xm04uf2nh" path="res://scripts/day_night_cycle.gd" id="18_j2m7l"]
 [ext_resource type="AudioStream" uid="uid://cwqury6eaejp3" path="res://assets/FridgeBuzz.mp3" id="18_v6xy7"]
 
 [sub_resource type="Gradient" id="Gradient_buvrw"]
@@ -1173,10 +1176,13 @@ animations = [{
 position = Vector2(10, -1)
 script = ExtResource("3_buvrw")
 
-[node name="Background" type="Node2D" parent="." unique_id=1262001329]
-z_index = -2
-position = Vector2(-10, 1)
+[node name="Background" type="CanvasLayer" parent="." unique_id=832772463]
+layer = -1
 script = ExtResource("4_npr5r")
+
+[node name="DayNightCycle" type="CanvasModulate" parent="Background" unique_id=695478131]
+position = Vector2(10, -1)
+script = ExtResource("18_j2m7l")
 
 [node name="TextureRect" type="TextureRect" parent="Background" unique_id=1749315235]
 z_index = -12
@@ -1209,16 +1215,16 @@ scale = Vector2(8, 8)
 texture = ExtResource("5_2icyl")
 
 [node name="Office" type="Parallax2D" parent="Background" unique_id=1723716411]
-visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Office" unique_id=1659687288]
 position = Vector2(640, 540)
 scale = Vector2(8, 8)
 texture = ExtResource("7_mq0tr")
 
-[node name="Employee" type="Parallax2D" parent="Background" unique_id=359773424]
+[node name="Employee" type="Parallax2D" parent="." unique_id=359773424]
+z_index = -1
 
-[node name="AnimatedSprite2D" type="Sprite2D" parent="Background/Employee" unique_id=505044593]
+[node name="AnimatedSprite2D" type="Sprite2D" parent="Employee" unique_id=505044593]
 position = Vector2(640, 540)
 scale = Vector2(8, 8)
 
@@ -1402,6 +1408,12 @@ volume_db = 10.0
 [node name="FridgeGrabSFX" type="AudioStreamPlayer2D" parent="." unique_id=1921800784]
 stream = ExtResource("15_iod1f")
 volume_db = 10.0
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="." unique_id=1187188675]
+stream = ExtResource("16_tfbev")
+volume_db = 10.0
+autoplay = true
+script = ExtResource("17_v6xy7")
 
 [connection signal="timeout" from="OpenSFXTimer" to="." method="_on_open_sfx_timer_timeout"]
 [connection signal="timeout" from="CloseSFXTimer" to="." method="_on_close_sfx_timer_timeout"]

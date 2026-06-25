@@ -353,6 +353,8 @@ func swap_helper(dest_cell_id, dest_inventory_index, dest_cell_type):
 # i promise this is just as hellish as it looks, particularly with all the redundant conditions becuz i don't have time to figure out which one matters or not 
 func _on_cell_input_event(viewport: Node, event: InputEvent, shape_idx: int, extra_arg_0: NodePath, extra_arg_1: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
+		if turn_count % 2 != 0:
+			return
 		if event.button_index == MOUSE_BUTTON_LEFT and enable_stash_edits == true and swap_in_progress == false:
 			stash_edit(extra_arg_0, extra_arg_1, viewport, event, shape_idx)		
 			fridge_grab_sfx.play()
@@ -370,7 +372,7 @@ func _on_stash_input_event(viewport: Node, event: InputEvent, shape_idx: int, ex
 
 @export var shake_amount: float = 5.0
 @onready var fridge_sprite: AnimatedSprite2D = $FridgeInside
-@onready var employee: Sprite2D = $Background/Employee/AnimatedSprite2D
+@onready var employee: Sprite2D = $Employee/AnimatedSprite2D
 @onready var city: Sprite2D = $Background/City/Sprite2D
 @onready var shake_timer = $ShakeTimer
 @onready var open_timer = $OpenTimer
@@ -380,6 +382,8 @@ func _on_stash_input_event(viewport: Node, event: InputEvent, shape_idx: int, ex
 @onready var fridge_close_sfx = $FridgeCloseSFX
 @onready var fridge_buzz_sfx = $FridgeBuzzSFX
 @onready var fridge_grab_sfx = $FridgeGrabSFX
+@onready var background_music = $BackgroundMusic
+@onready var canvas_modulate = $Background/DayNightCycle
 
 const CLOSED = 0
 const OPEN = 1
@@ -417,11 +421,15 @@ func advance_turn():
 	print("Turn: " + str(turn_count))
 	
 	if turn_count % 2 != 0:
+		background_music.fade_audio(-80.0, 3)
 		shake_timer.start()
 		open_sfx_timer.start()
 		Globals.refresh_buy_shop.emit()
+		canvas_modulate.daynightcycle((turn_count % 8) + 6)
+		print((turn_count % 15) + 7)
 	else:
 		fridge_sprite.frame = CLOSED
+		background_music.fade_audio(10.0, 2)
 		fridge_buzz_sfx.stop()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
