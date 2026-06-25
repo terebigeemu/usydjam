@@ -12,15 +12,18 @@ script = ExtResource("1_fqy7q")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1026147737]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 20
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2" unique_id=336968048]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="IconRect" type="TextureRect" parent="HBoxContainer2/VBoxContainer" unique_id=1362136692]
 unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 2
 stretch_mode = 5
 
 [node name="TitleLabel" type="Label" parent="HBoxContainer2/VBoxContainer" unique_id=859677394]
@@ -39,6 +42,7 @@ autowrap_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer2/VBoxContainer" unique_id=1176771701]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 8
 alignment = 1
 
@@ -50,6 +54,7 @@ theme_override_font_sizes/font_size = 30
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1300780726]
 unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("2_yg217")
 stretch_mode = 5
 

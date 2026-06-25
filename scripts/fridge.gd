@@ -69,9 +69,86 @@ var item102: int = Globals.item102
 @onready var stash_array = Globals.stash_array
 @onready var stash_item_array = Globals.stash_item_array
 
+# 1. The Database to hold our items
+var item_database: Dictionary = {}
+# --- NEW: CUSTOM TOOLTIP INNER CLASS ---
+# This builds the beautiful tooltip you wanted, bypassing the Global Theme!
+class CustomHoverOverlay extends Control:
+	func _make_custom_tooltip(for_text: String) -> Object:
+		var label = Label.new()
+		label.text = for_text
+		label.add_theme_font_size_override("font_size", 48)
+		label.add_theme_color_override("font_color", Color(1.0, 1.0, 1.0, 1.0))
+		
+		var style = StyleBoxFlat.new()
+		style.bg_color = Color(0.1, 0.1, 0.1, 1.0)
+		style.set_content_margin_all(12)
+		style.border_width_bottom = 2
+		style.border_width_top = 2
+		style.border_width_left = 2
+		style.border_width_right = 2
+		style.border_color = Color(1.0, 1.0, 1.0, 1.0)
+		
+		label.add_theme_stylebox_override("normal", style)
+		return label
+
+# --- NEW: TOOLTIP HELPER FUNCTIONS ---
+func attach_tooltip_overlay(sprite: AnimatedSprite2D):
+	# Create our custom invisible box
+	var overlay = CustomHoverOverlay.new()
+	overlay.name = "HoverOverlay"
+	
+	# IMPORTANT: Change these values to match the pixel size of your cell sprites!
+	overlay.custom_minimum_size = Vector2(64, 64) 
+	overlay.position = Vector2(-32, -32) # Centers the box if the sprite is centered
+	
+	# Set to PASS so the Area2D underneath can still be clicked! (The "Invisible Shield" fix)
+	overlay.mouse_filter = Control.MOUSE_FILTER_PASS 
+	sprite.add_child(overlay)
+
+# 4. Loader to read the items from the folder
+func load_item_database():
+	var folder = "res://items/"
+	var files = DirAccess.get_files_at(folder)
+	if files != null:
+		for file in files:
+			if file.ends_with(".tres") or file.ends_with(".tres.remap"):
+				var clean_name = file.replace(".remap", "")
+				var item = load(folder + clean_name) as ItemData
+				if item != null:
+					# Map the integer ID to the actual Resource data
+					item_database[item.item_id] = item
+
+# 5. Tooltip text generator
+func get_tooltip_text_from_id(item_id: int) -> String:
+	# Look up the ID in our newly loaded dictionary
+	if item_database.has(item_id):
+		var item: ItemData = item_database[item_id]
+		var tooltip = item.item_name + "\n"
+		tooltip += "Cost: " + str(item.cost) + " Coins\n"
+		tooltip += "Effect: " + item.attrb
+		return tooltip
+	
+	return "Unknown Item (ID: " + str(item_id) + ")"
+
+func update_slot_tooltip(sprite: AnimatedSprite2D, item_id: int):
+	var overlay = sprite.get_node_or_null("HoverOverlay")
+	if overlay:
+		# Assuming 'item_empty' is defined elsewhere in your script (e.g., -1 or 0)
+		if item_id == item_empty:
+			overlay.tooltip_text = ""
+		else:
+			overlay.tooltip_text = get_tooltip_text_from_id(item_id)
+
+########## Above is TESTED CODE
 
 func _ready() -> void:
+	
 	fridge_original_position = fridge_sprite.position
+	
+	# IMPORTANT: Load the database to connect table for hover data
+	load_item_database()
+	
 	cell_original_positions = [cell1.position, cell2.position, cell3.position, cell4.position, cell5.position, cell6.position]
 		
 	# call cutscene? can be done in a diff script
@@ -89,6 +166,8 @@ func _ready() -> void:
 	for i in stash_array:
 		i.frame = stash_item_array[n_stash]
 		i.visible = false
+		attach_tooltip_overlay(i) # ADDED
+		update_slot_tooltip(i, stash_item_array[n_stash]) # ADDED
 		n_stash += 1
 	
 	for i in cell_array:
@@ -99,6 +178,8 @@ func _ready() -> void:
 		cell_item_array[n_cell] = rng.randi_range(0, 156)
 		i.frame = cell_item_array[n_cell]
 		i.visible = true
+		attach_tooltip_overlay(i) # ADDED
+		update_slot_tooltip(i, cell_item_array[n_cell]) # ADDED
 		n_cell += 1
 		
 	print("Cell array: " + str(cell_array))
@@ -170,8 +251,10 @@ func stash_fill(cell_id, item_no, inventory_index):
 				# if a slot is empty, use that slot
 				stash_item_array[n_count] = item_no
 				stash_selected.frame = item_no 
+				update_slot_tooltip(stash_selected, item_no) # ADDED
 				cell_item_array[inventory_index] = item_empty
 				cell_selected.frame = item_empty
+				update_slot_tooltip(cell_selected, item_empty) # ADDED
 				print("updated stash_selected.frame = " + str(item_no) + " for " + str(stash_selected))
 				is_filled = true
 				
@@ -235,8 +318,10 @@ func fridge_fill(cell_id, item_no, inventory_index):
 				# if a slot is empty, use that slot
 				cell_item_array[n_count] = item_no
 				cell_selected.frame = item_no 
+				update_slot_tooltip(cell_selected, item_no) # ADDED
 				stash_item_array[inventory_index] = item_empty
 				stash_selected.frame = item_empty
+				update_slot_tooltip(stash_selected, item_empty) # ADDED
 				print("updated stash_selected.frame = " + str(item_no) + " for " + str(cell_selected))
 				is_filled = true
 				
@@ -291,7 +376,9 @@ func swap_helper(dest_cell_id, dest_inventory_index, dest_cell_type):
 			cell_item_array[swap_inventory_index] = temp
 			
 			swap_cell.frame = cell_item_array[swap_inventory_index]
+			update_slot_tooltip(swap_cell, cell_item_array[swap_inventory_index]) # ADDED
 			cell_selected.frame = cell_item_array[dest_inventory_index]
+			update_slot_tooltip(cell_selected, cell_item_array[dest_inventory_index]) # ADDED
 			
 		else:
 			print("player clicked on normal cell")
@@ -302,9 +389,11 @@ func swap_helper(dest_cell_id, dest_inventory_index, dest_cell_type):
 			
 			cell_item_array[dest_inventory_index] = stash_item_array[swap_inventory_index]
 			stash_item_array[swap_inventory_index] = temp
+			update_slot_tooltip(cell_selected, cell_item_array[dest_inventory_index]) # ADDED
 			
 			cell_selected.frame = cell_item_array[dest_inventory_index]
 			swap_cell.frame = stash_item_array[swap_inventory_index]
+			update_slot_tooltip(swap_cell, stash_item_array[swap_inventory_index]) # ADDED
 		
 	elif dest_cell_type == 1: # player clicked on stash cell
 		print("stash cell")
@@ -322,7 +411,9 @@ func swap_helper(dest_cell_id, dest_inventory_index, dest_cell_type):
 			stash_item_array[swap_inventory_index] = temp
 			
 			swap_cell.frame = stash_item_array[swap_inventory_index]
+			update_slot_tooltip(swap_cell, stash_item_array[swap_inventory_index]) # ADDED
 			cell_selected.frame = stash_item_array[dest_inventory_index]
+			update_slot_tooltip(cell_selected, stash_item_array[dest_inventory_index]) # ADDED
 
 		else:
 			print("player clicked on stash cell")
@@ -335,7 +426,9 @@ func swap_helper(dest_cell_id, dest_inventory_index, dest_cell_type):
 			cell_item_array[swap_inventory_index] = temp
 			
 			swap_cell.frame = cell_item_array[swap_inventory_index]
+			update_slot_tooltip(swap_cell, cell_item_array[swap_inventory_index]) # ADDED
 			cell_selected.frame = stash_item_array[dest_inventory_index]
+			update_slot_tooltip(cell_selected, stash_item_array[dest_inventory_index]) # ADDED
 
 	# reset registers
 	
