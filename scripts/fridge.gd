@@ -21,6 +21,7 @@ extends Node
 @onready var stash102: AnimatedSprite2D = Globals.stash102
 @onready var start_btn = $UI/PanelContainer/MarginContainer/MainMenu/StartBtn
 @onready var input_blocker = $StageScreen/InputBlocker
+@onready var final_score_label = $StageScreen/FinalScoreLabel
 
 ### Testing
 var current_active_employee: EmployeeData = null
@@ -76,7 +77,7 @@ var item_database: Dictionary = {}
 # This builds the beautiful tooltip you wanted, bypassing the Global Theme!
 class CustomHoverOverlay extends Control:
 	func _make_custom_tooltip(for_text: String) -> Object:
-		if for_text != "":
+		if for_text != "" and Globals.tooltips_enabled == true:
 			var label = Label.new()
 			label.text = for_text
 			label.add_theme_font_size_override("font_size", 48)
@@ -491,6 +492,7 @@ func _on_stash_input_event(viewport: Node, event: InputEvent, shape_idx: int, ex
 @onready var background_music = $BackgroundMusic
 @onready var canvas_modulate = $Background/DayNightCycle
 @onready var game_over_screen = $StageScreen/GameOverScreen
+@onready var win_game_screen = $StageScreen/WinGameScreen
 
 const CLOSED = 0
 const OPEN = 1
@@ -594,8 +596,17 @@ func advance_level():
 	print("Level: " + str(level))
 	city.position.y += 200
 	
+func win_game():
+	win_game_screen.visible = true
+	final_score_label.text = "You impressed " + Globals.chosen_employee.title + " and they're having you moved upstairs! You were promoted in " + str(turn_count) + " turns."
+	final_score_label.visible = true
+	input_blocker.show()
+	background_music.fade_audio(-80.0, 0.01)
+	
 func end_game():
 	game_over_screen.visible = true
+	final_score_label.text = "You lost favour with " + Globals.chosen_employee.title + " and they asked for you to be let go. You survived " + str(turn_count) + " turns."
+	final_score_label.visible = true
 	input_blocker.show()
 	background_music.fade_audio(-80.0, 0.01)
 	
@@ -605,6 +616,13 @@ func _check_if_game_over() -> void: # this can also check if the game has been w
 		
 		if Globals.chosen_employee.affinity < 0: # if affinity drops below zero
 				end_game()
+
+	if Globals.chosen_employee.promotion == true:
+		print("This employee can promote the player")
+
+		if Globals.chosen_employee.affinity >= 8: # i hope this is a reasonable number
+			if rng.randi_range(0, 10) <= 8: # haha rng
+				win_game()
 
 # Shop updates
 

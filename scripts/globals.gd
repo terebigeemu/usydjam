@@ -42,6 +42,8 @@ var item100: int = item_empty
 var item101: int = item_empty
 var item102: int = item_empty
 
+var tooltips_enabled: bool = false;
+
 @onready var cell_array = [cell1, cell2, cell3, cell4, cell5, cell6]
 @onready var cell_item_array = [item1, item2, item3, item4, item5, item6]
 
@@ -69,20 +71,16 @@ func update_pickable_status() -> void:
 	for i in stash_array:
 		if stash_item_array[n_i] != Globals.item_empty:
 			individual_stash_pickable_handler(true, n_i)
-			print("pickable stash true for" + str(n_i))
 		else:
 			individual_stash_pickable_handler(false, n_i)
-			print("pickable stash false for" + str(n_i))
 		n_i += 1
 		
 	var n_j: int = 0
 	for j in cell_array:
 		if cell_item_array[n_j] != Globals.item_empty:
 			individual_cell_pickable_handler(true, n_j)
-			print("pickable stash true for" + str(n_i))
 		else:
 			individual_cell_pickable_handler(false, n_j)
-			print("pickable stash false for" + str(n_i))
 		n_j += 1
 
 func stash_pickable_handler(is_pickable: bool) -> void:

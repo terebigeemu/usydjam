@@ -23,6 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://cwqury6eaejp3" path="res://assets/FridgeBuzz.mp3" id="18_v6xy7"]
 [ext_resource type="Texture2D" uid="uid://bxhu03iny5xsf" path="res://assets/game_over.png" id="19_j2m7l"]
 [ext_resource type="Texture2D" uid="uid://dogulcqjbtusd" path="res://assets/cutscene1.png" id="23_d0nps"]
+[ext_resource type="FontFile" uid="uid://cnkdl8bqimxub" path="res://assets/pixelify.ttf" id="23_ds0wk"]
 [ext_resource type="Texture2D" uid="uid://d07l3efylplfn" path="res://assets/cutscene2.png" id="24_qqhkm"]
 [ext_resource type="Texture2D" uid="uid://4p04aa6mhiy4" path="res://assets/cutscene3.png" id="25_y6mj6"]
 [ext_resource type="Texture2D" uid="uid://bgnbc7v7xve2" path="res://assets/cutscene4.png" id="26_8anqc"]
@@ -1484,6 +1485,23 @@ visible = false
 position = Vector2(960, 540)
 scale = Vector2(8, 8)
 texture = ExtResource("19_j2m7l")
+
+[node name="WinGameScreen" type="Sprite2D" parent="StageScreen" unique_id=1909945226]
+visible = false
+position = Vector2(960, 540)
+scale = Vector2(8, 8)
+texture = ExtResource("19_j2m7l")
+
+[node name="FinalScoreLabel" type="Label" parent="StageScreen" unique_id=2116564889]
+visible = false
+offset_left = 104.0
+offset_top = 560.0
+offset_right = 1827.0
+offset_bottom = 615.0
+theme_override_colors/font_color = Color(0.35686275, 0.45490196, 0.49019608, 1)
+theme_override_fonts/font = ExtResource("23_ds0wk")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
 
 [node name="Cutscene" type="AnimatedSprite2D" parent="StageScreen" unique_id=1254663875]
 position = Vector2(960, 540)

@@ -18,10 +18,16 @@ func _on_frame_changed() -> void:
 		var fade_tween = create_tween()
 		
 		fade_tween.tween_property(cutscene5_label2, "modulate:a", 1.0, 0.5).set_delay(3.0)
-
+		
+		Globals.tooltips_enabled = true
+		
 func _on_input_blocker_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
+			print("test")
+			
+			Globals.tooltips_enabled = true
+			
 			self.hide()
 			input_blocker.hide()
 			cutscene4_label.hide()
