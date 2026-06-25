@@ -1403,27 +1403,18 @@ text = "InitialState"
 [connection signal="timeout" from="ShakeTimer" to="." method="_on_shake_timer_timeout"]
 [connection signal="timeout" from="OpenTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="OpenTimer" to="." method="_on_open_timer_timeout"]
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
 [connection signal="input_event" from="TempNextTurnButton" to="." method="_on_side_panel_input_event"]
 [connection signal="input_event" from="TempNextTurnButton" to="." method="_on_temp_next_turn_button_input_event"]
 [connection signal="input_event" from="UI/Stash100" to="." method="_on_stash_input_event" binds= [NodePath("UI/Stash100/Cell100"), 0]]
 [connection signal="input_event" from="UI/Stash101" to="." method="_on_stash_input_event" binds= [NodePath("UI/Stash101/Cell101"), 1]]
 [connection signal="input_event" from="UI/Stash102" to="." method="_on_stash_input_event" binds= [NodePath("UI/Stash102/Cell102"), 2]]
->>>>>>> 2a43e36e10c1433100b58169cd84ec225749f95f
 [connection signal="input_event" from="Area1" to="." method="_on_cell_input_event" binds= [NodePath("Area1/Cell1"), 1]]
 [connection signal="input_event" from="Area2" to="." method="_on_cell_input_event" binds= [NodePath("Area2/Cell2"), 2]]
 [connection signal="input_event" from="Area3" to="." method="_on_cell_input_event" binds= [NodePath("Area3/Cell3"), 3]]
 [connection signal="input_event" from="Area4" to="." method="_on_cell_input_event" binds= [NodePath("Area4/Cell4"), 4]]
 [connection signal="input_event" from="Area5" to="." method="_on_cell_input_event" binds= [NodePath("Area5/Cell5"), 5]]
 [connection signal="input_event" from="Area6" to="." method="_on_cell_input_event" binds= [NodePath("Area6/Cell6"), 6]]
-<<<<<<< HEAD
 [connection signal="input_event" from="Stash100" to="." method="_on_stash_input_event" binds= [NodePath("Stash100/Cell100"), 0]]
 [connection signal="input_event" from="Stash101" to="." method="_on_stash_input_event" binds= [NodePath("Stash101/Cell101"), 1]]
 [connection signal="input_event" from="Stash102" to="." method="_on_stash_input_event" binds= [NodePath("Stash102/Cell102"), 2]]
->>>>>>> 9e1802e5720c16a3e1cfc6da50ec9fa6d65b77b9
 [connection signal="input_event" from="SidePanel" to="." method="_on_side_panel_input_event"]
-=======
->>>>>>> 2a43e36e10c1433100b58169cd84ec225749f95f
