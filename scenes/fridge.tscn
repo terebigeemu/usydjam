@@ -18,6 +18,8 @@
 [ext_resource type="Script" uid="uid://cn7dji2lpdsos" path="res://scripts/background_music.gd" id="17_v6xy7"]
 [ext_resource type="Script" uid="uid://b0q2xm04uf2nh" path="res://scripts/day_night_cycle.gd" id="18_j2m7l"]
 [ext_resource type="AudioStream" uid="uid://cwqury6eaejp3" path="res://assets/FridgeBuzz.mp3" id="18_v6xy7"]
+[ext_resource type="Script" uid="uid://io1qtrhejmyp" path="res://scripts/handlers.gd" id="12_nm1dx"]
+[ext_resource type="Texture2D" uid="uid://b32whxssbahlv" path="res://assets/roy.png" id="12_t2fjl"]
 
 [sub_resource type="Gradient" id="Gradient_buvrw"]
 colors = PackedColorArray(0.68235296, 0.91764706, 0.9882353, 1, 0.47058824, 0.8666667, 0.98039216, 1)
@@ -1417,6 +1419,12 @@ script = ExtResource("17_v6xy7")
 
 [connection signal="timeout" from="OpenSFXTimer" to="." method="_on_open_sfx_timer_timeout"]
 [connection signal="timeout" from="CloseSFXTimer" to="." method="_on_close_sfx_timer_timeout"]
+[node name="HandlerDummy" type="Sprite2D" parent="." unique_id=159950619]
+position = Vector2(1651, -576)
+scale = Vector2(0.0453241, 0.04997395)
+texture = ExtResource("12_t2fjl")
+script = ExtResource("12_nm1dx")
+
 [connection signal="timeout" from="ShakeTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="ShakeTimer" to="." method="_on_shake_timer_timeout"]
 [connection signal="timeout" from="OpenTimer" to="." method="_on_timer_timeout"]
