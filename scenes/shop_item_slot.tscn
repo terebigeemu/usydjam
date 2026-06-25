@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dxk7bln4rt0n5"]
 
 [ext_resource type="Script" uid="uid://qp4s8jiiv18n" path="res://scripts/shop_item_slot.gd" id="1_rg8m6"]
+[ext_resource type="Texture2D" uid="uid://dmxdwm6824vac" path="res://assets/bits.png" id="2_7qhvu"]
+[ext_resource type="FontFile" uid="uid://cnkdl8bqimxub" path="res://assets/pixelify.ttf" id="2_uob2f"]
 
 [node name="ItemTable" type="VBoxContainer" unique_id=873649058]
 offset_right = 8.0
@@ -14,10 +16,21 @@ layout_mode = 2
 expand_mode = 1
 stretch_mode = 5
 
-[node name="CostLabel" type="Label" parent="." unique_id=761312351]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=353535394]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-horizontal_alignment = 1
+theme_override_constants/margin_right = 40
+
+[node name="CostLabel" type="Label" parent="MarginContainer" unique_id=761312351]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_uob2f")
+theme_override_font_sizes/font_size = 40
+text = "test"
+horizontal_alignment = 2
+
+[node name="Bits" type="Sprite2D" parent="." unique_id=93760606]
+position = Vector2(183, 158)
+scale = Vector2(3.5798397, 3.5798397)
+texture = ExtResource("2_7qhvu")
 
 [node name="BuyButton" type="Button" parent="." unique_id=1646032409]
 layout_mode = 2

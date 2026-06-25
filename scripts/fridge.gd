@@ -531,7 +531,7 @@ func _on_action_sale_in_inventory(id: int, cost: int, combined_inventory_index: 
 	else:								# in stash
 		item_update_handler(true, combined_inventory_index - 6, item_empty)
 	
-	ToastX.fridgesim("Sold item! You got " + str(cost) + " coins!")
+	ToastX.fridgesim("Sold item! You got " + str(cost) + " bits!")
 		
 	Globals.player_bal += cost	
 	Globals.refresh_sell_shop.emit()
