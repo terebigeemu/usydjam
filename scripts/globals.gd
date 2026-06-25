@@ -13,6 +13,10 @@ var player_level: String = "Employee"
 @onready var stash101: AnimatedSprite2D = get_node("../Fridge/UI/Stash101/Cell101")
 @onready var stash102: AnimatedSprite2D = get_node("../Fridge/UI/Stash102/Cell102")
 
+@onready var error_sfx = get_node("../Fridge/UI/ErrorSFX")
+@onready var home_sfx = get_node("../Fridge/UI/HomeSFX")
+@onready var menu_sfx = get_node("../Fridge/UI/MenuSFX")
+
 const item_empty: int = 157
 
 var item1: int = item_empty
@@ -43,5 +47,7 @@ signal block_menu()
 
 var affinity_to_add: int = 0;
 var affinity_to_add_hasbeenadded: bool = true;
+
+var chosen_employee
 
 			

@@ -1268,7 +1268,7 @@ shape = SubResource("RectangleShape2D_tfbev")
 [node name="CoverMenu" type="Panel" parent="UI" unique_id=234450630]
 z_index = 25
 offset_left = 1282.0
-offset_top = -3.999998
+offset_top = -4.0
 offset_right = 1322.0
 offset_bottom = 36.0
 scale = Vector2(15.954549, 27.273582)

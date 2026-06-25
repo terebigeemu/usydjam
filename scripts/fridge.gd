@@ -359,13 +359,13 @@ func _on_cell_input_event(viewport: Node, event: InputEvent, shape_idx: int, ext
 			fridge_grab_sfx.play()
 		elif event.button_index == MOUSE_BUTTON_LEFT and enable_stash_edits == false and swap_in_progress == true:
 			swap_helper(extra_arg_0, extra_arg_1, 0)
-			fridge_grab_sfx.play()
 			
 
 func _on_stash_input_event(viewport: Node, event: InputEvent, shape_idx: int, extra_arg_0: NodePath, extra_arg_1: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT and enable_stash_edits == true and swap_in_progress == false:
 			fridge_edit(extra_arg_0, extra_arg_1, viewport, event, shape_idx)
+			fridge_grab_sfx.play()
 		elif event.button_index == MOUSE_BUTTON_LEFT and enable_stash_edits == false and swap_in_progress == true:
 			swap_helper(extra_arg_0, extra_arg_1, 1) 
 
@@ -399,22 +399,20 @@ func _on_start_btn_pressed():
 # Chooses employee from available ones in employees folder based on whether 
 # they have the same level as player and based on a probability
 func summon_employee(current_player_level: String):
-	
-	# Ask the Autoload for a random employee based on the level
-	var chosen_employee = EmployeeManager.summon_employee(current_player_level)
-	current_active_employee = chosen_employee
-	# Safety check: Make sure it actually found someone
-	if chosen_employee != null:
-		print("Spawned Employee: ", chosen_employee.title)
 		
-		Globals.employee_takes_from_fridge.emit(chosen_employee.title)
-		employee.texture = chosen_employee.icon
+	# Ask the Autoload for a random employee based on the level
+	Globals.chosen_employee = EmployeeManager.summon_employee(current_player_level)
+	current_active_employee = Globals.chosen_employee
+	# Safety check: Make sure it actually found someone
+	if Globals.chosen_employee != null:
+		print("Spawned Employee: ", Globals.chosen_employee.title)
+		
+		employee.texture = Globals.chosen_employee.icon
 		
 		await get_tree().create_timer(0.2).timeout
 		
 		EmployeeManager.add_affinity(current_active_employee, Globals.affinity_to_add) #tbc
 			
-
 
 func advance_turn():
 	turn_count += 1
@@ -460,7 +458,6 @@ func _on_shake_timer_timeout() -> void:
 	close_sfx_timer.start()
 	fridge_buzz_sfx.play()
 
-
 	# i moved the logic to summon_employee -adrian
 	
 func _on_open_timer_timeout() -> void:
@@ -470,6 +467,7 @@ func _on_open_sfx_timer_timeout() -> void:
 	fridge_open_sfx.play()
 	
 func _on_close_sfx_timer_timeout() -> void:
+	Globals.employee_takes_from_fridge.emit(Globals.chosen_employee.title)
 	fridge_close_sfx.play()
 	
 func _on_temp_button_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
@@ -518,6 +516,8 @@ func _on_inventory_update(id: int, cost: int, store_array_index: int) -> void: #
 		n_j += 1
 			
 	if has_filled == false:
+		Globals.error_sfx.play()
+		ToastX.fridgesim("No space in your inventory!")
 		pass
 	elif has_filled == true:
 		Globals.player_bal -= cost	
