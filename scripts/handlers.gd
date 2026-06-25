@@ -134,12 +134,12 @@ func _employee_picks_food_from_fridge_or_smth_idk(employee_title: String) -> voi
 			var food_attrb_array: Array = food_attribute_parser(i)		# return prefs for each item
 			var food_name: String = food_name(i)
 			var food_cost: int = food_cost(i)
-			var preference_points: int = 0								# how many points does this food win
+			var preference_points: int = 1							# how many points does this food win
 
 			for j in food_attrb_array:		
 				print("food_attrb_array j = " + j)						# for each j in food_attribute_array
 				if j in employee_preference_array:						# if it matches any attribute in employee_pref_array, +1 point
-					preference_points += 1			
+					preference_points += 1		
 					
 			preference_points = preference_points + food_cost
 	
@@ -148,7 +148,7 @@ func _employee_picks_food_from_fridge_or_smth_idk(employee_title: String) -> voi
 			if preference_points > pb_preference_points:
 				best_food_id = i
 				best_food_name = food_name
-				pb_preference_points = preference_points
+				pb_preference_points = preference_points - 1
 				likes_anything = true
 				print("new pb: preference points for " + str(i) + " is equal to " + str(preference_points))
 								
