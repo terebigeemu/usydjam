@@ -29,6 +29,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_ua6yw")
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=281203841]
 layout_mode = 2
 mouse_filter = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 0
 
 [node name="MainMenu" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=176046976]
 visible = false
@@ -98,10 +102,10 @@ theme_override_font_sizes/font_size = 24
 text = "erm you should not see this"
 horizontal_alignment = 1
 
-[node name="ShopLabel" type="Label" parent="PanelContainer/MarginContainer/ShopPage" unique_id=875980187]
+[node name="BuyLabel" type="Label" parent="PanelContainer/MarginContainer/ShopPage" unique_id=875980187]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "SHOP"
+text = "Buy items"
 horizontal_alignment = 1
 
 [node name="BuySection" type="MarginContainer" parent="PanelContainer/MarginContainer/ShopPage" unique_id=1821928613]
@@ -114,6 +118,12 @@ theme_override_constants/margin_top = 50
 layout_mode = 2
 theme_override_constants/h_separation = 8
 columns = 3
+
+[node name="SellLabel" type="Label" parent="PanelContainer/MarginContainer/ShopPage" unique_id=1948373572]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Sell items"
+horizontal_alignment = 1
 
 [node name="SellSection" type="ScrollContainer" parent="PanelContainer/MarginContainer/ShopPage" unique_id=950362076]
 layout_mode = 2
