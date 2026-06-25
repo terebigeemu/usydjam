@@ -381,12 +381,27 @@ func _on_start_btn_pressed():
 # Need to get this connected to each employee, need to expand this so 
 # only employees of appropriate levels can show up, based on fridges level
 
+
+
+
+
+
+########
 func get_random_employee():
 	var frame_count = employee.sprite_frames.get_frame_count("default")
 	var random_frame = randi_range(0, frame_count - 1)
 	print(random_frame)
 	employee.frame = random_frame
-			
+##########
+
+
+
+
+
+
+
+
+
 func advance_turn():
 	turn_count += 1
 	print("Turn: " + str(turn_count))
