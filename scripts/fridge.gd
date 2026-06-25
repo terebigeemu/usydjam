@@ -87,6 +87,7 @@ func _ready() -> void:
 	for i in stash_array:
 		i.frame = stash_item_array[n_stash]
 		i.visible = false
+		print("yes")
 		n_stash += 1
 	
 	for i in cell_array:
@@ -352,8 +353,10 @@ func _on_cell_input_event(viewport: Node, event: InputEvent, shape_idx: int, ext
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT and enable_stash_edits == true and swap_in_progress == false:
 			stash_edit(extra_arg_0, extra_arg_1, viewport, event, shape_idx)		
+			fridge_grab_sfx.play()
 		elif event.button_index == MOUSE_BUTTON_LEFT and enable_stash_edits == false and swap_in_progress == true:
 			swap_helper(extra_arg_0, extra_arg_1, 0)
+			fridge_grab_sfx.play()
 			
 
 func _on_stash_input_event(viewport: Node, event: InputEvent, shape_idx: int, extra_arg_0: NodePath, extra_arg_1: int) -> void:
@@ -369,6 +372,12 @@ func _on_stash_input_event(viewport: Node, event: InputEvent, shape_idx: int, ex
 @onready var city: Sprite2D = $Background/City/Sprite2D
 @onready var shake_timer = $ShakeTimer
 @onready var open_timer = $OpenTimer
+@onready var open_sfx_timer = $OpenSFXTimer
+@onready var close_sfx_timer = $CloseSFXTimer
+@onready var fridge_open_sfx = $FridgeOpenSFX
+@onready var fridge_close_sfx = $FridgeCloseSFX
+@onready var fridge_buzz_sfx = $FridgeBuzzSFX
+@onready var fridge_grab_sfx = $FridgeGrabSFX
 
 const CLOSED = 0
 const OPEN = 1
@@ -407,9 +416,11 @@ func advance_turn():
 	
 	if turn_count % 2 != 0:
 		shake_timer.start()
+		open_sfx_timer.start()
 		Globals.refresh_buy_shop.emit()
 	else:
 		fridge_sprite.frame = CLOSED
+		fridge_buzz_sfx.stop()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -429,6 +440,8 @@ func _on_shake_timer_timeout() -> void:
 	fridge_sprite.frame = OPEN
 	
 	open_timer.start()
+	close_sfx_timer.start()
+	fridge_buzz_sfx.play()
 
 func _on_open_timer_timeout() -> void:
 	var valid_cells = [] # Only cells that have items
@@ -443,6 +456,12 @@ func _on_open_timer_timeout() -> void:
 		cell_array[chosen_idx].frame = item_empty
 		
 	advance_turn()
+
+func _on_open_sfx_timer_timeout() -> void:
+	fridge_open_sfx.play()
+	
+func _on_close_sfx_timer_timeout() -> void:
+	fridge_close_sfx.play()
 	
 func _on_temp_button_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
