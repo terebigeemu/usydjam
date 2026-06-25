@@ -2,7 +2,6 @@ extends Control
 
 # Drag your UI nodes into these variables in the inspector, or use $NodeName
 @onready var icon_rect = $TextureRect
-@onready var name_label = $NameLabel
 @onready var cost_label = $CostLabel
 @onready var sell_item = $SellButton
 
@@ -13,7 +12,6 @@ func setup(item_data: ItemData, combined_inventory_index: int):
 	
 	# Assign the data to your UI nodes
 	icon_rect.texture = item_data.icon
-	name_label.text = item_data.item_name
 	cost_label.text = str(item_data.cost) + " Coins"
 	
 	# Connect the buy button!

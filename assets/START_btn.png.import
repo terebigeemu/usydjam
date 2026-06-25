@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2husdh4con3u"
-path="res://.godot/imported/wooden_shelf.png-e9e2c88f47425d1606e16b66912e05c8.ctex"
+uid="uid://d4cu3pa4gwm2e"
+path="res://.godot/imported/START_btn.png-11e8c97553b71bb2c3922760c83d0751.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wooden_shelf.png"
-dest_files=["res://.godot/imported/wooden_shelf.png-e9e2c88f47425d1606e16b66912e05c8.ctex"]
+source_file="res://assets/START_btn.png"
+dest_files=["res://.godot/imported/START_btn.png-11e8c97553b71bb2c3922760c83d0751.ctex"]
 
 [params]
 

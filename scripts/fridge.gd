@@ -463,18 +463,6 @@ func _on_shake_timer_timeout() -> void:
 	close_sfx_timer.start()
 	fridge_buzz_sfx.play()
 
-	#
-
-	#var valid_cells = [] # Only cells that have items
-	#for i in cell_array.size():
-		#if cell_item_array[i] != item_empty:
-			#valid_cells.append(i)
-			#
-	#if not valid_cells.is_empty():
-		#var random_idx = randi_range(0, valid_cells.size() - 1)
-		#var chosen_idx = valid_cells[random_idx]
-		#cell_item_array[chosen_idx] = item_empty
-		#cell_array[chosen_idx].frame = item_empty
 
 	# i moved the logic to summon_employee -adrian
 	
