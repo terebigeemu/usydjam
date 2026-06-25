@@ -21,7 +21,9 @@ extends Node
 @onready var stash102: AnimatedSprite2D = Globals.stash102
 @onready var start_btn = $UI/PanelContainer/MarginContainer/MainMenu/StartBtn
 
-
+### Testing
+var current_active_employee: EmployeeData = null
+###
 var fridge_original_position: Vector2
 var cell_original_positions: Array[Vector2]
 
@@ -395,7 +397,7 @@ func summon_employee(current_player_level: String):
 	
 	# Ask the Autoload for a random employee based on the level
 	var chosen_employee = EmployeeManager.summon_employee(current_player_level)
-	
+	current_active_employee = chosen_employee
 	# Safety check: Make sure it actually found someone
 	if chosen_employee != null:
 		print("Spawned Employee: ", chosen_employee.title)
@@ -448,6 +450,10 @@ func _on_open_timer_timeout() -> void:
 	for i in cell_array.size():
 		if cell_item_array[i] != item_empty:
 			valid_cells.append(i)
+			
+			######---------#########
+			EmployeeManager.add_affinity(current_active_employee, 5)
+			#######--------##########
 			
 	if not valid_cells.is_empty():
 		var random_idx = randi_range(0, valid_cells.size() - 1)
