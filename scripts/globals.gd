@@ -13,6 +13,17 @@ var player_level: String = "Employee"
 @onready var stash101: AnimatedSprite2D = get_node("../Fridge/UI/Stash101/Cell101")
 @onready var stash102: AnimatedSprite2D = get_node("../Fridge/UI/Stash102/Cell102")
 
+@onready var stash100_Area2D: Area2D = get_node("../Fridge/UI/Stash100")
+@onready var stash101_Area2D: Area2D = get_node("../Fridge/UI/Stash101")
+@onready var stash102_Area2D: Area2D = get_node("../Fridge/UI/Stash102")
+
+@onready var area1: Area2D = get_node("../Fridge/Area1")
+@onready var area2: Area2D = get_node("../Fridge/Area2")
+@onready var area3: Area2D = get_node("../Fridge/Area3")
+@onready var area4: Area2D = get_node("../Fridge/Area4")
+@onready var area5: Area2D = get_node("../Fridge/Area5")
+@onready var area6: Area2D = get_node("../Fridge/Area6")
+
 @onready var error_sfx = get_node("../Fridge/UI/ErrorSFX")
 @onready var home_sfx = get_node("../Fridge/UI/HomeSFX")
 @onready var menu_sfx = get_node("../Fridge/UI/MenuSFX")
@@ -50,4 +61,48 @@ var affinity_to_add_hasbeenadded: bool = true;
 
 var chosen_employee
 
+func update_pickable_status() -> void:
+	var n_i: int = 0
+	for i in stash_array:
+		if stash_item_array[n_i] != Globals.item_empty:
+			individual_stash_pickable_handler(true, n_i)
+		else:
+			individual_stash_pickable_handler(false, n_i)
+		n_i += 1
+		
+	var n_j: int = 0
+	for j in cell_array:
+		if cell_item_array[n_j] != Globals.item_empty:
+			individual_cell_pickable_handler(true, n_j)
+		else:
+			individual_cell_pickable_handler(false, n_j)
+		n_j += 1
+
+func stash_pickable_handler(is_pickable: bool) -> void:
+	stash100_Area2D.input_pickable = is_pickable
+	stash101_Area2D.input_pickable = is_pickable
+	stash102_Area2D.input_pickable = is_pickable
+	
+func individual_stash_pickable_handler(is_pickable: bool, index: int) -> void:
+	match index:
+		0:
+			stash100_Area2D.input_pickable = is_pickable
+		1:
+			stash101_Area2D.input_pickable = is_pickable
+		2:
+			stash102_Area2D.input_pickable = is_pickable
 			
+func individual_cell_pickable_handler(is_pickable: bool, index: int) -> void:
+	match index:
+		0:
+			area1.input_pickable = is_pickable
+		1:
+			area2.input_pickable = is_pickable
+		2:
+			area3.input_pickable = is_pickable
+		3:
+			area4.input_pickable = is_pickable
+		4:
+			area5.input_pickable = is_pickable
+		5:
+			area6.input_pickable = is_pickable

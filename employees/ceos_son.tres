@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_85ndv")
-title = "Intern 3 (CEOs son)"
+title = "CEO's son"
 level = "Employee"
 promotion = true
 encounter = 0.2

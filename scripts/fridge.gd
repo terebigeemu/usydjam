@@ -56,7 +56,7 @@ var item100: int = Globals.item100
 var item101: int = Globals.item101
 var item102: int = Globals.item102
 
-# _array		= contains the NodePath
+# _array		= contains the NodePath of the Cell
 # _item_array	= contains the item ID (usually congruent with the spritesheet frame ID)
 # cell_array and cell_item_array should generally never diverge except for
 # momentary instances where the frames of a sprite might need to change
@@ -162,6 +162,8 @@ func _ready() -> void:
 	
 	var n_stash: int = 0
 	var n_cell: int = 0
+	
+	Globals.stash_pickable_handler(false)
 
 	for i in stash_array:
 		i.frame = stash_item_array[n_stash]
@@ -245,7 +247,7 @@ func stash_fill(cell_id, item_no, inventory_index):
 					
 			if is_filled == true:
 				# if a slot has already been filled during this function execution, break the return function
-				ToastX.fridgesim("Moved to stash!")
+				ToastX.fridgesim("Moved to hidden inventory!")
 				break
 			elif i == item_empty and is_filled != true:
 				# if a slot is empty, use that slot
@@ -449,9 +451,11 @@ func _on_cell_input_event(viewport: Node, event: InputEvent, shape_idx: int, ext
 			return
 		if event.button_index == MOUSE_BUTTON_LEFT and enable_stash_edits == true and swap_in_progress == false:
 			stash_edit(extra_arg_0, extra_arg_1, viewport, event, shape_idx)		
+			Globals.update_pickable_status()
 			fridge_grab_sfx.play()
 		elif event.button_index == MOUSE_BUTTON_LEFT and enable_stash_edits == false and swap_in_progress == true:
 			swap_helper(extra_arg_0, extra_arg_1, 0)
+			Globals.update_pickable_status()
 			
 
 func _on_stash_input_event(viewport: Node, event: InputEvent, shape_idx: int, extra_arg_0: NodePath, extra_arg_1: int) -> void:
@@ -459,8 +463,10 @@ func _on_stash_input_event(viewport: Node, event: InputEvent, shape_idx: int, ex
 		if event.button_index == MOUSE_BUTTON_LEFT and enable_stash_edits == true and swap_in_progress == false:
 			fridge_edit(extra_arg_0, extra_arg_1, viewport, event, shape_idx)
 			fridge_grab_sfx.play()
+			Globals.update_pickable_status()
 		elif event.button_index == MOUSE_BUTTON_LEFT and enable_stash_edits == false and swap_in_progress == true:
 			swap_helper(extra_arg_0, extra_arg_1, 1) 
+			Globals.update_pickable_status()
 
 @export var shake_amount: float = 5.0
 @onready var fridge_sprite: AnimatedSprite2D = $FridgeInside
@@ -511,6 +517,8 @@ func advance_turn():
 	turn_count += 1
 	print("Turn: " + str(turn_count))
 	
+	Globals.update_pickable_status()
+	
 	if turn_count % 2 != 0:
 		background_music.fade_audio(-80.0, 3)
 		shake_timer.start()
@@ -537,6 +545,8 @@ func _process(delta: float) -> void:
 		fridge_sprite.position = fridge_original_position + shake_offset
 		for i in cell_array.size():
 			cell_array[i].position = cell_original_positions[i] + shake_offset
+			
+	Globals.update_pickable_status() # it is 10pm and i am lazy af
 
 func _on_shake_timer_timeout() -> void:
 	fridge_sprite.position = fridge_original_position
@@ -636,6 +646,5 @@ func item_update_handler(is_stash: bool, index: int, update_to_item_id: int) -> 
 	elif is_stash == true:
 		stash_item_array[index] = update_to_item_id
 		stash_array[index].frame = stash_item_array[index] 
-
 
 # it works right? no complaining~

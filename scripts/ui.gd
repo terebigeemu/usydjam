@@ -91,14 +91,17 @@ func go_home(mute_sound = false):
 func _exit_tree() -> void:
 	pass # Replace with function body.
 
+
 func _open_stash_ui() -> void:
 	for i in stash_cells:
 		i.visible = true
 		print("made " + str(i) + " visible")
+	Globals.update_pickable_status()
 	print("enter")
 
 func _close_stash_ui() -> void:
 	for i in stash_cells:
 		i.visible = false
+	Globals.update_pickable_status()
 	print("close")
 	pass # Replace with function body.
