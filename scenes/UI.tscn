@@ -3,10 +3,12 @@
 [ext_resource type="Script" uid="uid://b4eh34uyoaj51" path="res://scripts/ui.gd" id="1_dj8aq"]
 [ext_resource type="Script" uid="uid://bumd02qjvf6oq" path="res://scripts/shop_page.gd" id="2_5en4g"]
 [ext_resource type="FontFile" uid="uid://du80ca1uicgye" path="res://assets/PixelifySans-Bold.ttf" id="2_24e4x"]
-[ext_resource type="Texture2D" uid="uid://daxeu2jb62n32" path="res://assets/HomeBtnSprite.png" id="2_ro3t7"]
+[ext_resource type="Texture2D" uid="uid://bkbitawclk2cj" path="res://assets/UI_green_buttons_light_4.png" id="3_5sqrc"]
 [ext_resource type="PackedScene" uid="uid://dxk7bln4rt0n5" path="res://scenes/shop_item_slot.tscn" id="3_ua6yw"]
+[ext_resource type="Texture2D" uid="uid://b807vdohb3wr2" path="res://assets/UI_grey_buttons_light_1.png" id="4_ilk7v"]
 [ext_resource type="PackedScene" uid="uid://c8de8mxb0by25" path="res://scenes/sell_item_slot.tscn" id="4_xpksx"]
 [ext_resource type="Script" uid="uid://wy22hl6qt8ns" path="res://scripts/employee_page.gd" id="5_75u2n"]
+[ext_resource type="Texture2D" uid="uid://vr7m5ydfasph" path="res://assets/UI_orange_buttons_light_3.png" id="5_flkkw"]
 [ext_resource type="PackedScene" uid="uid://bh8j711jxlgyh" path="res://scenes/employee_slot.tscn" id="6_3wlde"]
 [ext_resource type="Texture2D" uid="uid://dmxdwm6824vac" path="res://assets/bits.png" id="8_24e4x"]
 [ext_resource type="AudioStream" uid="uid://dem1dl7tiyhsx" path="res://assets/error_glitch.mp3" id="10_w7enk"]
@@ -14,6 +16,31 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ua6yw"]
 bg_color = Color(0.22491127, 0.1524485, 0.13536867, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7paak"]
+atlas = ExtResource("3_5sqrc")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sqrc"]
+atlas = ExtResource("4_ilk7v")
+region = Rect2(0, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilk7v"]
+atlas = ExtResource("5_flkkw")
+region = Rect2(64, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flkkw"]
+atlas = ExtResource("4_ilk7v")
+region = Rect2(32, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7dow"]
+atlas = ExtResource("4_ilk7v")
+region = Rect2(0, 0, 16, 16)
 
 [node name="UI" type="CanvasLayer" unique_id=1826785090]
 script = ExtResource("1_dj8aq")
@@ -33,7 +60,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_ua6yw")
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=281203841]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/margin_left = 25
+theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 
@@ -44,25 +71,38 @@ mouse_filter = 2
 [node name="StartBtn" type="Button" parent="PanelContainer/MarginContainer/MainMenu" unique_id=1007978610]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.8806696, 0, 0.20713285, 1)
+theme_override_colors/font_color = Color(1, 0.93333334, 0.5137255, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.93333334, 0.5137255, 1)
 theme_override_colors/font_hover_color = Color(0.8846734, 0.7217854, 0.09078058, 1)
+theme_override_colors/icon_hover_color = Color(0.81960785, 0.69411767, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_constants/h_separation = 24
+theme_override_constants/icon_max_width = 120
 theme_override_fonts/font = ExtResource("2_24e4x")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 70
 text = "NEXT TURN"
+icon = SubResource("AtlasTexture_7paak")
+flat = true
+alignment = 0
+expand_icon = true
 
 [node name="ShopBtn" type="MenuButton" parent="PanelContainer/MarginContainer/MainMenu" unique_id=1611310431]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.9999997, 0.8563485, 0.55233353, 1)
+theme_override_colors/font_color = Color(0.8745098, 0.8784314, 0.90588236, 1)
 theme_override_colors/font_pressed_color = Color(0.9622261, 0, 0.26004782, 1)
 theme_override_colors/font_hover_color = Color(0.8441374, 0.7220233, 0.086890824, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0.81960785, 0.69411767, 0, 1)
 theme_override_constants/outline_size = 20
+theme_override_constants/h_separation = 24
+theme_override_constants/icon_max_width = 120
 theme_override_fonts/font = ExtResource("2_24e4x")
 theme_override_font_sizes/font_size = 70
 text = "Shop
 "
+icon = SubResource("AtlasTexture_5sqrc")
+alignment = 0
+expand_icon = true
 
 [node name="EmployeesBtn" type="MenuButton" parent="PanelContainer/MarginContainer/MainMenu" unique_id=1341166046]
 layout_mode = 2
@@ -70,11 +110,16 @@ size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 0.8217194, 0.86063063, 1)
 theme_override_colors/font_pressed_color = Color(0.9411765, 0, 0.24705882, 1)
 theme_override_colors/font_hover_color = Color(0.906929, 0.7869775, 7.70092e-07, 1)
+theme_override_colors/icon_hover_color = Color(0.81960785, 0.69411767, 0, 1)
 theme_override_constants/outline_size = 20
-theme_override_constants/h_separation = 4
+theme_override_constants/h_separation = 24
+theme_override_constants/icon_max_width = 120
 theme_override_fonts/font = ExtResource("2_24e4x")
 theme_override_font_sizes/font_size = 70
 text = "Employees"
+icon = SubResource("AtlasTexture_ilk7v")
+alignment = 0
+expand_icon = true
 
 [node name="StashBtn" type="MenuButton" parent="PanelContainer/MarginContainer/MainMenu" unique_id=680675728]
 layout_mode = 2
@@ -82,15 +127,20 @@ size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.5895579, 0.65290827, 0.79936594, 1)
 theme_override_colors/font_pressed_color = Color(0.94178766, 0, 0.24629304, 1)
 theme_override_colors/font_hover_color = Color(0.81823635, 0.69336426, 3.85046e-07, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(0.81960785, 0.69411767, 0, 1)
 theme_override_constants/outline_size = 20
+theme_override_constants/h_separation = 24
+theme_override_constants/icon_max_width = 120
 theme_override_fonts/font = ExtResource("2_24e4x")
 theme_override_font_sizes/font_size = 70
 text = "Stash"
+icon = SubResource("AtlasTexture_flkkw")
+alignment = 0
+expand_icon = true
 switch_on_hover = true
 
 [node name="ShopPage" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1092376491]
+visible = false
 layout_mode = 2
 script = ExtResource("2_5en4g")
 item_slot_scene = ExtResource("3_ua6yw")
@@ -100,12 +150,13 @@ sell_slot_scene = ExtResource("4_xpksx")
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="BtnHome" type="TextureButton" parent="PanelContainer/MarginContainer/ShopPage/TopBar" unique_id=1099208062]
+[node name="BtnHome" type="Button" parent="PanelContainer/MarginContainer/ShopPage/TopBar" unique_id=13883790]
 custom_minimum_size = Vector2(80, 60)
 layout_mode = 2
-texture_normal = ExtResource("2_ro3t7")
-ignore_texture_size = true
-stretch_mode = 5
+theme_override_colors/icon_hover_color = Color(0.81960785, 0.69411767, 0, 1)
+icon = SubResource("AtlasTexture_i7dow")
+flat = true
+expand_icon = true
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/ShopPage" unique_id=1580418924]
 layout_mode = 2
@@ -165,12 +216,13 @@ employee_slot_scene = ExtResource("6_3wlde")
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="BtnHome" type="TextureButton" parent="PanelContainer/MarginContainer/EmployeePage/TopBar" unique_id=1595406917]
+[node name="BtnHome" type="Button" parent="PanelContainer/MarginContainer/EmployeePage/TopBar" unique_id=1040996528]
 custom_minimum_size = Vector2(80, 60)
 layout_mode = 2
-texture_normal = ExtResource("2_ro3t7")
-ignore_texture_size = true
-stretch_mode = 5
+theme_override_colors/icon_hover_color = Color(0.81960785, 0.69411767, 0, 1)
+icon = SubResource("AtlasTexture_i7dow")
+flat = true
+expand_icon = true
 
 [node name="EmployeeLabel" type="Label" parent="PanelContainer/MarginContainer/EmployeePage" unique_id=1471840041]
 layout_mode = 2
@@ -202,12 +254,13 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="BtnHome" type="TextureButton" parent="PanelContainer/MarginContainer/StashPage/TopBar" unique_id=1097935858]
+[node name="BtnHome" type="Button" parent="PanelContainer/MarginContainer/StashPage/TopBar" unique_id=1470855676]
 custom_minimum_size = Vector2(80, 60)
 layout_mode = 2
-texture_normal = ExtResource("2_ro3t7")
-ignore_texture_size = true
-stretch_mode = 5
+theme_override_colors/icon_hover_color = Color(0.81960785, 0.69411767, 0, 1)
+icon = SubResource("AtlasTexture_i7dow")
+flat = true
+expand_icon = true
 
 [node name="StashLabel" type="Label" parent="PanelContainer/MarginContainer/StashPage" unique_id=1618034164]
 layout_mode = 2

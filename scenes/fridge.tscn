@@ -54,6 +54,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tfbev"]
 size = Vector2(12.237506, 13.504028)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8anqc"]
+bg_color = Color(0.04303915, 0.043039158, 0.043039113, 0.39215687)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_t2fjl"]
 atlas = ExtResource("7_nm1dx")
 region = Rect2(0, 0, 32, 32)
@@ -1299,11 +1302,11 @@ shape = SubResource("RectangleShape2D_tfbev")
 
 [node name="CoverMenu" type="Panel" parent="UI" unique_id=234450630]
 z_index = 25
-offset_left = 1282.0
-offset_top = -4.0
-offset_right = 1322.0
-offset_bottom = 36.0
+offset_left = 1279.9999
+offset_right = 1320.1252
+offset_bottom = 39.59876
 scale = Vector2(15.954549, 27.273582)
+theme_override_styles/panel = SubResource("StyleBoxFlat_8anqc")
 script = ExtResource("12_6s3sb")
 
 [node name="Stash100" type="Area2D" parent="UI" unique_id=394698429 groups=["stash_cells"]]

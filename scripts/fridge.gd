@@ -545,6 +545,8 @@ func advance_turn():
 				await get_tree().create_timer(0.05).timeout
 				cell_item_array[n_cell] = rng.randi_range(0, 156)
 				i.frame = cell_item_array[n_cell]
+				update_slot_tooltip(i, cell_item_array[n_cell])
+				n_cell += 1
 				ToastX.fridgesim("The fridge has been restocked!")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
