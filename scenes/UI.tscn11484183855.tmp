@@ -1,0 +1,218 @@
+[gd_scene format=3 uid="uid://bvfa18ddvvaon"]
+
+[ext_resource type="Script" uid="uid://b4eh34uyoaj51" path="res://scripts/ui.gd" id="1_dj8aq"]
+[ext_resource type="Script" uid="uid://bumd02qjvf6oq" path="res://scripts/shop_page.gd" id="2_5en4g"]
+[ext_resource type="FontFile" uid="uid://du80ca1uicgye" path="res://assets/PixelifySans-Bold.ttf" id="2_24e4x"]
+[ext_resource type="Texture2D" uid="uid://daxeu2jb62n32" path="res://assets/HomeBtnSprite.png" id="2_ro3t7"]
+[ext_resource type="PackedScene" uid="uid://dxk7bln4rt0n5" path="res://scenes/shop_item_slot.tscn" id="3_ua6yw"]
+[ext_resource type="PackedScene" uid="uid://c8de8mxb0by25" path="res://scenes/sell_item_slot.tscn" id="4_xpksx"]
+[ext_resource type="Script" uid="uid://wy22hl6qt8ns" path="res://scripts/employee_page.gd" id="5_75u2n"]
+[ext_resource type="PackedScene" uid="uid://bh8j711jxlgyh" path="res://scenes/employee_slot.tscn" id="6_3wlde"]
+[ext_resource type="Texture2D" uid="uid://dmxdwm6824vac" path="res://assets/bits.png" id="8_24e4x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ua6yw"]
+bg_color = Color(0.17283267, 0.17283267, 0.17283258, 1)
+
+[node name="UI" type="CanvasLayer" unique_id=1826785090]
+script = ExtResource("1_dj8aq")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=456803766]
+anchors_preset = -1
+anchor_left = 0.667
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.64001465
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ua6yw")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=281203841]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="MainMenu" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=176046976]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="StartBtn" type="Button" parent="PanelContainer/MarginContainer/MainMenu" unique_id=1007978610]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.8806696, 0, 0.20713285, 1)
+theme_override_colors/font_hover_color = Color(0.8846734, 0.7217854, 0.09078058, 1)
+theme_override_fonts/font = ExtResource("2_24e4x")
+theme_override_font_sizes/font_size = 60
+text = "START ROUND"
+
+[node name="ShopBtn" type="MenuButton" parent="PanelContainer/MarginContainer/MainMenu" unique_id=1611310431]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.9999997, 0.8563485, 0.55233353, 1)
+theme_override_colors/font_pressed_color = Color(0.9622261, 0, 0.26004782, 1)
+theme_override_colors/font_hover_color = Color(0.8441374, 0.7220233, 0.086890824, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_24e4x")
+theme_override_font_sizes/font_size = 70
+text = "Shop
+"
+
+[node name="EmployeesBtn" type="MenuButton" parent="PanelContainer/MarginContainer/MainMenu" unique_id=1341166046]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 0.8217194, 0.86063063, 1)
+theme_override_colors/font_pressed_color = Color(0.98871905, 0.23037633, 5.7756904e-07, 1)
+theme_override_colors/font_hover_color = Color(0.906929, 0.7869775, 7.70092e-07, 1)
+theme_override_constants/outline_size = 20
+theme_override_constants/h_separation = 4
+theme_override_fonts/font = ExtResource("2_24e4x")
+theme_override_font_sizes/font_size = 70
+text = "Employees"
+
+[node name="StashBtn" type="MenuButton" parent="PanelContainer/MarginContainer/MainMenu" unique_id=680675728]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.83274853, 0.94195986, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.94178766, 0, 0.24629304, 1)
+theme_override_colors/font_hover_color = Color(0.81823635, 0.69336426, 3.85046e-07, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_24e4x")
+theme_override_font_sizes/font_size = 70
+text = "Hidden Inventory
+
+"
+switch_on_hover = true
+
+[node name="ShopPage" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1092376491]
+layout_mode = 2
+script = ExtResource("2_5en4g")
+item_slot_scene = ExtResource("3_ua6yw")
+sell_slot_scene = ExtResource("4_xpksx")
+
+[node name="TopBar" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopPage" unique_id=1705407923]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BtnHome" type="TextureButton" parent="PanelContainer/MarginContainer/ShopPage/TopBar" unique_id=1099208062]
+custom_minimum_size = Vector2(80, 60)
+layout_mode = 2
+texture_normal = ExtResource("2_ro3t7")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/ShopPage" unique_id=1580418924]
+layout_mode = 2
+theme_override_constants/margin_right = 65
+
+[node name="CoinsLabel" type="Label" parent="PanelContainer/MarginContainer/ShopPage/MarginContainer" unique_id=1575846367]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "erm you should not see this"
+horizontal_alignment = 2
+
+[node name="Bits" type="Sprite2D" parent="PanelContainer/MarginContainer/ShopPage" unique_id=1614331325]
+position = Vector2(582.99994, 137.00002)
+scale = Vector2(5, 5)
+texture = ExtResource("8_24e4x")
+
+[node name="BuyLabel" type="Label" parent="PanelContainer/MarginContainer/ShopPage" unique_id=875980187]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Buy items"
+horizontal_alignment = 1
+
+[node name="BuySection" type="MarginContainer" parent="PanelContainer/MarginContainer/ShopPage" unique_id=1821928613]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.5
+theme_override_constants/margin_top = 50
+
+[node name="BuyGrid" type="GridContainer" parent="PanelContainer/MarginContainer/ShopPage/BuySection" unique_id=1811093333]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+columns = 3
+
+[node name="SellLabel" type="Label" parent="PanelContainer/MarginContainer/ShopPage" unique_id=1948373572]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Sell items"
+horizontal_alignment = 1
+
+[node name="SellSection" type="ScrollContainer" parent="PanelContainer/MarginContainer/ShopPage" unique_id=950362076]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.5
+
+[node name="SellGrid" type="GridContainer" parent="PanelContainer/MarginContainer/ShopPage/SellSection" unique_id=1365918977]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 3
+
+[node name="EmployeePage" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1176839180]
+visible = false
+layout_mode = 2
+script = ExtResource("5_75u2n")
+employee_slot_scene = ExtResource("6_3wlde")
+
+[node name="TopBar" type="HBoxContainer" parent="PanelContainer/MarginContainer/EmployeePage" unique_id=1830381082]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BtnHome" type="TextureButton" parent="PanelContainer/MarginContainer/EmployeePage/TopBar" unique_id=1595406917]
+custom_minimum_size = Vector2(80, 60)
+layout_mode = 2
+texture_normal = ExtResource("2_ro3t7")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="EmployeeSection" type="ScrollContainer" parent="PanelContainer/MarginContainer/EmployeePage" unique_id=1161835678]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 7.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="EGrid" type="GridContainer" parent="PanelContainer/MarginContainer/EmployeePage/EmployeeSection" unique_id=1907066367]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+
+[node name="StashPage" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=376075644]
+visible = false
+layout_mode = 2
+
+[node name="TopBar" type="HBoxContainer" parent="PanelContainer/MarginContainer/StashPage" unique_id=530167626]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BtnHome" type="TextureButton" parent="PanelContainer/MarginContainer/StashPage/TopBar" unique_id=1097935858]
+custom_minimum_size = Vector2(80, 60)
+layout_mode = 2
+texture_normal = ExtResource("2_ro3t7")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="StashSection" type="ScrollContainer" parent="PanelContainer/MarginContainer/StashPage" unique_id=500202458]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 7.0
+
+[node name="Stash" type="GridContainer" parent="PanelContainer/MarginContainer/StashPage/StashSection" unique_id=1454911529]
+layout_mode = 2
+columns = 6
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/StashPage" unique_id=630965806]
+layout_mode = 2
+stretch_mode = 5
+
+[connection signal="draw" from="PanelContainer/MarginContainer/StashPage" to="." method="_open_stash_ui"]
+[connection signal="hidden" from="PanelContainer/MarginContainer/StashPage" to="." method="_close_stash_ui"]

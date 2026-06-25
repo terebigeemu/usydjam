@@ -22,5 +22,7 @@ func setup(emp_data: EmployeeData):
 	level_label.text = "Lvl: " + str(emp_data.level)
 	affinity_label.text = str(emp_data.affinity)
 	likes_label.text = "Likes: " + emp_data.preferences
-	
+	var formatted_likes = emp_data.preferences.replace(", ", "\n- ").replace(",", "\n- ")
+
+	likes_label.text = "\nLikes:\n- " + formatted_likes
 	self.tooltip_text = "Encounter Rate: " + str(emp_data.encounter)

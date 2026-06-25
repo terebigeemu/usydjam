@@ -14,6 +14,11 @@ func setup(item_data: ItemData, combined_inventory_index: int):
 	icon_rect.texture = item_data.icon
 	cost_label.text = str(item_data.cost)
 	
+	# Format the tooltip for hovering 
+	self.tooltip_text = item_data.item_name + "\n"
+	self.tooltip_text += "Cost: " + str(item_data.cost) + "\n"
+	self.tooltip_text += "Effect: " + item_data.attrb
+	
 	# Connect the buy button!
 	sell_item.pressed.connect(_on_sell_pressed.bind(combined_inventory_index))
 
