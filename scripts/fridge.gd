@@ -147,7 +147,7 @@ func stash_fill(cell_id, item_no, inventory_index):
 		# if the stash is full, then swap the item instead with one that the user chooses
 		
 		# grow the item to show it has been selected
-		cell_selected.scale *= 1.25
+		cell_selected.scale *= 1.2
 		
 		# change registers
 		enable_stash_edits = false
@@ -212,7 +212,7 @@ func fridge_fill(cell_id, item_no, inventory_index):
 		# if the stash is full, then swap the item instead with one that the user chooses
 		
 		# grow the item to show it has been selected
-		stash_selected.scale *= 1.25
+		stash_selected.scale *= 1.2
 		
 		# change registers
 		enable_stash_edits = false
@@ -384,6 +384,8 @@ func _on_stash_input_event(viewport: Node, event: InputEvent, shape_idx: int, ex
 @onready var background_music = $BackgroundMusic
 @onready var canvas_modulate = $Background/DayNightCycle
 @onready var game_over_screen = $StageScreen/GameOverScreen
+@onready var cutscene = $StageScreen/Cutscene
+@onready var input_blocker = $StageScreen/InputBlocker
 
 const CLOSED = 0
 const OPEN = 1

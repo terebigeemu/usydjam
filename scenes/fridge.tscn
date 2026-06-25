@@ -22,6 +22,13 @@
 [ext_resource type="Script" uid="uid://b0q2xm04uf2nh" path="res://scripts/day_night_cycle.gd" id="18_j2m7l"]
 [ext_resource type="AudioStream" uid="uid://cwqury6eaejp3" path="res://assets/FridgeBuzz.mp3" id="18_v6xy7"]
 [ext_resource type="Texture2D" uid="uid://bxhu03iny5xsf" path="res://assets/game_over.png" id="19_j2m7l"]
+[ext_resource type="Texture2D" uid="uid://dogulcqjbtusd" path="res://assets/cutscene1.png" id="23_d0nps"]
+[ext_resource type="Texture2D" uid="uid://d07l3efylplfn" path="res://assets/cutscene2.png" id="24_qqhkm"]
+[ext_resource type="Texture2D" uid="uid://4p04aa6mhiy4" path="res://assets/cutscene3.png" id="25_y6mj6"]
+[ext_resource type="Texture2D" uid="uid://bgnbc7v7xve2" path="res://assets/cutscene4.png" id="26_8anqc"]
+[ext_resource type="Texture2D" uid="uid://by1l5bfq4sse1" path="res://assets/cutscene5.png" id="27_ds0wk"]
+[ext_resource type="Script" uid="uid://cqcrk071qffvv" path="res://scripts/cutscene.gd" id="28_qqhkm"]
+[ext_resource type="FontFile" uid="uid://du80ca1uicgye" path="res://assets/PixelifySans-Bold.ttf" id="29_y6mj6"]
 
 [sub_resource type="Gradient" id="Gradient_buvrw"]
 colors = PackedColorArray(0.68235296, 0.91764706, 0.9882353, 1, 0.47058824, 0.8666667, 0.98039216, 1)
@@ -1176,6 +1183,29 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_buvrw"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_abnil"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_d0nps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_qqhkm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_y6mj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_8anqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ds0wk")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 0.2
+}]
+
 [node name="Fridge" type="Node2D" unique_id=672302043]
 position = Vector2(10, -1)
 script = ExtResource("3_buvrw")
@@ -1196,6 +1226,7 @@ offset_right = -11.0
 offset_bottom = 1203.0
 rotation = -1.5707964
 scale = Vector2(18.95033, 21.977877)
+mouse_filter = 2
 texture = SubResource("GradientTexture2D_iod1f")
 script = ExtResource("4_husjh")
 
@@ -1437,23 +1468,64 @@ script = ExtResource("12_nm1dx")
 [node name="StageScreen" type="CanvasLayer" parent="." unique_id=1987877174]
 layer = 2
 
+[node name="InputBlocker" type="ColorRect" parent="StageScreen" unique_id=343126667]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
 [node name="GameOverScreen" type="Sprite2D" parent="StageScreen" unique_id=1393790922]
 visible = false
 position = Vector2(960, 540)
 scale = Vector2(8, 8)
 texture = ExtResource("19_j2m7l")
 
-[node name="Control" type="Control" parent="StageScreen/GameOverScreen" unique_id=1935789447]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -120.0
-offset_top = -67.5
-offset_right = -120.0
-offset_bottom = -67.5
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Cutscene" type="AnimatedSprite2D" parent="StageScreen" unique_id=1254663875]
+position = Vector2(960, 540)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_abnil")
+autoplay = "default"
+frame_progress = 0.1397391
+script = ExtResource("28_qqhkm")
+
+[node name="Cutscene4Label" type="Label" parent="StageScreen" unique_id=2014072875]
+visible = false
+offset_left = 1122.0
+offset_top = 470.0
+offset_right = 1652.0
+offset_bottom = 619.0
+theme_override_colors/font_color = Color(0.7764706, 0.28627452, 0.2, 1)
+theme_override_font_sizes/font_size = 60
+text = "Time to take over 
+   the CEO's office!"
+
+[node name="Cutscene5Label" type="Label" parent="StageScreen" unique_id=648855355]
+visible = false
+offset_left = 31.0
+offset_top = 280.0
+offset_right = 1886.0
+offset_bottom = 809.0
+theme_override_colors/font_color = Color(0.3529412, 0.45882353, 0.49411765, 1)
+theme_override_font_sizes/font_size = 60
+text = "Employees will take items out of the fridge 
+multiple times a day.
+
+I should stock up items that they like.
+I can stash them away as well...
+
+Win their trust and earn my promotion!"
+horizontal_alignment = 1
+
+[node name="Cutscene5Label2" type="Label" parent="StageScreen" unique_id=828514218]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = 512.0
+offset_top = 944.0
+offset_right = 1364.0
+offset_bottom = 1029.0
+theme_override_colors/font_color = Color(0.4745098, 0.5882353, 0.61960787, 1)
+theme_override_fonts/font = ExtResource("29_y6mj6")
+theme_override_font_sizes/font_size = 60
+text = "CLICK ANYWHERE TO START"
+horizontal_alignment = 1
 
 [connection signal="timeout" from="OpenSFXTimer" to="." method="_on_open_sfx_timer_timeout"]
 [connection signal="timeout" from="CloseSFXTimer" to="." method="_on_close_sfx_timer_timeout"]
@@ -1471,3 +1543,6 @@ grow_vertical = 2
 [connection signal="input_event" from="Area4" to="." method="_on_cell_input_event" binds= [NodePath("Area4/Cell4"), 4]]
 [connection signal="input_event" from="Area5" to="." method="_on_cell_input_event" binds= [NodePath("Area5/Cell5"), 5]]
 [connection signal="input_event" from="Area6" to="." method="_on_cell_input_event" binds= [NodePath("Area6/Cell6"), 6]]
+[connection signal="gui_input" from="StageScreen/InputBlocker" to="StageScreen/Cutscene" method="_on_input_blocker_gui_input"]
+[connection signal="animation_finished" from="StageScreen/Cutscene" to="StageScreen/Cutscene" method="_on_animation_finished"]
+[connection signal="frame_changed" from="StageScreen/Cutscene" to="StageScreen/Cutscene" method="_on_frame_changed"]
