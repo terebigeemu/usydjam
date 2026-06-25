@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c8de8mxb0by25" path="res://scenes/sell_item_slot.tscn" id="4_xpksx"]
 [ext_resource type="Script" uid="uid://wy22hl6qt8ns" path="res://scripts/employee_page.gd" id="5_75u2n"]
 [ext_resource type="PackedScene" uid="uid://bh8j711jxlgyh" path="res://scenes/employee_slot.tscn" id="6_3wlde"]
+[ext_resource type="Texture2D" uid="uid://dmxdwm6824vac" path="res://assets/bits.png" id="8_24e4x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ua6yw"]
 bg_color = Color(0.17283267, 0.17283267, 0.17283258, 1)
@@ -107,11 +108,20 @@ texture_normal = ExtResource("2_ro3t7")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="CoinsLabel" type="Label" parent="PanelContainer/MarginContainer/ShopPage" unique_id=1575846367]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/ShopPage" unique_id=1580418924]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_constants/margin_right = 65
+
+[node name="CoinsLabel" type="Label" parent="PanelContainer/MarginContainer/ShopPage/MarginContainer" unique_id=1575846367]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
 text = "erm you should not see this"
-horizontal_alignment = 1
+horizontal_alignment = 2
+
+[node name="Bits" type="Sprite2D" parent="PanelContainer/MarginContainer/ShopPage" unique_id=1614331325]
+position = Vector2(582.99994, 137.00002)
+scale = Vector2(5, 5)
+texture = ExtResource("8_24e4x")
 
 [node name="BuyLabel" type="Label" parent="PanelContainer/MarginContainer/ShopPage" unique_id=875980187]
 layout_mode = 2

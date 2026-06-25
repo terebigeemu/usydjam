@@ -9,7 +9,7 @@ const ITEMS_FOLDER = "res://items/"
 
 @onready var buy_grid = $BuySection/BuyGrid
 @onready var sell_grid = $SellSection/SellGrid
-@onready var coins_label = $CoinsLabel
+@onready var coins_label = $MarginContainer/CoinsLabel
 
 @onready var cell_array = Globals.cell_array
 @onready var cell_item_array = Globals.cell_item_array
@@ -140,4 +140,4 @@ func _process(delta: float) -> void:
 	# the lazy thing to do is just chuck it here
 	# i do the lazy thing
 	# huh what's optimisation?
-	coins_label.text = "You have " + str(Globals.player_bal) + " coins!"
+	coins_label.text = str(Globals.player_bal)
