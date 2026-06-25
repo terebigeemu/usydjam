@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bumd02qjvf6oq" path="res://scripts/shop_page.gd" id="2_5en4g"]
 [ext_resource type="Texture2D" uid="uid://daxeu2jb62n32" path="res://assets/HomeBtnSprite.png" id="2_ro3t7"]
 [ext_resource type="PackedScene" uid="uid://dxk7bln4rt0n5" path="res://scenes/shop_item_slot.tscn" id="3_ua6yw"]
+[ext_resource type="PackedScene" uid="uid://c8de8mxb0by25" path="res://scenes/sell_item_slot.tscn" id="4_xpksx"]
 [ext_resource type="Script" uid="uid://wy22hl6qt8ns" path="res://scripts/employee_page.gd" id="5_75u2n"]
 [ext_resource type="PackedScene" uid="uid://bh8j711jxlgyh" path="res://scenes/employee_slot.tscn" id="6_3wlde"]
 
@@ -28,6 +29,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_ua6yw")
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=281203841]
 layout_mode = 2
 mouse_filter = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
 
 [node name="MainMenu" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=176046976]
 visible = false
@@ -78,6 +83,7 @@ text = "Hidden Inventory
 layout_mode = 2
 script = ExtResource("2_5en4g")
 item_slot_scene = ExtResource("3_ua6yw")
+sell_slot_scene = ExtResource("4_xpksx")
 
 [node name="TopBar" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopPage" unique_id=1705407923]
 layout_mode = 2
@@ -96,10 +102,10 @@ theme_override_font_sizes/font_size = 24
 text = "erm you should not see this"
 horizontal_alignment = 1
 
-[node name="ShopLabel" type="Label" parent="PanelContainer/MarginContainer/ShopPage" unique_id=875980187]
+[node name="BuyLabel" type="Label" parent="PanelContainer/MarginContainer/ShopPage" unique_id=875980187]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "SHOP"
+text = "Buy items"
 horizontal_alignment = 1
 
 [node name="BuySection" type="MarginContainer" parent="PanelContainer/MarginContainer/ShopPage" unique_id=1821928613]
@@ -113,6 +119,12 @@ layout_mode = 2
 theme_override_constants/h_separation = 8
 columns = 3
 
+[node name="SellLabel" type="Label" parent="PanelContainer/MarginContainer/ShopPage" unique_id=1948373572]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Sell items"
+horizontal_alignment = 1
+
 [node name="SellSection" type="ScrollContainer" parent="PanelContainer/MarginContainer/ShopPage" unique_id=950362076]
 layout_mode = 2
 size_flags_vertical = 3
@@ -120,6 +132,8 @@ size_flags_stretch_ratio = 3.5
 
 [node name="SellGrid" type="GridContainer" parent="PanelContainer/MarginContainer/ShopPage/SellSection" unique_id=1365918977]
 layout_mode = 2
+size_flags_horizontal = 3
+columns = 3
 
 [node name="EmployeePage" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1176839180]
 visible = false

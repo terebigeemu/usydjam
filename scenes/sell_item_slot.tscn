@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c8de8mxb0by25"]
+
+[ext_resource type="Script" uid="uid://bfhnc055hoygp" path="res://scripts/sell_item_slot.gd" id="1_4cun4"]
+
+[node name="ItemTable" type="VBoxContainer" unique_id=873649058]
+offset_right = 8.0
+offset_bottom = 66.0
+size_flags_horizontal = 3
+script = ExtResource("1_4cun4")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1720076032]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NameLabel" type="Label" parent="." unique_id=1408852450]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="CostLabel" type="Label" parent="." unique_id=761312351]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="SellButton" type="Button" parent="." unique_id=1646032409]
+layout_mode = 2
+size_flags_vertical = 10
+text = "SELL"
