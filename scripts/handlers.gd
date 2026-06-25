@@ -125,7 +125,7 @@ func _employee_picks_food_from_fridge_or_smth_idk(employee_title: String) -> voi
 	# let affinity be preference points * arbitrary constant k
 	
 	if valid_cells.is_empty():
-		pb_preference_points = -1
+		pb_preference_points = -1										# lose points for not having the fridge stocked
 		
 	elif not valid_cells.is_empty():
 
@@ -169,6 +169,8 @@ func _employee_picks_food_from_fridge_or_smth_idk(employee_title: String) -> voi
 	
 	Globals.affinity_to_add = pb_preference_points
 	Globals.affinity_to_add_hasbeenadded = false
+	
+	Globals.check_if_game_over.emit()
 												
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

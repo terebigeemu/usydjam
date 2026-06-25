@@ -50,8 +50,8 @@ extends Resource
 @export var gap: int = 8
 @export var minimum_width: int = 320
 
-@export var corner_radius: int = 8
-@export var use_pill_shape: bool = true
+@export var corner_radius: int = 0 # original: 8
+@export var use_pill_shape: bool = false # original: true
 @export var border_enabled: bool = false
 @export var border_width: int = 1
 @export var border_color: Color = Color.WHITE

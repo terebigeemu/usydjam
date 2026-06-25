@@ -57,6 +57,7 @@ signal employee_takes_from_fridge(employee_title)
 signal release_menu()
 signal block_menu()
 signal update_slot_tooltip_signal(i, id)
+signal check_if_game_over()
 
 var affinity_to_add: int = 0;
 var affinity_to_add_hasbeenadded: bool = true;
@@ -68,16 +69,20 @@ func update_pickable_status() -> void:
 	for i in stash_array:
 		if stash_item_array[n_i] != Globals.item_empty:
 			individual_stash_pickable_handler(true, n_i)
+			print("pickable stash true for" + str(n_i))
 		else:
 			individual_stash_pickable_handler(false, n_i)
+			print("pickable stash false for" + str(n_i))
 		n_i += 1
 		
 	var n_j: int = 0
 	for j in cell_array:
 		if cell_item_array[n_j] != Globals.item_empty:
 			individual_cell_pickable_handler(true, n_j)
+			print("pickable stash true for" + str(n_i))
 		else:
 			individual_cell_pickable_handler(false, n_j)
+			print("pickable stash false for" + str(n_i))
 		n_j += 1
 
 func stash_pickable_handler(is_pickable: bool) -> void:

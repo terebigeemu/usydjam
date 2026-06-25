@@ -20,6 +20,7 @@ extends Node
 @onready var stash101: AnimatedSprite2D = Globals.stash101
 @onready var stash102: AnimatedSprite2D = Globals.stash102
 @onready var start_btn = $UI/PanelContainer/MarginContainer/MainMenu/StartBtn
+@onready var input_blocker = $StageScreen/InputBlocker
 
 ### Testing
 var current_active_employee: EmployeeData = null
@@ -162,6 +163,7 @@ func _ready() -> void:
 	Globals.add_purchase_to_inventory.connect(_on_inventory_update)
 	Globals.action_sale_in_inventory.connect(_on_action_sale_in_inventory)
 	Globals.update_slot_tooltip_signal.connect(update_slot_tooltip)
+	Globals.check_if_game_over.connect(_check_if_game_over)
 	
 	door_status.text = "init"
 		
@@ -543,6 +545,7 @@ func advance_turn():
 				await get_tree().create_timer(0.05).timeout
 				cell_item_array[n_cell] = rng.randi_range(0, 156)
 				i.frame = cell_item_array[n_cell]
+				ToastX.fridgesim("The fridge has been restocked!")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -591,7 +594,15 @@ func advance_level():
 	
 func end_game():
 	game_over_screen.visible = true
-	background_music.fade_audio(-80.0, 3)
+	input_blocker.show()
+	background_music.fade_audio(-80.0, 0.01)
+	
+func _check_if_game_over() -> void: # this can also check if the game has been won
+	if Globals.chosen_employee.death == true:
+		print("This employee can kill the player")
+		
+		if Globals.chosen_employee.affinity < 0: # if affinity drops below zero
+				end_game()
 
 # Shop updates
 
@@ -611,6 +622,7 @@ func _on_inventory_update(id: int, cost: int, store_array_index: int) -> void: #
 			has_filled = true
 			Globals.buy_sell_sfx.play()
 			ToastX.fridgesim("Delivered to the hidden inventory!")
+			update_slot_tooltip(stash_array[n_i], id)
 			break
 		n_i += 1
 
@@ -623,6 +635,7 @@ func _on_inventory_update(id: int, cost: int, store_array_index: int) -> void: #
 			has_filled = true
 			Globals.buy_sell_sfx.play()
 			ToastX.fridgesim("Delivered to the fridge!")
+			update_slot_tooltip(cell_array[n_j], id)
 			break
 		n_j += 1
 			
@@ -634,19 +647,22 @@ func _on_inventory_update(id: int, cost: int, store_array_index: int) -> void: #
 		Globals.player_bal -= cost	
 		Globals.remove_item_from_shop.emit(store_array_index)
 		has_filled = false # just in case yknow
-		
+						
 func _on_action_sale_in_inventory(id: int, cost: int, combined_inventory_index: int) -> void:
 	if combined_inventory_index <= 5:	# in fridge
 		item_update_handler(false, combined_inventory_index, item_empty)
+		update_slot_tooltip(cell_array[combined_inventory_index], item_empty)
 
 	else:								# in stash
 		item_update_handler(true, combined_inventory_index - 6, item_empty)
+		update_slot_tooltip(stash_array[combined_inventory_index - 6], item_empty)
 	
 	ToastX.fridgesim("Sold item! You got " + str(cost) + " bits!")
 	Globals.buy_sell_sfx.play()
 		
 	Globals.player_bal += cost	
 	Globals.refresh_sell_shop.emit()
+		
 	
 func item_update_handler(is_stash: bool, index: int, update_to_item_id: int) -> void:
 	if is_stash == false:	# in fridge
