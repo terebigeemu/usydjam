@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Globals="*uid://ikfwvoeqjlys"
 EmployeeManager="*uid://cp6p3vl1bmrch"
 EasyNotify="*uid://cb6na1wfgwtah"
+ToastX="*uid://0siugmqfyb8w"
 
 [display]
 
@@ -35,7 +36,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/easynotify/plugin.cfg")
+enabled=PackedStringArray("res://addons/easynotify/plugin.cfg", "res://addons/toastx/plugin.cfg")
 
 [global_group]
 
