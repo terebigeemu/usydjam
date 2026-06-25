@@ -73,9 +73,7 @@ var item102: int = Globals.item102
 func _ready() -> void:
 	fridge_original_position = fridge_sprite.position
 	cell_original_positions = [cell1.position, cell2.position, cell3.position, cell4.position, cell5.position, cell6.position]
-	
-	EasyNotify.add_notification({"amogus": "amogus"})	# need to handle this with notifications
-
+		
 	# call cutscene? can be done in a diff script
 	
 	Globals.add_purchase_to_inventory.connect(_on_inventory_update)
@@ -166,7 +164,7 @@ func stash_fill(cell_id, item_no, inventory_index):
 					
 			if is_filled == true:
 				# if a slot has already been filled during this function execution, break the return function
-				EasyNotify.add_notification({"Added to your hidden inventory!": "Open your hidden inventory to see it :P"})	# need to handle this with notifications
+				ToastX.fridgesim("Moved to stash!")
 				break
 			elif i == item_empty and is_filled != true:
 				# if a slot is empty, use that slot
@@ -231,7 +229,7 @@ func fridge_fill(cell_id, item_no, inventory_index):
 					
 			if is_filled == true:
 				# if a slot has already been filled during this function execution, break the return function
-				print("Filled - break loop")
+				ToastX.fridgesim("Moved to fridge!")
 				break
 			elif i == item_empty and is_filled != true:
 				# if a slot is empty, use that slot
@@ -416,7 +414,6 @@ func summon_employee(current_player_level: String):
 		
 		EmployeeManager.add_affinity(current_active_employee, Globals.affinity_to_add) #tbc
 			
-		# Apply the employee's icon directly to your visual node!
 
 
 func advance_turn():
@@ -505,6 +502,7 @@ func _on_inventory_update(id: int, cost: int, store_array_index: int) -> void: #
 			stash_item_array[n_i] = id
 			stash_array[n_i].frame = id
 			has_filled = true
+			ToastX.fridgesim("Delivered to the hidden inventory!")
 			break
 		n_i += 1
 
@@ -515,11 +513,12 @@ func _on_inventory_update(id: int, cost: int, store_array_index: int) -> void: #
 			cell_item_array[n_j] = id
 			cell_array[n_j].frame = id
 			has_filled = true
+			ToastX.fridgesim("Delivered to the fridge!")
 			break
 		n_j += 1
 			
 	if has_filled == false:
-		EasyNotify.add_notification({"Your fridge & stash are full!": "Sell items to free up inventory space"})	# need to handle this with notifications
+		pass
 	elif has_filled == true:
 		Globals.player_bal -= cost	
 		Globals.remove_item_from_shop.emit(store_array_index)
@@ -528,8 +527,11 @@ func _on_inventory_update(id: int, cost: int, store_array_index: int) -> void: #
 func _on_action_sale_in_inventory(id: int, cost: int, combined_inventory_index: int) -> void:
 	if combined_inventory_index <= 5:	# in fridge
 		item_update_handler(false, combined_inventory_index, item_empty)
+
 	else:								# in stash
 		item_update_handler(true, combined_inventory_index - 6, item_empty)
+	
+	ToastX.fridgesim("Sold item! You got " + str(cost) + " coins!")
 		
 	Globals.player_bal += cost	
 	Globals.refresh_sell_shop.emit()
