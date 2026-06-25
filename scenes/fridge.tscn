@@ -1309,7 +1309,7 @@ script = ExtResource("12_6s3sb")
 [node name="Stash100" type="Area2D" parent="UI" unique_id=394698429 groups=["stash_cells"]]
 z_index = 19
 z_as_relative = false
-position = Vector2(1263, 196)
+position = Vector2(1268, 290)
 scale = Vector2(0.7265467, 0.7265467)
 script = ExtResource("4_nm1dx")
 
@@ -1327,7 +1327,7 @@ shape = SubResource("CircleShape2D_buvrw")
 
 [node name="Stash101" type="Area2D" parent="UI" unique_id=754821852 groups=["stash_cells"]]
 z_index = 5
-position = Vector2(1573.9999, 339)
+position = Vector2(1582, 405)
 scale = Vector2(0.7386973, 0.7386973)
 script = ExtResource("4_nm1dx")
 
@@ -1345,7 +1345,7 @@ shape = SubResource("CircleShape2D_buvrw")
 
 [node name="Stash102" type="Area2D" parent="UI" unique_id=68831125 groups=["stash_cells"]]
 z_index = 5
-position = Vector2(1334, 584)
+position = Vector2(1351, 633)
 scale = Vector2(0.6852523, 0.6852523)
 script = ExtResource("4_nm1dx")
 
@@ -1471,6 +1471,7 @@ script = ExtResource("12_nm1dx")
 
 [node name="StageScreen" type="CanvasLayer" parent="." unique_id=1987877174]
 layer = 2
+visible = false
 
 [node name="InputBlocker" type="ColorRect" parent="StageScreen" unique_id=343126667]
 offset_right = 1920.0

@@ -33,10 +33,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_ua6yw")
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=281203841]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
 
 [node name="MainMenu" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=176046976]
 layout_mode = 2
@@ -119,7 +118,7 @@ text = "erm you should not see this"
 horizontal_alignment = 2
 
 [node name="Bits" type="Sprite2D" parent="PanelContainer/MarginContainer/ShopPage" unique_id=1614331325]
-position = Vector2(582.99994, 137.00002)
+position = Vector2(569.00006, 137)
 scale = Vector2(5, 5)
 texture = ExtResource("8_24e4x")
 
@@ -176,7 +175,7 @@ stretch_mode = 5
 [node name="EmployeeLabel" type="Label" parent="PanelContainer/MarginContainer/EmployeePage" unique_id=1471840041]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "As more visitors take food from you, you'll learn more about them and what they like.
+text = "As more visitors take food from you, you'll come to know more about them.
 
 Aim to please those who can help you reach higher places.
 "
