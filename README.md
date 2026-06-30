@@ -51,6 +51,8 @@ For our original Game Jam entry, we used the following assets:
 
 Background/character art was predominantly produced by Isaac.
 
+The Pigeon Game Studios loading screen was from an [earlier game jam project](https://github.com/terebigeemu/ludum-dare-49) which included this game's development team + other members.
+
 ## AI declaration
 
 AI was used in code assistance and developing a dataset of pre-populated attributes for in-game items.
