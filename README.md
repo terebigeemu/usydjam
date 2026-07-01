@@ -46,6 +46,7 @@ For our original Game Jam entry, we used the following assets:
 - [PIXEL FANTASY RPG ICONS - Colour Wheel by Caz](https://cazwolf.itch.io/caz-pixel-colourwheel)
 - [Pixel UI buttons by TotusLotus](https://totuslotus.itch.io/pixel-ui-buttons)
 - [Sound effects from Pixabay](https://pixabay.com/sound-effects/)
+- [Lofi - Lofi Girl - Lofi Music by MondaMusic](https://pixabay.com/music/lofi-lofi-lofi-girl-lofi-music-529555/)
 - [Pixelify Sans](https://fonts.google.com/specimen/Pixelify+Sans)
 - Soundly library (thanks to [@dippyshere](https://github.com/dippyshere) for providing this to us!)
 
